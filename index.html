@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life HQ</title>
+<style>
+  :root{
+    color-scheme:light;
+    --bg1:#f4fbf8;--bg2:#ecf8f2;
+    --ink:#16302a;--sub:#5d6f69;--faint:#9aa8a3;--hair:#e4efe9;
+    --card:#ffffff;
+    --mint:#1d9e75;--mint-d:#0f6e56;--mint-s:#e1f5ee;--mint-l:#9fe1cb;
+    --mag:#d4537e;--mag-d:#993556;--mag-s:#fbeaf0;--mag-l:#f4c0d1;
+    --blue:#378add;--blue-s:#e6f1fb;--blue-d:#185fa5;
+    --amber:#ba7517;--amber-s:#faeeda;--amber-d:#854f0b;
+    --gray:#888780;--gray-s:#f1efe8;
+    --sh:0 1px 2px rgba(20,48,42,.04),0 16px 32px -20px rgba(20,48,42,.22);
+    --sh-h:0 2px 6px rgba(20,48,42,.06),0 24px 46px -22px rgba(20,48,42,.30);
+    --r:22px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));min-height:100vh;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;letter-spacing:-.01em;padding:0 0 64px}
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 22px 0}
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .b{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:22px;transition:transform .18s,box-shadow .18s}
+  .b.hov:hover{transform:translateY(-3px);box-shadow:var(--sh-h)}
+  .c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}
+  @media(max-width:1024px){.c3,.c4,.c5{grid-column:span 6}.c6,.c7,.c8{grid-column:span 12}}
+  @media(max-width:600px){.bento>*{grid-column:span 12 !important}}
+  .k{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
+  .big{font-size:29px;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+  .mid{font-size:20px;font-weight:650;letter-spacing:-.02em}
+  .sub{color:var(--sub);font-size:13.5px}
+  .tiny{color:var(--faint);font-size:12px}
+  h2{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--sub);text-transform:uppercase;margin:32px 4px 4px}
+  /* hero */
+  .hero{background:linear-gradient(135deg,#e1f5ee,#f4fbf8);border:1px solid var(--mint-l);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,rgba(212,83,126,.16),rgba(212,83,126,0) 70%)}
+  .hello{font-size:26px;font-weight:700;letter-spacing:-.025em;color:var(--mint-d)}
+  .spark{font-size:14px;font-weight:600;color:var(--mag-d);margin-top:7px}
+  .wx{display:flex;align-items:center;gap:9px;color:var(--mint-d);font-size:14px;margin-top:14px;font-weight:500}
+  .countpill{display:inline-block;background:var(--mag-s);color:var(--mag-d);border-radius:999px;padding:6px 15px;font-size:14px;font-weight:700;margin-top:14px}
+  .clock{position:absolute;top:20px;right:24px;font-variant-numeric:tabular-nums;color:var(--mint-d);font-size:13px;font-weight:500}
+  /* stat */
+  .ring{--p:0;width:58px;height:58px;border-radius:50%;background:conic-gradient(var(--mag) calc(var(--p)*1%),#eceef0 0);display:grid;place-items:center;flex:none}
+  .ring i{width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;font-style:normal;color:var(--mag-d)}
+  .statrow{display:flex;align-items:center;gap:14px;margin-top:10px}
+  /* todos centerpiece */
+  .todohead{display:flex;justify-content:space-between;align-items:baseline}
+  .bar{height:8px;border-radius:999px;background:var(--gray-s);overflow:hidden;margin:10px 0 4px}
+  .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--mag));transition:width .3s}
+  .todogrid{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;margin-top:10px}
+  @media(max-width:700px){.todogrid{grid-template-columns:1fr}}
+  .gh{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--mag-d);margin:12px 0 2px;grid-column:1/-1}
+  .todo{display:flex;gap:11px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--hair)}
+  .cb{appearance:none;width:21px;height:21px;border-radius:7px;border:2px solid #c2cfc9;margin-top:1px;flex:none;cursor:pointer;position:relative;transition:.15s}
+  .cb:checked{background:var(--mint);border-color:var(--mint)}
+  .cb:checked::after{content:"\2713";color:#fff;position:absolute;inset:0;display:grid;place-items:center;font-size:13px;font-weight:800}
+  .tt{font-size:14px;font-weight:600}.ts{font-size:12.5px;color:var(--sub);margin-top:1px}
+  .done .tt,.done .ts{text-decoration:line-through;opacity:.42}
+  .due{font-size:11px;font-weight:700;color:var(--amber-d);background:var(--amber-s);border-radius:6px;padding:1px 7px;margin-left:7px;white-space:nowrap}
+  .btns{display:flex;gap:7px;margin-top:8px;flex-wrap:wrap}
+  a.act{font-size:12px;font-weight:600;text-decoration:none;color:var(--mag-d);background:var(--mag-s);padding:5px 11px;border-radius:9px;transition:.15s}
+  a.act:hover{background:var(--mag-l)}
+  a.act.mint{color:var(--mint-d);background:var(--mint-s)}a.act.mint:hover{background:var(--mint-l)}
+  /* calendar */
+  .calhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .calhead .mn{font-size:18px;font-weight:700;letter-spacing:-.02em}
+  .seg{display:inline-flex;background:var(--mint-s);border-radius:11px;padding:3px;gap:2px}
+  .seg button{border:none;background:transparent;border-radius:8px;height:30px;min-width:34px;padding:0 10px;font-size:13px;font-weight:600;color:var(--mint-d);cursor:pointer}
+  .seg button:hover{background:var(--mint-l)}
+  table.cal{width:100%;border-collapse:separate;border-spacing:4px;table-layout:fixed}
+  table.cal th{font-size:11px;font-weight:600;color:var(--faint);text-transform:uppercase;padding-bottom:4px}
+  table.cal td{vertical-align:top;height:72px;padding:5px 6px;border-radius:11px;background:#f7faf8;cursor:pointer;transition:background .15s}
+  table.cal td:hover{background:var(--mint-s)}
+  .dn{font-size:12.5px;color:var(--sub);font-weight:550}
+  td.today{background:var(--mag-s);outline:2px solid var(--mag);outline-offset:-2px}
+  td.today .dn{color:var(--mag-d);font-weight:800}
+  td.oth{opacity:.4}
+  td.bank{background:repeating-linear-gradient(135deg,#f1efe8,#f1efe8 6px,#e8e6dd 6px,#e8e6dd 12px)}
+  .chip{font-size:10.5px;font-weight:600;border-radius:6px;padding:2px 6px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .teal{background:var(--mint-s);color:var(--mint-d)}.pink{background:var(--mag-s);color:var(--mag-d)}
+  .blue{background:var(--blue-s);color:var(--blue-d)}.amber{background:var(--amber-s);color:var(--amber-d)}.gray{background:var(--gray-s);color:var(--gray)}
+  .off{background:#ece9f3;color:#6a5f7a}
+  .more{font-size:10px;color:var(--faint);margin-top:3px;font-weight:600}
+  .leg{display:flex;flex-wrap:wrap;gap:11px;margin-top:13px}
+  .leg span{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--sub)}
+  .dot{width:8px;height:8px;border-radius:3px}
+  .daycard{background:#f7faf8;border-radius:14px;padding:13px 15px;margin-top:12px;min-height:54px}
+  .daycard .dt{font-weight:700;font-size:14px;margin-bottom:7px}
+  .dev{font-size:13px;padding:7px 10px;background:#fff;border-radius:10px;margin-bottom:6px}
+  .dev .when,.dev .nt{color:var(--sub);font-size:12px}
+  .title{font-size:15px;font-weight:650;letter-spacing:-.01em}
+  .meta{font-size:13px;color:var(--sub);margin-top:5px;line-height:1.5}
+  ul.tl{margin:9px 0 0;padding:0;list-style:none}
+  ul.tl li{font-size:13px;padding:5px 0;border-top:1px solid var(--hair)}ul.tl li:first-child{border-top:none}
+  ul.tl b{font-weight:600}
+  .pill{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px}
+  .pill.nyc{background:var(--mag-s);color:var(--mag-d)}
+  .tip{border-bottom:1px dashed var(--mint-l);cursor:help;position:relative}
+  .tip:hover::after{content:attr(data-tip);position:absolute;left:0;top:140%;width:240px;background:var(--ink);color:#fff;padding:9px 11px;border-radius:10px;font-size:12px;font-weight:400;line-height:1.45;letter-spacing:0;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .watch{background:linear-gradient(135deg,#fbeaf0,#fff);border:1px solid var(--mag-l)}
+  .care{background:linear-gradient(135deg,#e1f5ee,#fff);border:1px solid var(--mint-l)}
+  .foot{text-align:center;color:var(--faint);font-size:12px;margin-top:32px;line-height:1.7}
+  /* gate */
+  #gate{position:fixed;inset:0;z-index:999;background:linear-gradient(160deg,#0f3d31,#16302a 55%,#3a1326);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:#fff}
+  #gate .glab{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7fd8c4;font-weight:700}
+  #gate .gt{font-size:25px;font-weight:700;letter-spacing:-.02em}
+  #gate input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:13px;padding:14px 16px;font-size:16px;width:240px;text-align:center;outline:none}
+  #gate input:focus{border-color:var(--mag);box-shadow:0 0 0 4px rgba(212,83,126,.25)}
+  #gate button{background:var(--mag);border:none;color:#fff;border-radius:13px;padding:13px 28px;font-size:15px;font-weight:600;cursor:pointer}
+  #gate button:hover{background:var(--mag-d)}
+  #gate .err{color:#ffb0c0;font-size:13px;height:16px}
+</style>
+</head>
+<body>
+<div id="gate">
+  <div class="glab">Life HQ</div>
+  <div class="gt">Welcome back, Andrew</div>
+  <input id="gpw" type="password" placeholder="Password" autocomplete="off" autofocus>
+  <button id="gbtn">Enter</button>
+  <div class="err" id="gerr"></div>
+</div>
+
+<div class="wrap">
+  <div class="bento">
+    <!-- HERO -->
+    <div class="b hero c8">
+      <span class="clock" id="clock"></span>
+      <div class="hello" id="hello">Good evening, Andrew</div>
+      <div class="tiny" id="today" style="margin-top:4px"></div>
+      <div class="spark">Let's make it a killer week.</div>
+      <div class="wx"><span style="font-size:18px">&#9729;</span>76&deg; · showers, light layers <span class="tiny" style="color:var(--mint-d)">· Middletown, NJ</span></div>
+      <div class="countpill" id="countpill">— open</div>
+    </div>
+    <!-- MSP -->
+    <div class="b c4 hov">
+      <div class="k">Minneapolis · SummerSlam</div>
+      <div class="statrow"><div class="ring" id="ring"><i id="ringd">—</i></div>
+        <div><div class="mid" id="mspdays">—</div><div class="tiny">need a hotel</div></div></div>
+      <div class="btns"><a class="act mint" href="https://www.google.com/travel/hotels/Minneapolis%20US%20Bank%20Stadium" target="_blank">Find hotel</a></div>
+    </div>
+
+    <!-- TODOS CENTERPIECE -->
+    <div class="b c12">
+      <div class="todohead"><div class="mid">Your to-dos</div><div class="k" id="prog">0 of 0 done</div></div>
+      <div class="bar"><i id="fill"></i></div>
+      <div class="todogrid" id="todos"></div>
+    </div>
+
+    <!-- CALENDAR -->
+    <div class="b c8">
+      <div class="calhead"><div class="mn" id="mn"></div>
+        <div class="seg"><button id="prev">‹</button><button id="todayBtn">Today</button><button id="nextm">›</button></div></div>
+      <table class="cal"><thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead><tbody id="cal"></tbody></table>
+      <div class="leg">
+        <span><i class="dot" style="background:var(--mint)"></i>Appt / Agora</span>
+        <span><i class="dot" style="background:var(--mag)"></i>Social / NYC</span>
+        <span><i class="dot" style="background:var(--blue)"></i>Trip</span>
+        <span><i class="dot" style="background:var(--amber)"></i>Bill / tax</span>
+        <span><i class="dot" style="background:var(--gray)"></i>Bank holiday</span>
+        <span><i class="dot" style="background:#9a8fb5"></i>Off / OOO</span>
+      </div>
+      <div class="daycard" id="day"></div>
+    </div>
+
+    <!-- WATCHING -->
+    <div class="b c4 watch">
+      <div class="title"><span style="margin-right:5px">&#128276;</span>Watching for you</div>
+      <div class="meta" style="color:var(--mag-d)">A few personal matters I track for you. The specifics live in your private copy.</div>
+    </div>
+  </div>
+
+  <!-- TRIPS & NYC -->
+  <h2>Trips &amp; NYC crew</h2>
+  <div class="bento">
+    <div class="b c4 hov">
+      <div class="title">✈️ Minneapolis · SummerSlam</div>
+      <div class="meta">Jul 30 – Aug 4 · Delta, conf <b>H6WZVC</b> · 🎟️ 2-day pass in hand. Need: hotel, ground transport, pack.</div>
+    </div>
+    <div class="b c4 hov">
+      <div class="title"><span class="pill nyc">NYC</span> Get the meetings going</div>
+      <ul class="tl">
+        <li><b>Shane Gillis</b> · Jul 11 w/ Allie</li>
+        <li><b>JD</b> · night out — pick a date</li>
+        <li><b>Carson (NOPAC)</b> · meet in town</li>
+        <li><span class="tip" data-tip="You mentioned several more city meetings. List them and I'll batch the invites + travel.">+ your other city meetings</span></li>
+      </ul>
+      <div class="meta"><span class="tip" data-tip="From Middletown: NJ Transit North Jersey Coast Line → NY Penn (~1h15, hourly), or Seastreak ferry from Atlantic Highlands (~45 min). Drinking night → transit, leave ~2 hrs before.">How to get there →</span></div>
+    </div>
+  </div>
+
+  <!-- DATES TO KNOW -->
+  <h2>Dates to know · banks &amp; taxes</h2>
+  <div class="bento">
+    <div class="b c6 hov">
+      <div class="title">🏦 Bank holidays <span class="sub" style="font-weight:400">— banks &amp; most people offline</span></div>
+      <ul class="tl">
+        <li><b>Fri Jul 3</b> · Independence Day (observed)</li>
+        <li><b>Mon Sep 7</b> · Labor Day</li>
+        <li><b>Mon Oct 12</b> · Columbus Day <span class="sub">(markets open)</span></li>
+        <li><b>Wed Nov 11</b> · Veterans Day <span class="sub">(markets open)</span></li>
+        <li><b>Thu Nov 26</b> · Thanksgiving &middot; <b>Fri Dec 25</b> · Christmas</li>
+      </ul>
+      <div class="meta">Shaded on the calendar — don't expect wires, ACH, or replies to land.</div>
+    </div>
+    <div class="b c6 hov">
+      <div class="title">🧾 Tax dates</div>
+      <ul class="tl">
+        <li><b>Tue Sep 15</b> · Q3 estimated taxes <span class="tip" data-tip="Federal + NJ quarterly estimate on business/self-employment income. Get your number from your accountant a week ahead.">(fed + NJ)</span></li>
+        <li><b>Thu Oct 15</b> · Extended 2025 return <span class="sub">(if you extended)</span></li>
+        <li><b>Fri Jan 15</b> · Q4 estimated taxes (2026)</li>
+      </ul>
+      <div class="meta">Want a reminder a week before each, nudging your accountant?</div>
+    </div>
+  </div>
+
+  <!-- PARTIES / ATTIRE / TICKETS -->
+  <h2>Coming up · what to wear · tickets</h2>
+  <div class="bento">
+    <div class="b c4 hov">
+      <div class="title">🥂 Parties</div>
+      <ul class="tl">
+        <li><b>Jimmy Levy</b> · cocktail/smart</li>
+        <li><b>Gordon Daniels @ MBBT</b> · Aug 7</li>
+        <li><b>Hendo's White Party</b> · Sep 6 · white</li>
+      </ul>
+    </div>
+    <div class="b c4 hov">
+      <div class="title">👔 When you need a suit</div>
+      <div class="meta">Weddings &amp; black-tie → <span class="tip" data-tip="You order from Indochino (~3–4 wk lead). Give me dates + cities and I'll set the order deadline.">order from Indochino early</span>. Send me any wedding dates and I'll back-plan.</div>
+    </div>
+    <div class="b c4 hov">
+      <div class="title">🎟️ Tickets</div>
+      <ul class="tl"><li><b>Have:</b> SummerSlam 2-day pass</li><li><b>Want:</b> tell me &amp; I'll watch prices</li></ul>
+    </div>
+  </div>
+
+  <!-- FUN / GIFTS / PETS -->
+  <h2>Life, gifts &amp; the dogs</h2>
+  <div class="bento">
+    <div class="b c4 hov">
+      <div class="title">🎭 Fun radar</div>
+      <div class="meta">Favorite bands/comedians, <span class="tip" data-tip="Send your go-to artists & a movies/theater wishlist. I'll watch NJ/NYC/Philly dates, suggest it, you add to calendar, I tee up tickets.">dueling pianos, shows you want</span>. Send a few favorites to switch on.</div>
+    </div>
+    <div class="b c4 hov">
+      <div class="title">🎁 Gifts ahead of time</div>
+      <div class="meta"><span class="tip" data-tip="Birthdays = close friends only, reminded ~2 weeks out with ideas. Christmas = full list, tracked from November.">Birthdays + Christmas</span>, reminded early with ideas — never last-minute.</div>
+    </div>
+    <div class="b c4 hov">
+      <div class="title">🐾 Archie &amp; the dogs</div>
+      <div class="meta"><span class="tip" data-tip="Connect Chewy for food reorders; I'll watch your inbox for vet shot/checkup reminders. Tell me the dogs' names + vet.">Chewy reorders + vet shots</span>. Needs Chewy + your vet.</div>
+    </div>
+  </div>
+
+  <!-- CARE + CHARITY -->
+  <h2>The part that matters</h2>
+  <div class="bento">
+    <div class="b c8 care">
+      <div class="title">🌿 You, first</div>
+      <div class="meta" style="color:var(--mint-d)">You said you're overwhelmed, lonely, not having enough fun. That's the real headline — the calendar's there so you can <i>see</i> the room. Protect <b>Agora</b> (Thu 7 AM Zoom + meetups), skip the optional Lifetime classes guilt-free, and say one social yes a week that's just for you.</div>
+      <div class="btns"><a class="act mint" href="https://us06web.zoom.us/j/87278217343" target="_blank">Join Agora Zoom</a></div>
+    </div>
+    <div class="b c4 hov">
+      <div class="title">💛 2026 giving</div>
+      <div class="meta"><b>Money:</b> CBA (Jun 23) · <b>Time:</b> Rising Treetops, CBA, AOK. <span class="tip" data-tip="Want a running 2026 total — dollars and volunteer hours — for taxes? I'll build the ledger.">Want the tax ledger?</span></div>
+    </div>
+  </div>
+
+  <div class="foot">Built from your inbox + what you told me · refreshes daily at 6 AM.<br>Tap any day for detail · check off to-dos as you go.</div>
+</div>
+
+<script>
+const TODAY=new Date('2026-06-27T18:30:00-04:00');
+const MS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const pad=n=>String(n).padStart(2,'0');
+const tkey='2026-06-27';
+
+/* ---- TO-DOS ---- */
+const TODOS=[
+ ['Calls & bookings',[
+  ['physical','Book annual physical','bring labs over',[]],
+  ['dentist','Book dentist','book online',[]],
+  ['car','Schedule car service','Middletown · Mon–Fri',[['Call','tel:+17327418408',1]]],
+  ['hair','Book haircut','Kyle @ Prosecco · monthly',[['Book Kyle','https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287',1]]],
+  ['audi','Get car title','Audi Financial',[['Call','tel:+18882372834',0],['myAudi','https://www.audiusa.com/en/myaudi/',0]]],
+  ['ezpass','Pay / replenish E-ZPass','',[['Log in','https://www.ezpassnj.com',0]]] ]],
+ ['Money',[
+  ['soho','Cancel Soho House membership','stop the spend',[]],
+  ['subs','Review subscriptions','LegalZoom renewal · 1Password price hike',[]],
+  ['rent','Rent','due ~25th','Jul 25'],
+  ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
+ ['NYC & social',[
+  ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
+  ['gillis','Confirm Shane Gillis showtime','Jul 11 · w/ Allie','Jul 11'],
+  ['hotel','Book Minneapolis hotel','SummerSlam','Jul 30'] ]],
+ ['Watching',[
+  ['vsst','Track a pending personal matter','details in private copy',[]] ]],
+];
+let total=0,done=0;const tg=document.getElementById('todos');
+TODOS.forEach(grp=>{const h=document.createElement('div');h.className='gh';h.textContent=grp[0];tg.appendChild(h);
+ grp[1].forEach(it=>{total++;const key='lifehq_'+it[0];
+  const row=document.createElement('div');row.className='todo';
+  const cb=document.createElement('input');cb.type='checkbox';cb.className='cb';
+  if(localStorage.getItem(key)==='1'){cb.checked=true;row.classList.add('done');done++;}
+  const body=document.createElement('div');body.style.flex='1';
+  const due=(typeof it[3]==='string')?it[3]:'';
+  body.innerHTML='<div class="tt">'+it[1]+(due?'<span class="due">'+due+'</span>':'')+'</div>'+(it[2]?'<div class="ts">'+it[2]+'</div>':'');
+  const btns=Array.isArray(it[3])?it[3]:[];
+  if(btns.length){const bd=document.createElement('div');bd.className='btns';
+   btns.forEach(x=>{const a=document.createElement('a');a.className='act'+(x[2]?'':' mint');a.href=x[1];a.target='_blank';a.textContent=x[0];bd.appendChild(a);});body.appendChild(bd);}
+  cb.onchange=()=>{row.classList.toggle('done',cb.checked);done+=cb.checked?1:-1;localStorage.setItem(key,cb.checked?'1':'0');prog();};
+  row.appendChild(cb);row.appendChild(body);tg.appendChild(row);});});
+function prog(){document.getElementById('prog').textContent=done+' of '+total+' done';
+ document.getElementById('countpill').textContent=(total-done)+' open';
+ document.getElementById('fill').style.width=Math.round(done/total*100)+'%';}
+prog();
+
+/* ---- EVENTS ---- */
+let EV=[
+ {s:'2026-06-27',title:"Britt's 40th",time:'7:00 PM',type:'pink',note:'Hibachi · "Allie only" — confirm.'},
+ {s:'2026-06-30',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park, Colts Neck'},
+ {s:'2026-07-11',title:'Shane Gillis',time:'TBD',type:'pink',note:'NYC w/ Allie — confirm showtime.'},
+ {s:'2026-07-14',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park'},
+ {s:'2026-07-25',title:'Rent',time:'',type:'amber',note:'Monthly (~25th)'},
+ {s:'2026-07-30',e:'2026-08-04',title:'Minneapolis',type:'blue',note:'SummerSlam trip · Delta, conf H6WZVC'},
+ {s:'2026-08-01',e:'2026-08-02',title:'SummerSlam',type:'blue',note:'2-day pass — in hand'},
+ {s:'2026-08-07',title:'Gordon Daniels',time:'5:00 PM',type:'pink',note:'@ MBBT · smart casual'},
+ {s:'2026-09-06',title:'White Party',time:'5:30 PM',type:'pink',note:"Hendo's · wear white"},
+ {s:'2026-09-15',title:'Q3 taxes',type:'amber',note:'Federal + NJ estimate'},
+ {s:'2026-10-15',title:'Extended return',type:'amber',note:'2025 return due if extended'},
+ {s:'2026-07-03',e:'2026-07-05',title:'Mohonk',type:'blue',note:'Mohonk Mountain House · Fri–Sun getaway · Archie boarded ✓'},
+ {s:'2026-07-06',e:'2026-07-12',title:'Off',type:'off',note:'Out of office / personal time'},
+ {s:'2026-07-27',e:'2026-08-07',title:'Off',type:'off',note:'Out of office (incl. Minneapolis Jul 30–Aug 4)'},
+ {s:'2026-09-10',e:'2026-09-15',title:'Off',type:'off',note:'Out of office / personal time'},
+];
+[['2026-07-03','Independence Day'],['2026-09-07','Labor Day'],['2026-10-12','Columbus Day'],['2026-11-11','Veterans Day'],['2026-11-26','Thanksgiving'],['2026-12-25','Christmas']]
+ .forEach(h=>EV.push({s:h[0],title:h[1],type:'gray',bank:1,note:'Bank holiday — banks & most people offline.'}));
+{let d=new Date('2026-07-02T07:00:00');for(let i=0;i<20;i++){const x=new Date(d.getTime()+i*7*864e5);EV.push({s:x.toISOString().slice(0,10),title:'Agora Zoom',time:'7:00 AM',type:'teal',note:'Sacred Time · ID 872 7821 7343'});}}
+const BY={};EV.forEach(ev=>{const s=new Date(ev.s+'T12:00'),e=ev.e?new Date(ev.e+'T12:00'):s;for(let d=new Date(s);d<=e;d.setDate(d.getDate()+1)){const k=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());(BY[k]=BY[k]||[]).push(ev);}});
+
+let cur=new Date('2026-06-01T12:00');
+function render(){const y=cur.getFullYear(),mo=cur.getMonth();document.getElementById('mn').textContent=MS[mo]+' '+y;
+ const st=new Date(y,mo,1).getDay(),dim=new Date(y,mo+1,0).getDate(),tb=document.getElementById('cal');tb.innerHTML='';let day=1-st;
+ for(let w=0;w<6;w++){const tr=document.createElement('tr');for(let i=0;i<7;i++){const td=document.createElement('td'),dd=new Date(y,mo,day),inM=dd.getMonth()===mo,k=dd.getFullYear()+'-'+pad(dd.getMonth()+1)+'-'+pad(dd.getDate());
+  if(!inM)td.className='oth';const evs=BY[k]||[];if(evs.some(e=>e.bank))td.className=(td.className+' bank').trim();if(k===tkey)td.className=(td.className+' today').trim();
+  const dn=document.createElement('div');dn.className='dn';dn.textContent=dd.getDate();td.appendChild(dn);
+  evs.slice(0,2).forEach(ev=>{const c=document.createElement('div');c.className='chip '+ev.type;c.textContent=ev.title;td.appendChild(c);});
+  if(evs.length>2){const m=document.createElement('div');m.className='more';m.textContent='+'+(evs.length-2)+' more';td.appendChild(m);}
+  td.onclick=()=>showDay(k);tr.appendChild(td);day++;}tb.appendChild(tr);if(day>dim)break;}}
+function showDay(k){const evs=BY[k]||[],d=new Date(k+'T12:00');let h='<div class="dt">'+d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+'</div>';
+ if(!evs.length)h+='<div class="sub">An open day. Room to breathe.</div>';
+ evs.forEach(ev=>{h+='<div class="dev"><b>'+ev.title+'</b>'+(ev.time?' <span class="when">· '+ev.time+'</span>':'')+(ev.note?'<div class="nt">'+ev.note+'</div>':'')+'</div>';});
+ document.getElementById('day').innerHTML=h;}
+document.getElementById('prev').onclick=()=>{cur.setMonth(cur.getMonth()-1);render();};
+document.getElementById('nextm').onclick=()=>{cur.setMonth(cur.getMonth()+1);render();};
+document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-06-01T12:00');render();showDay(tkey);};
+
+/* ---- tiles + clock ---- */
+const days=Math.ceil((new Date('2026-07-30T18:45:00-04:00')-TODAY)/864e5);
+document.getElementById('ringd').textContent=days;document.getElementById('mspdays').textContent=days+' days';
+document.getElementById('ring').style.setProperty('--p',Math.max(8,100-days*1.3));
+function greet(){const h=new Date().getHours(),g=h<12?'Good morning':h<18?'Good afternoon':'Good evening';
+ document.getElementById('hello').textContent=g+', Andrew';
+ document.getElementById('today').textContent=TODAY.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+function clk(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
+greet();clk();setInterval(clk,20000);render();showDay(tkey);
+
+/* ---- password gate (light client-side lock; change PASSWORD) ---- */
+const PASSWORD='lifehq';
+const gate=document.getElementById('gate');
+if(sessionStorage.getItem('lifehq_ok')==='1')gate.style.display='none';
+function unlock(){if(document.getElementById('gpw').value===PASSWORD){sessionStorage.setItem('lifehq_ok','1');gate.style.display='none';}
+ else{document.getElementById('gerr').textContent='Not quite — try again.';document.getElementById('gpw').value='';}}
+document.getElementById('gbtn').onclick=unlock;
+document.getElementById('gpw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock();});
+</script>
+</body>
+</html>
