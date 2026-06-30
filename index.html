@@ -134,7 +134,7 @@
       <div class="hello" id="hello">Good evening, Andrew</div>
       <div class="tiny" id="today" style="margin-top:4px"></div>
       <div class="spark">Let's make it a killer week.</div>
-      <div class="wx"><span style="font-size:18px">&#9729;</span>76&deg; · showers, light layers <span class="tiny" style="color:var(--mint-d)">· Middletown, NJ</span></div>
+      <div class="wx"><span style="font-size:18px">&#9728;&#65039;</span>90&deg; · sun &amp; clouds, hot — hydrate <span class="tiny" style="color:var(--mint-d)">· Middletown, NJ</span></div>
       <div class="countpill" id="countpill">— open</div>
     </div>
     <!-- MSP -->
@@ -267,18 +267,18 @@
     </div>
     <div class="b c4 hov">
       <div class="title">💛 2026 giving</div>
-      <div class="meta"><b>Money:</b> CBA (Jun 23) · <b>Time:</b> Rising Treetops, CBA, AOK. <span class="tip" data-tip="Want a running 2026 total — dollars and volunteer hours — for taxes? I'll build the ledger.">Want the tax ledger?</span></div>
+      <div class="meta"><b>Money:</b> CBA (Jun 23) · <b>Time:</b> Rising Treetops, CBA, AOK. <b>New asks:</b> Rising Treetops Summer Benefit <b>Jul 18, 7 PM</b> · CBA annual-fund appeal. <span class="tip" data-tip="Want a running 2026 total — dollars and volunteer hours — for taxes? I'll build the ledger.">Want the tax ledger?</span></div>
     </div>
   </div>
 
-  <div class="foot">Built from your inbox + what you told me · refreshes daily at 6 AM.<br>Tap any day for detail · check off to-dos as you go.</div>
+  <div class="foot">Built from your inbox + what you told me · Updated Tue, Jun 30 · refreshes daily.<br>Tap any day for detail · check off to-dos as you go.</div>
 </div>
 
 <script>
-const TODAY=new Date('2026-06-27T18:30:00-04:00');
+const TODAY=new Date('2026-06-30T09:00:00-04:00');
 const MS=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const pad=n=>String(n).padStart(2,'0');
-const tkey='2026-06-27';
+const tkey='2026-06-30';
 
 /* ---- TO-DOS ---- */
 const TODOS=[
@@ -290,13 +290,14 @@ const TODOS=[
   ['audi','Get car title','Audi Financial',[['Call','tel:+18882372834',0],['myAudi','https://www.audiusa.com/en/myaudi/',0]]],
   ['ezpass','Pay / replenish E-ZPass','',[['Log in','https://www.ezpassnj.com',0]]] ]],
  ['Money',[
-  ['soho','Cancel Soho House membership','stop the spend',[]],
-  ['subs','Review subscriptions','LegalZoom renewal · 1Password price hike',[]],
-  ['rent','Rent','due ~25th','Jul 25'],
+  ['soho','Cancel Soho House membership','stop the spend — still active',[]],
+  ['subs','Kill the auto-renewals','1Password $36→$48 Jul 24 · LegalZoom · antivirus + domains renewing',[]],
+  ['retire','Roll over an old retirement account','old employer plan — decide: roll over or leave it',[]],
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
  ['NYC & social',[
   ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
   ['gillis','Confirm Shane Gillis showtime','Jul 11 · w/ Allie','Jul 11'],
+  ['risingbenefit','RSVP Rising Treetops Summer Benefit','7 PM gala · counts as your giving','Jul 18'],
   ['hotel','Book Minneapolis hotel','SummerSlam','Jul 30'] ]],
  ['Watching',[
   ['vsst','Track a pending personal matter','details in private copy',[]] ]],
@@ -322,18 +323,18 @@ prog();
 
 /* ---- EVENTS ---- */
 let EV=[
- {s:'2026-06-27',title:"Britt's 40th",time:'7:00 PM',type:'pink',note:'Hibachi · "Allie only" — confirm.'},
  {s:'2026-06-30',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park, Colts Neck'},
  {s:'2026-07-11',title:'Shane Gillis',time:'TBD',type:'pink',note:'NYC w/ Allie — confirm showtime.'},
  {s:'2026-07-14',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park'},
- {s:'2026-07-25',title:'Rent',time:'',type:'amber',note:'Monthly (~25th)'},
+ {s:'2026-07-18',title:'Rising Treetops Benefit',time:'7:00 PM',type:'pink',note:'Summer Benefit gala · Oakhurst · counts toward your giving — RSVP'},
+ {s:'2026-07-25',title:'Rent due',time:'',type:'amber',note:'Monthly (~25th) · this month handled ✓'},
  {s:'2026-07-30',e:'2026-08-04',title:'Minneapolis',type:'blue',note:'SummerSlam trip · Delta, conf H6WZVC'},
  {s:'2026-08-01',e:'2026-08-02',title:'SummerSlam',type:'blue',note:'2-day pass — in hand'},
  {s:'2026-08-07',title:'Gordon Daniels',time:'5:00 PM',type:'pink',note:'@ MBBT · smart casual'},
  {s:'2026-09-06',title:'White Party',time:'5:30 PM',type:'pink',note:"Hendo's · wear white"},
  {s:'2026-09-15',title:'Q3 taxes',type:'amber',note:'Federal + NJ estimate'},
  {s:'2026-10-15',title:'Extended return',type:'amber',note:'2025 return due if extended'},
- {s:'2026-07-03',e:'2026-07-05',title:'Mohonk',type:'blue',note:'Mohonk Mountain House · Fri–Sun getaway · Archie boarded ✓'},
+ {s:'2026-07-03',e:'2026-07-05',title:'Mohonk',type:'blue',note:'Mohonk Mountain House · Fri–Sun getaway · Archie boarded ✓ (drop 12–3 PM Jul 3)'},
  {s:'2026-07-06',e:'2026-07-12',title:'Off',type:'off',note:'Out of office / personal time'},
  {s:'2026-07-27',e:'2026-08-07',title:'Off',type:'off',note:'Out of office (incl. Minneapolis Jul 30–Aug 4)'},
  {s:'2026-09-10',e:'2026-09-15',title:'Off',type:'off',note:'Out of office / personal time'},
