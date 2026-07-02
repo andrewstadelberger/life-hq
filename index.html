@@ -220,6 +220,17 @@
       <div class="todogrid" id="todos"></div>
     </div>
 
+    <!-- BODY SHOP -->
+    <div class="b c12 hov">
+      <div class="title">💆 Body shop — get booked through me</div>
+      <div class="blk m"><span class="h">Your spots</span>
+        <b>Muscle Memory Mechanic</b> — you've got sessions banked · sign in with your Gmail <a class="act mint" style="display:inline-block" href="https://www.google.com/search?q=muscle+memory+mechanic+nj+book+appointment" target="_blank">Book ↗</a> &nbsp;·&nbsp; <b>Recover · Ocean County</b> — your chiro <a class="act mint" style="display:inline-block" href="https://www.google.com/search?q=recover+chiropractic+ocean+county+nj+book" target="_blank">Book ↗</a> &nbsp;·&nbsp; <b>Bodywork · Middletown</b> — Rt 35 across from Whole Foods (yeah, the spot's a little grim — I'll scout upgrades)</div>
+      <div class="blk r"><span class="h">The fix list</span>
+        <b>Hip + groin — priority, they're wrecking you</b> · deep tissue shoulders &amp; neck · carpal tunnel (hand) · full assisted-stretch session. Next refresh I'll shortlist the best-reviewed local spots for each — hand specialist included.</div>
+      <div class="blk p"><span class="h">One-tap booking</span>
+        <a class="act" style="display:inline-block" href="https://www.zocdoc.com" target="_blank">Your doctor ↗</a> &nbsp;<a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a> — or just text me <i>"book Kyle Tuesday afternoon"</i> or <i>"hip massage this week"</i> and I'll line it up in your browser and confirm with you before anything's locked.</div>
+    </div>
+
     <!-- CALENDAR -->
     <div class="b c8">
       <div class="calhead"><div class="mn" id="mn"></div>
@@ -312,7 +323,7 @@
     <div class="b c4 hov">
       <div class="title">🥂 Parties</div>
       <ul class="tl">
-        <li><b>Jim &amp; Ashley Levy</b> · Rumson · <b>date TBD — text me the date</b> · cocktail/smart</li>
+        <li><b>Jimmy &amp; Ash's Backyard Bash</b> · Fri Jul 10, 6 PM · 164 Bingham Ave, Rumson · Pat Roddy Band · on your calendar ✓</li>
         <li><b>Shane Gillis</b> · Fri Jul 17, 7 PM · Linc, Philly · w/ Allie ✓</li>
         <li><b>Parker's pool party</b> · Jul 25 · skipping — Allie's out &amp; you're at Lake Placid · send regrets</li>
         <li><b>Drew Tig @ Chapel Beach Club</b> · Sun Jul 26 · Sea Bright · time TBD · on your calendar ✓</li>
@@ -332,7 +343,6 @@
       <ul class="tl">
         <li><b>Jungle @ Barclays</b> · Sat Sep 19 · new album tour — will sell</li>
         <li><b>Alonso's return, Citi Field</b> · Sep 14 · Bryant's bday — get 2</li>
-        <li><b>Jared Freid @ the Vogel</b> · Thu Jul 16 · Red Bank comedy, your vibe</li>
         <li><b>Juston McKinney @ the Vogel</b> · Thu Aug 6 · chill comedy room</li>
         <li><b>Big Bad Voodoo Daddy @ the Basie</b> · Wed Oct 14, 7 PM · swing night, easy yes</li>
         <li><b>Maria Bamford @ the Basie</b> · Sun Nov 22, 7:30 PM · (Bradshaw Q&amp;A also exists — pass?)</li>
@@ -442,7 +452,7 @@
   <div class="bento">
     <div class="b c12 hov">
       <div class="blk p"><span class="h">This week's picks</span>
-        Jared Freid @ the Vogel <b>Jul 16</b> · Juston McKinney @ the Vogel <b>Aug 6</b> · Big Bad Voodoo Daddy @ the Basie <b>Oct 14</b> · Activate Games @ American Dream — open now, no date needed · USA–Belgium watch party anywhere with a TV <b>Jul 6</b></div>
+        Juston McKinney @ the Vogel <b>Aug 6</b> · Big Bad Voodoo Daddy @ the Basie <b>Oct 14</b> · Activate Games @ American Dream — open now, no date needed · USA–Belgium watch party anywhere with a TV <b>Jul 6</b></div>
       <div class="meta" style="margin-top:8px">Every week I scan for stuff in your wheelhouse — go-karts, adult playgrounds, carnivals, VR, magic, comedy rooms, weird immersive things — and drop the best 3–5 here. If it's on this card, it cleared the bar.</div>
     </div>
   </div>
@@ -491,7 +501,6 @@ const TODOS=[
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
  ['NYC & social',[
   ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
-  ['levyparty','Text me the Levy party date','Jim &amp; Ashley Levy · Rumson — no email invite found, must be on your phone. Send date + time and I&#39;ll calendar it',[]],
   ['tigparty','Confirm Chapel Beach Club start time','Drew Tig · Sun Jul 26, Sea Bright — on your calendar, just need the hour','Jul 26'],
   ['parkerregrets','Send regrets for Parker&#39;s party','Jul 25, Baltimore · you + Allie are at Lake Placid — quick text to Laura &amp; Alex','Jul 25'],
   ['lakeplacid','Accept the Lake Placid invite','Jul 22–25 · Interlaken Inn w/ Allie · conf 7C8Z7B76 — say yes on the calendar invite','Jul 22'],
@@ -546,6 +555,7 @@ let EV=[
  {s:'2026-11-03',title:'Election Day 🗳️',type:'pink',note:'Midterms — your favorite kind of TV night · all-day coverage'},
  {s:'2026-07-16',e:'2026-07-19',title:'The Open ⛳',type:'pink',note:'Royal Birkdale · final golf major of 2026 · weekend couch viewing (you&#39;re back from Lake Placid prep)'},
  {s:'2026-07-06',title:'USA vs Belgium ⚽',type:'pink',note:'World Cup Round of 16 · they beat us 5–2 in March — revenge game · you&#39;re at Mohonk-adjacent, find a TV'},
+ {s:'2026-07-10',title:'Levy backyard bash 🎉',type:'pink',note:'Jimmy &amp; Ash · 6 PM · 164 Bingham Ave, Rumson · light food, cold drinks, Pat Roddy Band · on your calendar ✓'},
  {s:'2026-10-09',title:'The Social Reckoning',type:'pink',note:'Sorkin&#39;s Social Network follow-up · Jeremy Strong as Zuck · theaters'},
  {s:'2026-09-15',title:'Q3 taxes',type:'amber',note:'Federal + NJ estimate'},
  {s:'2026-10-15',title:'Extended return',type:'amber',note:'2025 return due if extended'},
@@ -592,6 +602,7 @@ const COUNTS=[
  ['🏔️','Mohonk getaway','2026-07-03','unplug all weekend'],
  ['🚀','Project Hail Mary on Prime','2026-07-03','Clariss&#39;s pick · hits streaming tomorrow'],
  ['⚽','USA vs Belgium','2026-07-06','World Cup Round of 16 · revenge game'],
+ ['🎉','Levy backyard bash','2026-07-10','Rumson · Pat Roddy Band · 6 PM'],
  ['🎤','Shane Gillis · the Linc','2026-07-17','Philly · w/ Allie'],
  ['🏞️','Lake Placid w/ Allie','2026-07-22','Interlaken Inn'],
  ['🍹','Chapel Beach Club','2026-07-26','Drew Tig · Sea Bright'],
