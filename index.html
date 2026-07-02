@@ -114,6 +114,14 @@
   .watch{background:linear-gradient(135deg,#fbeaf0,#fff);border:1px solid var(--mag-l)}
   .care{background:linear-gradient(135deg,#e1f5ee,#fff);border:1px solid var(--mint-l)}
   .foot{text-align:center;color:var(--faint);font-size:12px;margin-top:32px;line-height:1.7}
+  details.sec{margin-top:16px}
+  details.sec summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--sub);text-transform:uppercase;padding:12px 16px;background:var(--card);border-radius:14px;box-shadow:var(--sh);user-select:none;transition:.15s}
+  details.sec summary:hover{color:var(--mag-d)}
+  details.sec summary::-webkit-details-marker{display:none}
+  details.sec summary::before{content:"\25B8";color:var(--mag);transition:transform .15s}
+  details.sec[open] summary::before{transform:rotate(90deg)}
+  details.sec>.bento{margin-top:12px}
+  details.sec summary .cnt{margin-left:auto;font-size:11px;font-weight:600;color:var(--faint);text-transform:none;letter-spacing:0}
   /* gate */
   #gate{position:fixed;inset:0;z-index:999;background:linear-gradient(160deg,#0f3d31,#16302a 55%,#3a1326);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:#fff}
   #gate .glab{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7fd8c4;font-weight:700}
@@ -185,8 +193,10 @@
     </div>
   </div>
 
+  <!-- FINANCES -->
+
   <!-- TRIPS & NYC -->
-  <h2>Trips &amp; NYC crew</h2>
+  <details class="sec" open><summary>Trips &amp; NYC crew</summary>
   <div class="bento">
     <div class="b c4 hov">
       <div class="title">✈️ Minneapolis · SummerSlam</div>
@@ -200,7 +210,6 @@
     <div class="b c4 hov">
       <div class="title"><span class="pill nyc">NYC</span> Get the meetings going</div>
       <ul class="tl">
-        <li><b>Shane Gillis</b> · Jul 11 w/ Allie</li>
         <li><b>JD</b> · night out — pick a date</li>
         <li><b>Carson (NOPAC)</b> · meet in town</li>
         <li><span class="tip" data-tip="You mentioned several more city meetings. List them and I'll batch the invites + travel.">+ your other city meetings</span></li>
@@ -208,9 +217,10 @@
       <div class="meta"><span class="tip" data-tip="From Middletown: NJ Transit North Jersey Coast Line → NY Penn (~1h15, hourly), or Seastreak ferry from Atlantic Highlands (~45 min). Drinking night → transit, leave ~2 hrs before.">How to get there →</span></div>
     </div>
   </div>
+  </details>
 
   <!-- DATES TO KNOW -->
-  <h2>Dates to know · banks &amp; taxes</h2>
+  <details class="sec"><summary>Dates to know · banks &amp; taxes <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c6 hov">
       <div class="title">🏦 Bank holidays <span class="sub" style="font-weight:400">— banks &amp; most people offline</span></div>
@@ -233,16 +243,19 @@
       <div class="meta">Want a reminder a week before each, nudging your accountant?</div>
     </div>
   </div>
+  </details>
 
   <!-- PARTIES / ATTIRE / TICKETS -->
-  <h2>Coming up · what to wear · tickets</h2>
+  <details class="sec" open><summary>Coming up · what to wear · tickets</summary>
   <div class="bento">
     <div class="b c4 hov">
       <div class="title">🥂 Parties</div>
       <ul class="tl">
-        <li><b>Jimmy Levy</b> · cocktail/smart</li>
-        <li><b>Gordon Daniels @ MBBT</b> · Aug 7</li>
-        <li><b>Hendo's White Party</b> · Sep 6 · white</li>
+        <li><b>Jim &amp; Ashley Levy</b> · Rumson · <b>date TBD — text me the date</b> · cocktail/smart</li>
+        <li><b>Shane Gillis</b> · Fri Jul 17, 7 PM · Linc, Philly · w/ Allie ✓</li>
+        <li><b>Parker's 3rd bday pool party</b> · Sat Jul 25, 3:30 PM · Baltimore · ⚠️ conflicts w/ Lake Placid</li>
+        <li><b>Gordon Daniels @ MBBT</b> · Fri Aug 7, 5 PM · Monmouth Beach ✓</li>
+        <li><b>Hendo's White Party</b> · Sun Sep 6, 5:30 PM · w/ Gordon Daniels · wear white ✓</li>
       </ul>
     </div>
     <div class="b c4 hov">
@@ -251,16 +264,17 @@
     </div>
     <div class="b c4 hov">
       <div class="title">🎟️ Tickets</div>
-      <ul class="tl"><li><b>Have:</b> SummerSlam 2-day pass</li><li><b>Want:</b> tell me &amp; I'll watch prices</li></ul>
+      <ul class="tl"><li><b>Have:</b> SummerSlam 2-day pass · Shane Gillis Jul 17</li><li><b>Watching:</b> Ben Folds · Jungle · dueling pianos · close-up magic · immersive theater</li></ul>
     </div>
   </div>
+  </details>
 
   <!-- FUN / GIFTS / PETS -->
-  <h2>Life, gifts &amp; the dogs</h2>
+  <details class="sec"><summary>Life, gifts &amp; the dogs <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c4 hov">
-      <div class="title">🎭 Fun radar</div>
-      <div class="meta">Favorite bands/comedians, <span class="tip" data-tip="Send your go-to artists & a movies/theater wishlist. I'll watch NJ/NYC/Philly dates, suggest it, you add to calendar, I tee up tickets.">dueling pianos, shows you want</span>. Send a few favorites to switch on.</div>
+      <div class="title">🎭 Fun radar — now watching</div>
+      <div class="meta"><b>Ben Folds</b> (NJ dates) · <b>Jungle</b> · <b>dueling pianos</b> (any NJ/NYC) · <b>close-up magic</b> · <b>Sleep No More-style immersive theater</b>. Checked on every refresh. Local favorites on file: Silverball arcade + chill comedy in Asbury, Red Bank nights, Life Time Red Bank.</div>
     </div>
     <div class="b c4 hov">
       <div class="title">🎁 Birthdays &amp; gifts</div>
@@ -271,18 +285,20 @@
       <div class="meta"><span class="tip" data-tip="Connect Chewy for food reorders; I'll watch your inbox for vet shot/checkup reminders. Tell me the dogs' names + vet.">Chewy reorders + vet shots</span>. Needs Chewy + your vet.</div>
     </div>
   </div>
+  </details>
 
   <!-- BIRTHDAY NOTES -->
-  <h2>Birthday notes — drafts ready to send</h2>
+  <details class="sec"><summary>Birthday notes — drafts ready to send <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c12">
       <div class="meta" style="margin-bottom:6px">Copy-and-send drafts for your upcoming birthdays, newest first. I refresh these as each date nears — and I can drop them straight into Gmail as drafts when you want.</div>
       <div id="bdrafts"></div>
     </div>
   </div>
+  </details>
 
   <!-- CARE + CHARITY -->
-  <h2>The part that matters</h2>
+  <details class="sec"><summary>The part that matters <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c8 care">
       <div class="title">🌿 You, first</div>
@@ -294,12 +310,12 @@
       <div class="meta"><b>Money:</b> CBA (Jun 23) · <b>Time:</b> Rising Treetops, CBA, AOK. <b>Benefit update (Jul 1):</b> $56,360 raised, 56 attendees — and Lauren wants a studio tour (Nat leading). <b>New ask:</b> AOK round-up at Livoti's all July — just round up at checkout. <span class="tip" data-tip="Want a running 2026 total — dollars and volunteer hours — for taxes? I'll build the ledger.">Want the tax ledger?</span></div>
     </div>
   </div>
+  </details>
 
-  <h2>Agora — open invites · RSVP to grab them</h2>
+  <details class="sec"><summary>Agora — open invites · RSVP to grab them <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c12 care">
       <ul class="tl">
-        <li><b>AG Family Day · Cape May</b> — Sat Jul 18, 10:30 AM–5 PM · Cape May Zoo &amp; downtown</li>
         <li><b>AG Morning Brew</b> — Mon Aug 3, 8 AM · Molly Pitcher Inn, Red Bank</li>
         <li><b>AG Volunteer · Rising Treetops</b> — Sat Sep 12, 9 AM · doubles as your committee work</li>
         <li><b>Playground meetups</b> — every other Tue 5:30 PM · Jul 14, Jul 28, Aug 11, Aug 25, Sep 8 · Dorbrook Park</li>
@@ -310,6 +326,7 @@
       <div class="meta">You haven't signed up for any of these — they're on the calendar in dashed green so you can grab the ones you want. Say which and I'll RSVP for you.</div>
     </div>
   </div>
+  </details>
 
   <div class="foot">Built from your inbox + what you told me · Updated Thu, Jul 2 · refreshes daily.<br>Tap any day for detail · check off to-dos as you go.</div>
 </div>
@@ -329,7 +346,7 @@ const TODOS=[
   ['hair','Book haircut','Kyle @ Prosecco · monthly',[['Book Kyle','https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287',1]]],
   ['archlp','Book Archie&#39;s boarding for Lake Placid','Jul 22–25 · Purr&#39;n Pooch again — they just confirmed his Jul 3–5 stay',[['Purr&#39;n Pooch','https://www.purrnpooch.com',1]]],
   ['audi','Get car title','Audi Financial',[['Call','tel:+18882372834',0],['myAudi','https://www.audiusa.com/en/myaudi/',0]]],
-  ['ezpass','Pay E-ZPass — REVOCATION WARNING','negative 60+ days · replenish now or account shuts off + toll violations stack',[['Log in','https://www.ezpassnj.com',0]]] ]],
+  ['ezpass','Fix E-ZPass — it&#39;s one 10-minute job','Don&#39;t panic: the root cause is your Amex on file started declining (Apr 26) so auto-replenish has failed ever since → statements piled up → Jun 27 revocation warning. Log in, update the card, replenish. All the scary emails stop.',[['Log in','https://www.ezpassnj.com',0]]] ]],
  ['Money',[
   ['soho','Cancel Soho House membership','stop the spend — still active',[]],
   ['subs','Kill the auto-renewals','1Password $36→$48 Jul 24 · LegalZoom renewing · Intego auto-renewed Jun 28 · GoDaddy domains expiring',[]],
@@ -339,7 +356,8 @@ const TODOS=[
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
  ['NYC & social',[
   ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
-  ['gillis','Confirm Shane Gillis showtime','Jul 11 · w/ Allie','Jul 11'],
+  ['jul25','Untangle Sat Jul 25 with Allie','Lake Placid checkout runs to 8 PM · Parker&#39;s pool party in Baltimore is 3:30 PM — pick one','Jul 25'],
+  ['levyparty','Text me the Levy party date','Jim &amp; Ashley Levy · Rumson — no email invite found, must be on your phone. Send date + time and I&#39;ll calendar it',[]],
   ['lakeplacid','Accept the Lake Placid invite','Jul 22–25 · Interlaken Inn w/ Allie · conf 7C8Z7B76 — say yes on the calendar invite','Jul 22'],
   ['villanova','Villanova golf outing — register or decline','Jul 20 · Woodway CC, Darien CT · 2 days before Lake Placid','Jul 20'],
   ['risingbenefit','RSVP Rising Treetops Summer Benefit','7 PM gala · counts as your giving','Jul 18'],
@@ -368,12 +386,13 @@ prog();
 
 /* ---- EVENTS ---- */
 let EV=[
- {s:'2026-07-11',title:'Shane Gillis',time:'TBD',type:'pink',note:'NYC w/ Allie — confirm showtime.'},
+ {s:'2026-07-17',title:'Shane Gillis',time:'7:00 PM',type:'pink',note:'CORRECTED: Fri Jul 17, Lincoln Financial Field, Philadelphia · w/ Allie (her Christmas gift) · on your calendar, both accepted ✓'},
+ {s:'2026-07-25',title:"Parker's pool party",time:'3:30 PM',type:'pink',note:"Parker's 3rd birthday · 1012 Winding Way, Baltimore MD · invite to you + Allie · ⚠️ same day as Lake Placid checkout — you can't do both, talk to Allie"},
  {s:'2026-07-22',e:'2026-07-25',title:'Lake Placid',type:'blue',note:'Interlaken Inn w/ Allie · The Carriage House · conf 7C8Z7B76 · (518) 241-8855 · NEW from your inbox — accept the invite + book Archie&#39;s boarding'},
  {s:'2026-07-20',title:'Villanova golf outing',time:'10:30 AM',type:'pink',note:'Invited, not registered · Villanova Basketball Golf Outing · Woodway CC, Darien CT · 10:30 AM–8 PM · register or decline'},
  {s:'2026-07-03',title:'Segwik First Friday',time:'6:00 PM',type:'agorap',note:'Pete Romano&#39;s Art, Access & Entrepreneurs happy hour · 415 Bond St, Asbury Park · conflicts with Mohonk — decline or send regrets'},
  {s:'2026-07-14',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park'},
- {s:'2026-07-18',title:'Rising Treetops Benefit',time:'7:00 PM',type:'pink',note:'Summer Benefit gala · "Growing Stronger Together" · Oakhurst · counts toward your giving — RSVP'},
+ {s:'2026-07-18',title:'Rising Treetops Benefit',time:'7:00 PM',type:'pink',note:'Summer Benefit gala · "Growing Stronger Together" · Rumson, NJ · $56,360 raised so far · counts toward your giving — RSVP'},
  {s:'2026-07-25',title:'Rent due',time:'',type:'amber',note:'Monthly rent — July handled ✓'},
  {s:'2026-07-30',e:'2026-08-04',title:'Minneapolis',type:'blue',note:'SummerSlam trip · Delta, conf H6WZVC'},
  {s:'2026-08-01',e:'2026-08-02',title:'SummerSlam',type:'blue',note:'2-day pass — in hand'},
@@ -385,7 +404,6 @@ let EV=[
  {s:'2026-07-06',e:'2026-07-12',title:'Off',type:'off',note:'Out of office / personal time'},
  {s:'2026-07-27',e:'2026-08-07',title:'Off',type:'off',note:'Out of office (incl. Minneapolis Jul 30–Aug 4)'},
  {s:'2026-09-10',e:'2026-09-15',title:'Off',type:'off',note:'Out of office / personal time'},
- {s:'2026-07-18',title:'AG Family Day · Cape May',time:'10:30 AM',type:'agorap',note:'Potential (not signed up) · Cape May Zoo & downtown · RSVP to join'},
  {s:'2026-08-03',title:'AG Morning Brew',time:'8:00 AM',type:'agorap',note:'Potential · Molly Pitcher Inn, Red Bank · RSVP'},
  {s:'2026-09-12',title:'AG Volunteer · Rising Treetops',time:'9:00 AM',type:'agorap',note:'Potential · Rising Treetops, Oakhurst · ties to your committee work · RSVP'},
  {s:'2026-07-28',title:'Agora meetup',time:'5:30 PM',type:'agorap',note:'AG Playground Meetup · Dorbrook Park · open, not signed up'},
@@ -400,7 +418,7 @@ let EV=[
  .forEach(h=>EV.push({s:h[0],title:h[1],type:'gray',bank:1,note:'Bank holiday — banks & most people offline.'}));
 {let d=new Date('2026-07-02T07:00:00');for(let i=0;i<20;i++){const x=new Date(d.getTime()+i*7*864e5);EV.push({s:x.toISOString().slice(0,10),title:'Agora Zoom',time:'7:00 AM',type:'teal',note:'Sacred Time · ID 872 7821 7343'});}}
 ['2026-08-25','2026-09-25','2026-10-25','2026-11-25','2026-12-25'].forEach(d=>EV.push({s:d,title:'Rent due',type:'amber',note:'Monthly rent · 25th'}));
-[['2026-09-08','JD',1],['2026-09-14','Bryant',0],['2026-09-24','Purvi',0],['2026-10-28','Steve Silva',0],['2027-01-20','Randy Wilder',1],['2027-01-24','Ryan Driscoll',0],['2027-02-12','Dad',1],['2027-03-16','Kat Henderson',0],['2027-04-03','Paul Molzon',0],['2027-05-13','Tom D',1],['2027-05-16','Jeff Miscagne',1]].forEach(b=>EV.push({s:b[0],title:b[1]+' 🎂',type:'bday',note:b[2]?'Close friend — order a gift ~2 weeks ahead':'Birthday'}));
+[['2026-09-08','JD',1],['2026-09-14','Bryant',0],['2026-10-28','Steve Silva',0],['2027-01-20','Randy Wilder',1],['2027-01-24','Ryan Driscoll',0],['2027-02-12','Dad',1],['2027-03-16','Kat Henderson',0],['2027-04-03','Paul Molzon',0],['2027-05-13','Tom D',1],['2027-05-16','Jeff Miscagne',1]].forEach(b=>EV.push({s:b[0],title:b[1]+' 🎂',type:'bday',note:b[2]?'Close friend — order a gift ~2 weeks ahead':'Birthday'}));
 const BY={};EV.forEach(ev=>{const s=new Date(ev.s+'T12:00'),e=ev.e?new Date(ev.e+'T12:00'):s;for(let d=new Date(s);d<=e;d.setDate(d.getDate()+1)){const k=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());(BY[k]=BY[k]||[]).push(ev);}});
 
 let cur=new Date('2026-07-01T12:00');
@@ -423,7 +441,7 @@ document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-07-01T12:00'
 /* ---- tiles + clock ---- */
 const COUNTS=[
  ['🏔️ Mohonk getaway','2026-07-03'],
- ['🎤 Shane Gillis · NYC','2026-07-11'],
+ ['🎤 Shane Gillis · Philly','2026-07-17'],
  ['🏞️ Lake Placid w/ Allie','2026-07-22'],
  ['✈️ Minneapolis · SummerSlam','2026-07-30'],
  ['🌴 Agora Bahamas','2026-11-12'],
@@ -446,7 +464,6 @@ greet();clk();setInterval(clk,20000);render();showDay(tkey);
 const BDRAFTS=[
  ['JD','Sept 8',"Happy birthday, JD! Hope today's a good one, brother. Glad to have you in my corner — let's grab a drink soon and celebrate it right. 🥃"],
  ['Bryant','Sept 14',"Happy birthday, Bryant! Wishing you a great day and an even better year ahead. Let's catch up soon — it's been too long."],
- ['Purvi','Sept 24',"Happy birthday, Purvi! Hope your day is full of the people and things you love. Sending a big one — let's connect soon. 🎉"],
  ['Steve Silva','Oct 28',"Happy birthday, Steve! Hope you're getting properly celebrated today. Appreciate you, man — let's link up soon."],
 ];
 (function(){const bd=document.getElementById('bdrafts');if(!bd)return;
