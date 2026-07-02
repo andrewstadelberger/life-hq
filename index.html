@@ -86,6 +86,14 @@
   .teal{background:var(--mint-s);color:var(--mint-d)}.pink{background:var(--mag-s);color:var(--mag-d)}
   .blue{background:var(--blue-s);color:var(--blue-d)}.amber{background:var(--amber-s);color:var(--amber-d)}.gray{background:var(--gray-s);color:var(--gray)}
   .off{background:#ece9f3;color:#6a5f7a}
+  .agorap{background:#eef7f3;color:#2f8f6e;border:1px dashed #8fd6bf}
+  .bday{background:#fdeef4;color:#b03a67}
+  .draft{border-top:1px solid var(--hair);padding:11px 0}
+  .draft:first-child{border-top:none;padding-top:2px}
+  .dhead{font-size:13.5px;display:flex;align-items:center;gap:8px}
+  .dhead .cpy{margin-left:auto;font-size:11.5px;font-weight:600;border:none;background:var(--mag-s);color:var(--mag-d);padding:5px 12px;border-radius:8px;cursor:pointer}
+  .dhead .cpy:hover{background:var(--mag-l)}
+  .dtext{font-size:13px;color:var(--ink);margin-top:6px;line-height:1.5;background:#faf9f7;border:1px solid var(--hair);border-radius:10px;padding:10px 12px}
   .more{font-size:10px;color:var(--faint);margin-top:3px;font-weight:600}
   .leg{display:flex;flex-wrap:wrap;gap:11px;margin-top:13px}
   .leg span{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--sub)}
@@ -133,16 +141,16 @@
       <span class="clock" id="clock"></span>
       <div class="hello" id="hello">Good evening, Andrew</div>
       <div class="tiny" id="today" style="margin-top:4px"></div>
-      <div class="spark">Let's make it a killer week.</div>
-      <div class="wx"><span style="font-size:18px">&#9728;&#65039;</span>90&deg; · sun &amp; clouds, hot — hydrate <span class="tiny" style="color:var(--mint-d)">· Middletown, NJ</span></div>
+      <div class="spark">Mohonk tomorrow — drop Archie at Purr'n Pooch 12–3 PM, then go unplug.</div>
+      <div class="wx"><span style="font-size:18px">&#128293;</span>~103&deg; · EXTREME HEAT WARNING thru Jul 4 — stay in the AC, hydrate <span class="tiny" style="color:var(--mint-d)">· Middletown, NJ</span></div>
       <div class="countpill" id="countpill">— open</div>
     </div>
-    <!-- MSP -->
+    <!-- COUNTDOWNS -->
     <div class="b c4 hov">
-      <div class="k">Minneapolis · SummerSlam</div>
+      <div class="k">Counting down to fun</div>
       <div class="statrow"><div class="ring" id="ring"><i id="ringd">—</i></div>
-        <div><div class="mid" id="mspdays">—</div><div class="tiny">need a hotel</div></div></div>
-      <div class="btns"><a class="act mint" href="https://www.google.com/travel/hotels/Minneapolis%20US%20Bank%20Stadium" target="_blank">Find hotel</a></div>
+        <div><div class="mid" id="nextfun">—</div><div class="tiny" id="nextfunsub">—</div></div></div>
+      <ul class="tl" id="counts" style="margin-top:10px"></ul>
     </div>
 
     <!-- TODOS CENTERPIECE -->
@@ -164,14 +172,16 @@
         <span><i class="dot" style="background:var(--amber)"></i>Bill / tax</span>
         <span><i class="dot" style="background:var(--gray)"></i>Bank holiday</span>
         <span><i class="dot" style="background:#9a8fb5"></i>Off / OOO</span>
+        <span><i class="dot" style="background:#8fd6bf"></i>Agora — open (RSVP)</span>
+        <span><i class="dot" style="background:#b03a67"></i>Birthday</span>
       </div>
       <div class="daycard" id="day"></div>
     </div>
 
     <!-- WATCHING -->
     <div class="b c4 watch">
-      <div class="title"><span style="margin-right:5px">&#128276;</span>Watching for you</div>
-      <div class="meta" style="color:var(--mag-d)">A few personal matters I track for you. The specifics live in your private copy.</div>
+      <div class="title"><span style="margin-right:5px">&#128276;</span>Watching</div>
+      <div class="meta" style="color:var(--mag-d)">Keeping an eye on a few personal matters for you — details live in the private copy.</div>
     </div>
   </div>
 
@@ -181,6 +191,11 @@
     <div class="b c4 hov">
       <div class="title">✈️ Minneapolis · SummerSlam</div>
       <div class="meta">Jul 30 – Aug 4 · Delta, conf <b>H6WZVC</b> · 🎟️ 2-day pass in hand. Need: hotel, ground transport, pack.</div>
+      <div class="btns"><a class="act mint" href="https://www.google.com/travel/hotels/Minneapolis%20US%20Bank%20Stadium" target="_blank">Find hotel</a></div>
+    </div>
+    <div class="b c4 hov">
+      <div class="title">🏞️ Lake Placid · w/ Allie <span class="pill nyc">NEW</span></div>
+      <div class="meta">Jul 22 – 25 · Interlaken Inn, The Carriage House (Queen + Full) · conf <b>7C8Z7B76</b> · (518) 241-8855. Landed in your inbox Jul 1 — accept the invite, book Archie's boarding, and you're set.</div>
     </div>
     <div class="b c4 hov">
       <div class="title"><span class="pill nyc">NYC</span> Get the meetings going</div>
@@ -248,12 +263,21 @@
       <div class="meta">Favorite bands/comedians, <span class="tip" data-tip="Send your go-to artists & a movies/theater wishlist. I'll watch NJ/NYC/Philly dates, suggest it, you add to calendar, I tee up tickets.">dueling pianos, shows you want</span>. Send a few favorites to switch on.</div>
     </div>
     <div class="b c4 hov">
-      <div class="title">🎁 Gifts ahead of time</div>
-      <div class="meta"><span class="tip" data-tip="Birthdays = close friends only, reminded ~2 weeks out with ideas. Christmas = full list, tracked from November.">Birthdays + Christmas</span>, reminded early with ideas — never last-minute.</div>
+      <div class="title">🎁 Birthdays &amp; gifts</div>
+      <div class="meta"><b>Next up: JD · Sept 8.</b> Inner circle (gift-worthy): JD, Randy, Allie, Jeff Miscagne, Tom D — I'll nudge you ~2 weeks ahead with ideas. <span class="tip" data-tip="All your calendar birthdays now show on the calendar in rose. Christmas list gets tracked from November.">Add Allie's date</span> and I'll lock her in.</div>
     </div>
     <div class="b c4 hov">
       <div class="title">🐾 Archie &amp; the dogs</div>
       <div class="meta"><span class="tip" data-tip="Connect Chewy for food reorders; I'll watch your inbox for vet shot/checkup reminders. Tell me the dogs' names + vet.">Chewy reorders + vet shots</span>. Needs Chewy + your vet.</div>
+    </div>
+  </div>
+
+  <!-- BIRTHDAY NOTES -->
+  <h2>Birthday notes — drafts ready to send</h2>
+  <div class="bento">
+    <div class="b c12">
+      <div class="meta" style="margin-bottom:6px">Copy-and-send drafts for your upcoming birthdays, newest first. I refresh these as each date nears — and I can drop them straight into Gmail as drafts when you want.</div>
+      <div id="bdrafts"></div>
     </div>
   </div>
 
@@ -267,40 +291,61 @@
     </div>
     <div class="b c4 hov">
       <div class="title">💛 2026 giving</div>
-      <div class="meta"><b>Money:</b> CBA (Jun 23) · <b>Time:</b> Rising Treetops, CBA, AOK. <b>New asks:</b> Rising Treetops Summer Benefit <b>Jul 18, 7 PM</b> · CBA annual-fund appeal. <span class="tip" data-tip="Want a running 2026 total — dollars and volunteer hours — for taxes? I'll build the ledger.">Want the tax ledger?</span></div>
+      <div class="meta"><b>Money:</b> CBA (Jun 23) · <b>Time:</b> Rising Treetops, CBA, AOK. <b>Benefit update (Jul 1):</b> $56,360 raised, 56 attendees — and Lauren wants a studio tour (Nat leading). <b>New ask:</b> AOK round-up at Livoti's all July — just round up at checkout. <span class="tip" data-tip="Want a running 2026 total — dollars and volunteer hours — for taxes? I'll build the ledger.">Want the tax ledger?</span></div>
     </div>
   </div>
 
-  <div class="foot">Built from your inbox + what you told me · Updated Tue, Jun 30 · refreshes daily.<br>Tap any day for detail · check off to-dos as you go.</div>
+  <h2>Agora — open invites · RSVP to grab them</h2>
+  <div class="bento">
+    <div class="b c12 care">
+      <ul class="tl">
+        <li><b>AG Family Day · Cape May</b> — Sat Jul 18, 10:30 AM–5 PM · Cape May Zoo &amp; downtown</li>
+        <li><b>AG Morning Brew</b> — Mon Aug 3, 8 AM · Molly Pitcher Inn, Red Bank</li>
+        <li><b>AG Volunteer · Rising Treetops</b> — Sat Sep 12, 9 AM · doubles as your committee work</li>
+        <li><b>Playground meetups</b> — every other Tue 5:30 PM · Jul 14, Jul 28, Aug 11, Aug 25, Sep 8 · Dorbrook Park</li>
+        <li><b>AG Alphafit Workout</b> — Thu Oct 1, 7 PM · Alpha Fit Club, Englishtown <span class="pill nyc">NEW</span></li>
+        <li><b>AG Bahamas Trip</b> — Nov 12 on the calendar · Atlantis · ask Hendo for the real dates <span class="pill nyc">NEW</span></li>
+        <li><b>Agora Holiday Gala</b> — Thu Dec 3, 6 PM · 26 West On The Navesink, Red Bank <span class="pill nyc">NEW</span></li>
+      </ul>
+      <div class="meta">You haven't signed up for any of these — they're on the calendar in dashed green so you can grab the ones you want. Say which and I'll RSVP for you.</div>
+    </div>
+  </div>
+
+  <div class="foot">Built from your inbox + what you told me · Updated Thu, Jul 2 · refreshes daily.<br>Tap any day for detail · check off to-dos as you go.</div>
 </div>
 
 <script>
-const TODAY=new Date('2026-06-30T09:00:00-04:00');
+const TODAY=new Date('2026-07-02T09:00:00-04:00');
 const MS=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const pad=n=>String(n).padStart(2,'0');
-const tkey='2026-06-30';
+const tkey='2026-07-02';
 
 /* ---- TO-DOS ---- */
 const TODOS=[
  ['Calls & bookings',[
-  ['physical','Book annual physical','bring labs over',[]],
-  ['dentist','Book dentist','book online',[]],
+  ['physical','Book annual physical','get it on the books',[]],
+  ['dentist','Book dentist','routine cleaning · online booking',[]],
   ['car','Schedule car service','Middletown · Mon–Fri',[['Call','tel:+17327418408',1]]],
   ['hair','Book haircut','Kyle @ Prosecco · monthly',[['Book Kyle','https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287',1]]],
+  ['archlp','Book Archie&#39;s boarding for Lake Placid','Jul 22–25 · Purr&#39;n Pooch again — they just confirmed his Jul 3–5 stay',[['Purr&#39;n Pooch','https://www.purrnpooch.com',1]]],
   ['audi','Get car title','Audi Financial',[['Call','tel:+18882372834',0],['myAudi','https://www.audiusa.com/en/myaudi/',0]]],
-  ['ezpass','Pay / replenish E-ZPass','',[['Log in','https://www.ezpassnj.com',0]]] ]],
+  ['ezpass','Pay E-ZPass — REVOCATION WARNING','negative 60+ days · replenish now or account shuts off + toll violations stack',[['Log in','https://www.ezpassnj.com',0]]] ]],
  ['Money',[
   ['soho','Cancel Soho House membership','stop the spend — still active',[]],
-  ['subs','Kill the auto-renewals','1Password $36→$48 Jul 24 · LegalZoom · antivirus + domains renewing',[]],
-  ['retire','Roll over an old retirement account','old employer plan — decide: roll over or leave it',[]],
+  ['subs','Kill the auto-renewals','1Password $36→$48 Jul 24 · LegalZoom renewing · Intego auto-renewed Jun 28 · GoDaddy domains expiring',[]],
+  ['retire403b','Sort the old retirement plan','decide: roll it over or leave it',[]],
+  ['bofa','View Bank of America renewal notice','Online Banking → Statements & Documents',[]],
+  ['audible','Audible membership started Jul 1','new auto-renewing sub + $20 credit — use it, or cancel before the first charge',[]],
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
  ['NYC & social',[
   ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
   ['gillis','Confirm Shane Gillis showtime','Jul 11 · w/ Allie','Jul 11'],
+  ['lakeplacid','Accept the Lake Placid invite','Jul 22–25 · Interlaken Inn w/ Allie · conf 7C8Z7B76 — say yes on the calendar invite','Jul 22'],
+  ['villanova','Villanova golf outing — register or decline','Jul 20 · Woodway CC, Darien CT · 2 days before Lake Placid','Jul 20'],
   ['risingbenefit','RSVP Rising Treetops Summer Benefit','7 PM gala · counts as your giving','Jul 18'],
   ['hotel','Book Minneapolis hotel','SummerSlam','Jul 30'] ]],
  ['Watching',[
-  ['vsst','Track a pending personal matter','details in private copy',[]] ]],
+  ['watch1','Personal matters','tracked in the private copy',[]] ]],
 ];
 let total=0,done=0;const tg=document.getElementById('todos');
 TODOS.forEach(grp=>{const h=document.createElement('div');h.className='gh';h.textContent=grp[0];tg.appendChild(h);
@@ -323,28 +368,42 @@ prog();
 
 /* ---- EVENTS ---- */
 let EV=[
- {s:'2026-06-30',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park, Colts Neck'},
  {s:'2026-07-11',title:'Shane Gillis',time:'TBD',type:'pink',note:'NYC w/ Allie — confirm showtime.'},
+ {s:'2026-07-22',e:'2026-07-25',title:'Lake Placid',type:'blue',note:'Interlaken Inn w/ Allie · The Carriage House · conf 7C8Z7B76 · (518) 241-8855 · NEW from your inbox — accept the invite + book Archie&#39;s boarding'},
+ {s:'2026-07-20',title:'Villanova golf outing',time:'10:30 AM',type:'pink',note:'Invited, not registered · Villanova Basketball Golf Outing · Woodway CC, Darien CT · 10:30 AM–8 PM · register or decline'},
+ {s:'2026-07-03',title:'Segwik First Friday',time:'6:00 PM',type:'agorap',note:'Pete Romano&#39;s Art, Access & Entrepreneurs happy hour · 415 Bond St, Asbury Park · conflicts with Mohonk — decline or send regrets'},
  {s:'2026-07-14',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park'},
- {s:'2026-07-18',title:'Rising Treetops Benefit',time:'7:00 PM',type:'pink',note:'Summer Benefit gala · Oakhurst · counts toward your giving — RSVP'},
- {s:'2026-07-25',title:'Rent due',time:'',type:'amber',note:'Monthly (~25th) · this month handled ✓'},
+ {s:'2026-07-18',title:'Rising Treetops Benefit',time:'7:00 PM',type:'pink',note:'Summer Benefit gala · "Growing Stronger Together" · Oakhurst · counts toward your giving — RSVP'},
+ {s:'2026-07-25',title:'Rent due',time:'',type:'amber',note:'Monthly rent — July handled ✓'},
  {s:'2026-07-30',e:'2026-08-04',title:'Minneapolis',type:'blue',note:'SummerSlam trip · Delta, conf H6WZVC'},
  {s:'2026-08-01',e:'2026-08-02',title:'SummerSlam',type:'blue',note:'2-day pass — in hand'},
  {s:'2026-08-07',title:'Gordon Daniels',time:'5:00 PM',type:'pink',note:'@ MBBT · smart casual'},
  {s:'2026-09-06',title:'White Party',time:'5:30 PM',type:'pink',note:"Hendo's · wear white"},
  {s:'2026-09-15',title:'Q3 taxes',type:'amber',note:'Federal + NJ estimate'},
  {s:'2026-10-15',title:'Extended return',type:'amber',note:'2025 return due if extended'},
- {s:'2026-07-03',e:'2026-07-05',title:'Mohonk',type:'blue',note:'Mohonk Mountain House · Fri–Sun getaway · Archie boarded ✓ (drop 12–3 PM Jul 3)'},
+ {s:'2026-07-03',e:'2026-07-05',title:'Mohonk',type:'blue',note:'Mohonk Mountain House · Fri–Sun getaway · Archie boarded at Purr&#39;n Pooch ✓ (drop 12–3 PM Jul 3)'},
  {s:'2026-07-06',e:'2026-07-12',title:'Off',type:'off',note:'Out of office / personal time'},
  {s:'2026-07-27',e:'2026-08-07',title:'Off',type:'off',note:'Out of office (incl. Minneapolis Jul 30–Aug 4)'},
  {s:'2026-09-10',e:'2026-09-15',title:'Off',type:'off',note:'Out of office / personal time'},
+ {s:'2026-07-18',title:'AG Family Day · Cape May',time:'10:30 AM',type:'agorap',note:'Potential (not signed up) · Cape May Zoo & downtown · RSVP to join'},
+ {s:'2026-08-03',title:'AG Morning Brew',time:'8:00 AM',type:'agorap',note:'Potential · Molly Pitcher Inn, Red Bank · RSVP'},
+ {s:'2026-09-12',title:'AG Volunteer · Rising Treetops',time:'9:00 AM',type:'agorap',note:'Potential · Rising Treetops, Oakhurst · ties to your committee work · RSVP'},
+ {s:'2026-07-28',title:'Agora meetup',time:'5:30 PM',type:'agorap',note:'AG Playground Meetup · Dorbrook Park · open, not signed up'},
+ {s:'2026-08-11',title:'Agora meetup',time:'5:30 PM',type:'agorap',note:'AG Playground Meetup · Dorbrook Park · open, not signed up'},
+ {s:'2026-08-25',title:'Agora meetup',time:'5:30 PM',type:'agorap',note:'AG Playground Meetup · Dorbrook Park · open, not signed up'},
+ {s:'2026-09-08',title:'Agora meetup',time:'5:30 PM',type:'agorap',note:'AG Playground Meetup · Dorbrook Park · open, not signed up'},
+ {s:'2026-10-01',title:'AG Alphafit Workout',time:'7:00 PM',type:'agorap',note:'NEW · Alpha Fit Club, Englishtown · 7–8:30 PM · open, not signed up'},
+ {s:'2026-11-12',title:'AG Bahamas Trip',type:'agorap',note:'NEW · Atlantis Bahamas · calendar shows Nov 12 — ask Hendo for real dates + details · open, not signed up'},
+ {s:'2026-12-03',title:'Agora Holiday Gala',time:'6:00 PM',type:'agorap',note:'NEW · 26 West On The Navesink, Red Bank · 6–9 PM · open, not signed up'},
 ];
 [['2026-07-03','Independence Day'],['2026-09-07','Labor Day'],['2026-10-12','Columbus Day'],['2026-11-11','Veterans Day'],['2026-11-26','Thanksgiving'],['2026-12-25','Christmas']]
  .forEach(h=>EV.push({s:h[0],title:h[1],type:'gray',bank:1,note:'Bank holiday — banks & most people offline.'}));
 {let d=new Date('2026-07-02T07:00:00');for(let i=0;i<20;i++){const x=new Date(d.getTime()+i*7*864e5);EV.push({s:x.toISOString().slice(0,10),title:'Agora Zoom',time:'7:00 AM',type:'teal',note:'Sacred Time · ID 872 7821 7343'});}}
+['2026-08-25','2026-09-25','2026-10-25','2026-11-25','2026-12-25'].forEach(d=>EV.push({s:d,title:'Rent due',type:'amber',note:'Monthly rent · 25th'}));
+[['2026-09-08','JD',1],['2026-09-14','Bryant',0],['2026-09-24','Purvi',0],['2026-10-28','Steve Silva',0],['2027-01-20','Randy Wilder',1],['2027-01-24','Ryan Driscoll',0],['2027-02-12','Dad',1],['2027-03-16','Kat Henderson',0],['2027-04-03','Paul Molzon',0],['2027-05-13','Tom D',1],['2027-05-16','Jeff Miscagne',1]].forEach(b=>EV.push({s:b[0],title:b[1]+' 🎂',type:'bday',note:b[2]?'Close friend — order a gift ~2 weeks ahead':'Birthday'}));
 const BY={};EV.forEach(ev=>{const s=new Date(ev.s+'T12:00'),e=ev.e?new Date(ev.e+'T12:00'):s;for(let d=new Date(s);d<=e;d.setDate(d.getDate()+1)){const k=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());(BY[k]=BY[k]||[]).push(ev);}});
 
-let cur=new Date('2026-06-01T12:00');
+let cur=new Date('2026-07-01T12:00');
 function render(){const y=cur.getFullYear(),mo=cur.getMonth();document.getElementById('mn').textContent=MS[mo]+' '+y;
  const st=new Date(y,mo,1).getDay(),dim=new Date(y,mo+1,0).getDate(),tb=document.getElementById('cal');tb.innerHTML='';let day=1-st;
  for(let w=0;w<6;w++){const tr=document.createElement('tr');for(let i=0;i<7;i++){const td=document.createElement('td'),dd=new Date(y,mo,day),inM=dd.getMonth()===mo,k=dd.getFullYear()+'-'+pad(dd.getMonth()+1)+'-'+pad(dd.getDate());
@@ -359,17 +418,44 @@ function showDay(k){const evs=BY[k]||[],d=new Date(k+'T12:00');let h='<div class
  document.getElementById('day').innerHTML=h;}
 document.getElementById('prev').onclick=()=>{cur.setMonth(cur.getMonth()-1);render();};
 document.getElementById('nextm').onclick=()=>{cur.setMonth(cur.getMonth()+1);render();};
-document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-06-01T12:00');render();showDay(tkey);};
+document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-07-01T12:00');render();showDay(tkey);};
 
 /* ---- tiles + clock ---- */
-const days=Math.ceil((new Date('2026-07-30T18:45:00-04:00')-TODAY)/864e5);
-document.getElementById('ringd').textContent=days;document.getElementById('mspdays').textContent=days+' days';
-document.getElementById('ring').style.setProperty('--p',Math.max(8,100-days*1.3));
+const COUNTS=[
+ ['🏔️ Mohonk getaway','2026-07-03'],
+ ['🎤 Shane Gillis · NYC','2026-07-11'],
+ ['🏞️ Lake Placid w/ Allie','2026-07-22'],
+ ['✈️ Minneapolis · SummerSlam','2026-07-30'],
+ ['🌴 Agora Bahamas','2026-11-12'],
+ ['🎄 Agora Holiday Gala','2026-12-03'],
+];
+const dTo=d=>Math.max(0,Math.ceil((new Date(d+'T09:00:00-04:00')-TODAY)/864e5));
+const up=COUNTS.filter(c=>dTo(c[1])>=0);
+const nd=dTo(up[0][1]);
+document.getElementById('ringd').textContent=nd;
+document.getElementById('nextfun').textContent=nd===0?'Today!':nd===1?'Tomorrow!':nd+' days';
+document.getElementById('nextfunsub').textContent=up[0][0].replace(/^\S+\s/,'');
+document.getElementById('ring').style.setProperty('--p',Math.max(8,100-nd*1.3));
+document.getElementById('counts').innerHTML=up.slice(1).map(c=>{const n=dTo(c[1]);return '<li><b>'+c[0]+'</b> — '+(n===0?'today':n===1?'tomorrow':n+' days')+'</li>';}).join('');
 function greet(){const h=new Date().getHours(),g=h<12?'Good morning':h<18?'Good afternoon':'Good evening';
  document.getElementById('hello').textContent=g+', Andrew';
  document.getElementById('today').textContent=TODAY.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
 function clk(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
 greet();clk();setInterval(clk,20000);render();showDay(tkey);
+
+const BDRAFTS=[
+ ['JD','Sept 8',"Happy birthday, JD! Hope today's a good one, brother. Glad to have you in my corner — let's grab a drink soon and celebrate it right. 🥃"],
+ ['Bryant','Sept 14',"Happy birthday, Bryant! Wishing you a great day and an even better year ahead. Let's catch up soon — it's been too long."],
+ ['Purvi','Sept 24',"Happy birthday, Purvi! Hope your day is full of the people and things you love. Sending a big one — let's connect soon. 🎉"],
+ ['Steve Silva','Oct 28',"Happy birthday, Steve! Hope you're getting properly celebrated today. Appreciate you, man — let's link up soon."],
+];
+(function(){const bd=document.getElementById('bdrafts');if(!bd)return;
+ BDRAFTS.forEach((b,i)=>{const d=document.createElement('div');d.className='draft';
+  d.innerHTML='<div class="dhead"><b>'+b[0]+'</b> · '+b[1]+' <button class="cpy" data-i="'+i+'">Copy</button></div><div class="dtext">'+b[2]+'</div>';
+  bd.appendChild(d);});
+ bd.addEventListener('click',e=>{if(e.target.classList.contains('cpy')){const i=e.target.dataset.i;
+  navigator.clipboard&&navigator.clipboard.writeText(BDRAFTS[i][2]);e.target.textContent='Copied ✓';setTimeout(()=>e.target.textContent='Copy',1500);}});
+})();
 
 /* ---- password gate (light client-side lock; change PASSWORD) ---- */
 const PASSWORD='lifehq';
