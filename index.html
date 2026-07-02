@@ -267,6 +267,15 @@
       </ul>
       <div class="meta">Want a reminder a week before each, nudging your accountant?</div>
     </div>
+    <div class="b c12 hov">
+      <div class="title">🔁 Renewals &amp; red tape — so nothing sneaks up</div>
+      <ul class="tl">
+        <li><b>Car insurance (Progressive)</b> · renewed ~June, 6-month term → <b>next renewal ~Dec 1</b>. The renewal email lands in November — I'll catch it and post the exact date + price so you can shop it if it jumps.</li>
+        <li><b>Health insurance (Get Covered NJ)</b> · open enrollment <b>Nov 1 – Jan 31</b> · enroll/change by <b>Dec 31</b> for Jan 1 coverage · on your Google calendar ✓</li>
+        <li><b>Car registration (NJ MVC)</b> · <b>need your expiry month</b> — it's on the registration card in your glovebox or the windshield sticker. Text it to me and I'll set the runway (renew online, takes 5 min).</li>
+        <li><b>E-ZPass</b> · tracked in Money up top — fix the card, everything else here is calm.</li>
+      </ul>
+    </div>
   </div>
   </details>
 
@@ -300,6 +309,7 @@
         <li><b>Have:</b> SummerSlam pass · Gillis Jul 17 ✓</li>
         <li><b>Nova hoops @ Xfinity Mobile Arena (Philly):</b> Wisconsin game + Big 5 Classic (~early Dec) confirmed · full schedule drops late summer — I'll flag every one</li>
         <li><b>Still hunting:</b> Ben Folds (NJ symphony dates just passed — watching for new ones) · dueling pianos · close-up magic · immersive theater</li>
+        <li><b>Experiential radar 🎮:</b> Activate Games @ American Dream (you're-inside-the-video-game — it's there now, ~40 min away) · DreamWorks indoor park + go-karts nearby · VR, escape-the-ordinary stuff, magic shows — I'll flag anything like this that pops up in NJ/NYC</li>
       </ul>
     </div>
   </div>
@@ -308,15 +318,23 @@
   <!-- FUN / GIFTS / PETS -->
   <details class="sec"><summary>🎁 Screens, gifts &amp; Archie <span class="cnt">tap to open</span></summary>
   <div class="bento">
-    <div class="b c4 hov">
+    <div class="b c12 hov">
       <div class="title">📺 Screens radar</div>
-      <div class="meta"><b>Watch NOW:</b> Obsession — on digital Jun 30 · <b>Project Hail Mary — hits Prime Jul 3</b> (Clariss's pick) · Paradise (Clariss's other pick) · finish Hacks — final season complete · Knives Out: Wake Up Dead Man — on Netflix.<br><b>Dates locked:</b> Social Reckoning Oct 9 · Street Fighter Oct 16 · Traitors: New Blood Sep 17 (celebrity edition Jan '27) · Only Murders S6 ~Sep 30.<br><b>Watching for dates:</b> Widow's Bay S2 · Your Friends &amp; Neighbors S3 · Love Island · Too Hot to Handle · Perfect Match · Million Dollar Secret · The Trust · next Knives Out.<br><b>To own:</b> Ken Burns' <i>Baseball</i> + The Tenth Inning.</div>
+      <div class="meta"><b>Watch NOW:</b> Obsession — on digital Jun 30 · <b>Project Hail Mary — hits Prime Jul 3</b> (Clariss's pick) · Paradise (Clariss's other pick) · finish Hacks — final season complete · Knives Out: Wake Up Dead Man — on Netflix.<br><b>Dates locked:</b> Social Reckoning Oct 9 · Street Fighter Oct 16 · Traitors: New Blood Sep 17 (celebrity edition Jan '27) · Only Murders S6 ~Sep 30.<br><b>Watching for dates:</b> Widow's Bay S2 · Your Friends &amp; Neighbors S3 · The Studio next season · The Diplomat next season · Landman next season · Love Island · Too Hot to Handle · Perfect Match · Million Dollar Secret · The Trust · next Knives Out.<br><b>To own:</b> Ken Burns' <i>Baseball</i> + The Tenth Inning.</div>
+      <div class="meta" style="margin-top:10px"><b>🛋️ The backlog — bored? pull anything off this shelf:</b><br>
+      <b>Netflix:</b> Churchill at War · The Diplomat · House of Guinness · No Good Deed · Death by Lightning (JD's rec — Garfield) ·
+      <b>HBO:</b> The Rehearsal S2 · The Tetris Murders · The Cheer Company ·
+      <b>Apple TV+:</b> The Studio ·
+      <b>Prime:</b> Play Nice (easy Ocean's-11-vibes comedy) ·
+      <b>Peacock:</b> Traitors Canada · Celebrity Traitors UK (great) · The 'Burbs ·
+      <b>Paramount+:</b> Landman ·
+      <b>Movie nights:</b> Galaxy Quest · 13 Ghosts · AfrAId · Now You See Me: Now You Don't · The Night Manager S1–2 · Rosencrantz &amp; Guildenstern Are Dead</div>
     </div>
-    <div class="b c4 hov">
+    <div class="b c6 hov">
       <div class="title">🎁 Birthdays &amp; gifts</div>
       <div class="meta"><b>Next up: JD · Sept 8.</b> Inner circle (gift-worthy): JD, Randy, Allie, Jeff Miscagne, Tom D — I'll nudge you ~2 weeks ahead with ideas. <span class="tip" data-tip="All your calendar birthdays now show on the calendar in rose. Christmas list gets tracked from November.">Add Allie's date</span> and I'll lock her in.</div>
     </div>
-    <div class="b c4 hov">
+    <div class="b c6 hov">
       <div class="title">🐾 Archie &amp; the dogs</div>
       <div class="meta"><span class="tip" data-tip="Connect Chewy for food reorders; I'll watch your inbox for vet shot/checkup reminders. Tell me the dogs' names + vet.">Chewy reorders + vet shots</span>. Needs Chewy + your vet.</div>
     </div>
@@ -389,6 +407,7 @@ const TODOS=[
   ['retire403b','Sort the old retirement plan','decide: roll it over or leave it',[]],
   ['bofa','View Bank of America renewal notice','Online Banking → Statements & Documents',[]],
   ['audible','Audible membership started Jul 1','new auto-renewing sub + $20 credit — use it, or cancel before the first charge',[]],
+  ['registration','Text me your registration expiry month','on the card in the glovebox / windshield sticker — then it goes on the calendar with a renewal runway',[]],
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
  ['NYC & social',[
   ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
@@ -442,6 +461,8 @@ let EV=[
  {s:'2026-09-19',title:'Jungle @ Barclays',time:'8:00 PM',type:'pink',note:'Brooklyn · new album "Sunshine" tour · grab tickets'},
  {s:'2026-10-02',e:'2026-10-04',title:'Misciagna wedding',type:'blue',note:'Rennie &amp; Mike · Sundance Mountain Resort, Utah · welcome BBQ Fri · "elevated mountain chic" · michaelandrennie.com (pw: outlaw) · book flights + Archie boarding'},
  {s:'2026-10-16',title:'STREET FIGHTER 🥋',type:'pink',note:'In theaters + IMAX · you&#39;ve been waiting for this one'},
+ {s:'2026-10-31',title:'Halloween 🎃',type:'pink',note:'Falls on a Saturday — prime party night, plan something'},
+ {s:'2026-11-01',title:'Open enrollment opens',type:'amber',note:'Get Covered NJ · Nov 1–Jan 31 · enroll by Dec 31 for Jan 1 coverage · on your Google calendar ✓'},
  {s:'2026-07-06',title:'USA vs Belgium ⚽',type:'pink',note:'World Cup Round of 16 · they beat us 5–2 in March — revenge game · you&#39;re at Mohonk-adjacent, find a TV'},
  {s:'2026-10-09',title:'The Social Reckoning',type:'pink',note:'Sorkin&#39;s Social Network follow-up · Jeremy Strong as Zuck · theaters'},
  {s:'2026-09-15',title:'Q3 taxes',type:'amber',note:'Federal + NJ estimate'},
@@ -501,7 +522,9 @@ const COUNTS=[
  ['🤵','Misciagna wedding','2026-10-02','Sundance, Utah · mountain chic'],
  ['💻','The Social Reckoning','2026-10-09','Sorkin&#39;s Social Network sequel · Jeremy Strong'],
  ['🥋','STREET FIGHTER','2026-10-16','in theaters + IMAX'],
+ ['🎃','Halloween','2026-10-31','Saturday this year — do something'],
  ['🌴','Agora Bahamas','2026-11-12','Atlantis'],
+ ['🦃','Thanksgiving','2026-11-26','food coma incoming'],
  ['🎄','Agora Holiday Gala','2026-12-03','26 West, Red Bank'],
  ['🎅','Christmas','2026-12-25','the big one · + the Schneiderbergers'],
 ];
