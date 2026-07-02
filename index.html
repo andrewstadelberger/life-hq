@@ -43,11 +43,22 @@
   .sub{color:var(--sub);font-size:13.5px}
   .tiny{color:var(--faint);font-size:12px}
   h2{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--sub);text-transform:uppercase;margin:32px 4px 4px}
-  /* hero */
-  .hero{background:linear-gradient(135deg,#e1f5ee,#f4fbf8);border:1px solid var(--mint-l);position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;
-    background:radial-gradient(circle at 35% 35%,rgba(212,83,126,.16),rgba(212,83,126,0) 70%)}
-  .hello{font-size:26px;font-weight:700;letter-spacing:-.025em;color:var(--mint-d)}
+  /* hero — sherbet */
+  .hero{background:linear-gradient(118deg,#ffe9d2 0%,#ffdbe4 34%,#eadcff 64%,#d8f4e9 100%);border:1px solid #ffd9bd;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-50px;top:-50px;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,rgba(255,158,94,.28),rgba(212,83,126,0) 70%)}
+  .hero::before{content:"";position:absolute;left:-60px;bottom:-80px;width:240px;height:240px;border-radius:50%;
+    background:radial-gradient(circle at 60% 40%,rgba(29,158,117,.14),rgba(29,158,117,0) 70%)}
+  .hello{font-size:27px;font-weight:800;letter-spacing:-.025em;
+    background:linear-gradient(90deg,#e0653f,#d4537e 42%,#8a63c9 72%,#0f8f6c);-webkit-background-clip:text;background-clip:text;color:transparent}
+  /* next-up — big + scenic */
+  .next{position:relative;overflow:hidden;background-size:cover;background-position:center bottom}
+  .next::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.55) 55%,rgba(255,255,255,.72))}
+  .next>*{position:relative;z-index:1}
+  .next .ring{width:78px;height:78px}
+  .next .ring i{width:62px;height:62px;font-size:21px}
+  .next .mid{font-size:30px;font-weight:800}
+  .next .tiny{font-size:14px;font-weight:650;color:var(--sub)}
   .spark{font-size:14px;font-weight:600;color:var(--mag-d);margin-top:7px}
   .wx{display:flex;align-items:center;gap:9px;color:var(--mint-d);font-size:14px;margin-top:14px;font-weight:500}
   .countpill{display:inline-block;background:var(--mag-s);color:var(--mag-d);border-radius:999px;padding:6px 15px;font-size:14px;font-weight:700;margin-top:14px}
@@ -128,10 +139,10 @@
   .cd .n small{font-size:11px;font-weight:700;letter-spacing:.02em}
   .cd .lbl{font-size:12.5px;font-weight:650;margin-top:4px;line-height:1.25}
   .cd .s2{font-size:10.5px;opacity:.72;margin-top:2px}
-  .cd0{background:var(--mint-s);color:var(--mint-d)}
-  .cd1{background:var(--mag-s);color:var(--mag-d)}
-  .cd2{background:var(--blue-s);color:var(--blue-d)}
-  .cd3{background:var(--amber-s);color:var(--amber-d)}
+  .cd0{background:linear-gradient(135deg,#ffedd9,#ffe3c4);color:#9a4a12}
+  .cd1{background:linear-gradient(135deg,#ffdfe8,#ffd2df);color:#a83a5c}
+  .cd2{background:linear-gradient(135deg,#ece2ff,#e0d2fb);color:#6d4fa8}
+  .cd3{background:linear-gradient(135deg,#dcf5ea,#cbf0df);color:#0d7a5c}
   details.sec{margin-top:16px}
   details.sec summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--sub);text-transform:uppercase;padding:12px 16px;background:var(--card);border-radius:14px;box-shadow:var(--sh);user-select:none;transition:.15s}
   details.sec summary:hover{color:var(--mag-d)}
@@ -172,11 +183,11 @@
       <div class="countpill" id="countpill">— open</div>
     </div>
     <!-- NEXT UP -->
-    <div class="b c4 hov">
+    <div class="b c4 hov next" id="nextcard">
       <div class="k">Next up</div>
       <div class="statrow"><div class="ring" id="ring"><i id="ringd">—</i></div>
         <div><div class="mid" id="nextfun">—</div><div class="tiny" id="nextfunsub">—</div></div></div>
-      <div class="spark" style="margin-top:10px">Get out there. Be bold. 😎🌴</div>
+      <div class="spark" style="margin-top:12px">Get out there. Be bold. 😎🌴</div>
     </div>
 
     <!-- COUNTDOWN BOARD -->
@@ -298,7 +309,7 @@
     </div>
     <div class="b c4 hov">
       <div class="title">👔 Dress like the man</div>
-      <div class="meta"><b>Misciagna wedding · Oct 2–4 · Sundance UT</b> — "elevated mountain chic." Indochino needs 3–4 weeks → <b>order by Aug 28</b>.<br><b>The vibe, named:</b> agency-boy → Jon Hamm in Friends &amp; Neighbors — modern-classic, 50s/60s clean. The playbook: <b>Suitsupply</b> tailoring (one NYC fitting) · <b>Proper Cloth</b> shirts · Ivy look = Spier &amp; Mackay + J.Press sale rack · <b>the Carmy tee</b> = Whitesville or Merz b. Schwanen heavyweight white (budget: Uniqlo U) · <b>shoes</b> (your usual miss): Thursday Boots ✓ for boots, then Morjas or Meermin loafers, Koio for the clean sneaker — nothing chunky, nothing "agency." Want the tight 10-piece fall kit? Say go.</div>
+      <div class="meta"><b>Misciagna wedding · Oct 2–4 · Sundance UT</b> — "elevated mountain chic." Indochino needs 3–4 weeks → <b>order by Aug 28</b>.<br><b>The vibe, named:</b> agency-boy → Jon Hamm in Friends &amp; Neighbors — modern-classic, 50s/60s clean. The playbook: <b>Suitsupply</b> tailoring (one NYC fitting) · <b>Proper Cloth</b> shirts · Ivy look = Spier &amp; Mackay + J.Press sale rack · <b>the Carmy tee</b> = Whitesville or Merz b. Schwanen heavyweight white (budget: Uniqlo U) · <b>shoes</b> (your usual miss): Thursday Boots ✓ for boots, then Morjas or Meermin loafers, Koio for the clean sneaker — nothing chunky, nothing "agency." Sizes on file: L · 40R · 12. Want the tight 10-piece fall kit? Say go.</div>
     </div>
     <div class="b c4 hov">
       <div class="title">🎟️ Tickets — grab these now</div>
@@ -369,7 +380,7 @@
     </div>
     <div class="b c12 hov">
       <div class="title">🎹 Music practice — you already own the tools</div>
-      <div class="meta"><b>Your courses:</b> your old course purchases live in your <a class="act mint" href="https://www.udemy.com/home/my-courses/" target="_blank" style="display:inline-block">Udemy library ↗</a> (log in with this Gmail — purchases never expire) · you also follow <a class="act mint" href="https://www.pianowithjonny.com/my-account/" target="_blank" style="display:inline-block">Piano With Jonny ↗</a> — if you bought PWJ courses they're behind that login. No receipts survive in your email, so check both; whichever opens to a course list is your guy.<br>
+      <div class="meta"><b>Your piano course — one click:</b> <a class="act mint" href="https://www.udemy.com/home/my-courses/" target="_blank" style="display:inline-block">Open your Udemy library ↗</a> — log in with your personal Gmail, your Jonny/piano course is in there (purchases never expire, even years later). Backup: <a class="act mint" href="https://www.pianowithjonny.com/my-account/" target="_blank" style="display:inline-block">Piano With Jonny login ↗</a> in case part of it lives there. Wall mounts are up, keyboard's ready — just press play on lesson one.<br>
       <b>🎸 Songs to learn:</b> Slow Dancing in a Burning Room — John Mayer (guitar) · Dance With Me — Orleans (guitar) · plus your saved reels: <a href="https://www.instagram.com/reel/DaIsqoWMb-B/" target="_blank">1</a> · <a href="https://www.instagram.com/reel/DaN_Wb-sTxc/" target="_blank">2</a> · <a href="https://www.instagram.com/reel/DV0i_D5kknT/" target="_blank">3</a> · <a href="https://www.instagram.com/reel/DZqapOBBKZY/" target="_blank">4</a> · <a href="https://www.instagram.com/reel/DZzwEaHMI3Z/" target="_blank">5</a> · <a href="https://www.instagram.com/reel/DY764Q9stFy/" target="_blank">6</a> (one of these is your style reference — the color-theory guy — tell me which number and I'll move it to the style card). Keep sending songs — this list grows.</div>
     </div>
     <div class="b c6 hov">
@@ -579,6 +590,22 @@ document.getElementById('nextfunsub').textContent=up[0][1];
 document.getElementById('ring').style.setProperty('--p',Math.max(8,100-nd*1.3));
 document.getElementById('counts').innerHTML=up.map((c,i)=>{const n=dTo(c[2]);
  return '<div class="cd cd'+(i%4)+'"><div class="n">'+(n===0?'TODAY':n===1?'TOMORROW':n+'<small> DAYS</small>')+'</div><div class="lbl">'+c[0]+' '+c[1]+'</div><div class="s2">'+c[3]+'</div></div>';}).join('');
+
+/* ---- scenic backdrop for Next Up ---- */
+const SCENES={
+ mountain:"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'><rect width='400' height='220' fill='#ffe9d2'/><circle cx='318' cy='46' r='30' fill='#ffb264'/><path d='M-10 150 L80 48 L150 132 L215 62 L295 150 Z' fill='#8db8a6'/><path d='M110 160 L235 76 L410 158 Z' fill='#6a9c88'/><rect x='236' y='104' width='58' height='30' fill='#a8523c'/><path d='M230 104 L265 84 L300 104 Z' fill='#7c3a2a'/><rect y='158' width='400' height='62' fill='#a5dcc9'/><path d='M0 165 Q100 172 200 165 T400 165 L400 220 L0 220 Z' fill='#8fd0ba'/></svg>",
+ beach:"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'><rect width='400' height='220' fill='#ffe9d2'/><circle cx='90' cy='52' r='32' fill='#ffb264'/><rect y='120' width='400' height='58' fill='#8fcfe0'/><rect y='178' width='400' height='42' fill='#ffe0b3'/><path d='M300 178 q8-70 -14-92 M300 178 q-4-66 26-88 M300 178 q14-58 42-64' stroke='#3f8f6e' stroke-width='7' fill='none' stroke-linecap='round'/><rect x='296' y='150' width='9' height='34' fill='#8a5a37'/></svg>",
+ stadium:"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'><rect width='400' height='220' fill='#e8ddff'/><ellipse cx='200' cy='150' rx='185' ry='62' fill='#b79ae0'/><ellipse cx='200' cy='142' rx='150' ry='46' fill='#9a77cf'/><ellipse cx='200' cy='138' rx='108' ry='32' fill='#79b894'/><rect x='188' y='58' width='24' height='26' fill='#ffd166'/><rect x='196' y='84' width='8' height='28' fill='#7a6a99'/></svg>",
+ city:"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'><rect width='400' height='220' fill='#ffdbe4'/><circle cx='330' cy='52' r='26' fill='#ffb264'/><rect x='24' y='96' width='42' height='124' fill='#a583c7'/><rect x='78' y='60' width='52' height='160' fill='#8a63c9'/><rect x='142' y='108' width='38' height='112' fill='#b79ae0'/><rect x='192' y='76' width='58' height='144' fill='#9a77cf'/><rect x='262' y='120' width='40' height='100' fill='#a583c7'/><rect x='312' y='92' width='50' height='128' fill='#8a63c9'/></svg>",
+ sun:"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'><rect width='400' height='220' fill='#ffe9d2'/><circle cx='200' cy='120' r='58' fill='#ffb264'/><rect y='150' width='400' height='70' fill='#ffd2df'/></svg>"
+};
+function sceneFor(n){n=n.toLowerCase();
+ if(/mohonk|placid|sundance|misciagna/.test(n))return 'mountain';
+ if(/chapel|bahamas|beach|lbi/.test(n))return 'beach';
+ if(/summerslam|alonso|barclays|minneapolis|belgium|open champ|jungle @/.test(n))return 'stadium';
+ if(/gillis|linc|reckoning|street|philly|nyc|gala|bamford|voodoo/.test(n))return 'city';
+ return 'sun';}
+document.getElementById('nextcard').style.backgroundImage="url(\"data:image/svg+xml;utf8,"+encodeURIComponent(SCENES[sceneFor(up[0][1]+' '+up[0][3])])+"\")";
 function greet(){const h=new Date().getHours(),g=h<12?'Good morning':h<18?'Good afternoon':'Good evening';
  document.getElementById('hello').textContent=g+', Andrew';
  document.getElementById('today').textContent=TODAY.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
