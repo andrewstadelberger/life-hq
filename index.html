@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Life HQ</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231d9e75'/%3E%3Cstop offset='1' stop-color='%23d4537e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Cpath d='M32 11c2.2 12.6 8.4 18.8 21 21-12.6 2.2-18.8 8.4-21 21-2.2-12.6-8.4-18.8-21-21 12.6-2.2 18.8-8.4 21-21z' fill='%23fff'/%3E%3Ccircle cx='49' cy='15' r='3.5' fill='%23fff' opacity='.85'/%3E%3Ccircle cx='15' cy='49' r='2.5' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231d9e75'/%3E%3Cstop offset='1' stop-color='%23d4537e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' fill='url(%23g)'/%3E%3Cpath d='M32 11c2.2 12.6 8.4 18.8 21 21-12.6 2.2-18.8 8.4-21 21-2.2-12.6-8.4-18.8-21-21 12.6-2.2 18.8-8.4 21-21z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <style>
   :root{
     color-scheme:light;
@@ -116,6 +116,17 @@
   .watch{background:linear-gradient(135deg,#fbeaf0,#fff);border:1px solid var(--mag-l)}
   .care{background:linear-gradient(135deg,#e1f5ee,#fff);border:1px solid var(--mint-l)}
   .foot{text-align:center;color:var(--faint);font-size:12px;margin-top:32px;line-height:1.7}
+  .cdgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:10px;margin-top:12px}
+  .cd{border-radius:14px;padding:11px 13px;transition:transform .15s}
+  .cd:hover{transform:translateY(-2px)}
+  .cd .n{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .cd .n small{font-size:11px;font-weight:700;letter-spacing:.02em}
+  .cd .lbl{font-size:12.5px;font-weight:650;margin-top:4px;line-height:1.25}
+  .cd .s2{font-size:10.5px;opacity:.72;margin-top:2px}
+  .cd0{background:var(--mint-s);color:var(--mint-d)}
+  .cd1{background:var(--mag-s);color:var(--mag-d)}
+  .cd2{background:var(--blue-s);color:var(--blue-d)}
+  .cd3{background:var(--amber-s);color:var(--amber-d)}
   details.sec{margin-top:16px}
   details.sec summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--sub);text-transform:uppercase;padding:12px 16px;background:var(--card);border-radius:14px;box-shadow:var(--sh);user-select:none;transition:.15s}
   details.sec summary:hover{color:var(--mag-d)}
@@ -151,16 +162,23 @@
       <span class="clock" id="clock"></span>
       <div class="hello" id="hello">Good evening, Andrew</div>
       <div class="tiny" id="today" style="margin-top:4px"></div>
-      <div class="spark">Mohonk tomorrow — drop Archie at Purr'n Pooch 12–3 PM, then go unplug.</div>
+      <div class="spark">Mohonk tomorrow — drop Archie 12–3, then go unplug. Happy to be alive, baby. 🌴</div>
       <div class="wx"><span style="font-size:18px">&#128293;</span>~103&deg; · EXTREME HEAT WARNING thru Jul 4 — stay in the AC, hydrate <span class="tiny" style="color:var(--mint-d)">· Middletown, NJ</span></div>
       <div class="countpill" id="countpill">— open</div>
     </div>
-    <!-- COUNTDOWNS -->
+    <!-- NEXT UP -->
     <div class="b c4 hov">
-      <div class="k">Counting down to fun</div>
+      <div class="k">Next up</div>
       <div class="statrow"><div class="ring" id="ring"><i id="ringd">—</i></div>
         <div><div class="mid" id="nextfun">—</div><div class="tiny" id="nextfunsub">—</div></div></div>
-      <ul class="tl" id="counts" style="margin-top:10px"></ul>
+      <div class="spark" style="margin-top:10px">Get out there. Be bold. 😎🌴</div>
+    </div>
+
+    <!-- COUNTDOWN BOARD -->
+    <div class="b c12">
+      <div class="todohead"><div class="mid">🎉 Counting down to fun</div><div class="k">every one of these is a reason to smile</div></div>
+      <div class="cdgrid" id="counts"></div>
+      <div class="meta" style="margin-top:12px">🏖️ <b>No countdown needed:</b> LBI is always right there for a beach day · Soho House is yours while you still have it (use it or lose it — literally, it's on your kill list). Just go.</div>
     </div>
 
     <!-- TODOS CENTERPIECE -->
@@ -198,7 +216,7 @@
   <!-- FINANCES -->
 
   <!-- TRIPS & NYC -->
-  <details class="sec" open><summary>Trips &amp; NYC crew</summary>
+  <details class="sec" open><summary>✈️ Trips &amp; adventures</summary>
   <div class="bento">
     <div class="b c4 hov">
       <div class="title">✈️ Minneapolis · SummerSlam</div>
@@ -222,7 +240,7 @@
   </details>
 
   <!-- DATES TO KNOW -->
-  <details class="sec"><summary>Dates to know · banks &amp; taxes <span class="cnt">tap to open</span></summary>
+  <details class="sec"><summary>🏦 Boring-but-important dates <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c6 hov">
       <div class="title">🏦 Bank holidays <span class="sub" style="font-weight:400">— banks &amp; most people offline</span></div>
@@ -248,7 +266,7 @@
   </details>
 
   <!-- PARTIES / ATTIRE / TICKETS -->
-  <details class="sec" open><summary>Coming up · what to wear · tickets</summary>
+  <details class="sec" open><summary>🥂 Parties · fits · tickets</summary>
   <div class="bento">
     <div class="b c4 hov">
       <div class="title">🥂 Parties</div>
@@ -259,25 +277,34 @@
         <li><b>Drew Tig @ Chapel Beach Club</b> · Sun Jul 26 · Sea Bright · time TBD · on your calendar ✓</li>
         <li><b>Gordon Daniels @ MBBT</b> · Fri Aug 7, 5 PM · Monmouth Beach ✓</li>
         <li><b>Hendo's White Party</b> · Sun Sep 6, 5:30 PM · w/ Gordon Daniels · wear white ✓</li>
+        <li><b>Misciagna wedding</b> · Oct 2–4 · Sundance, Utah · mountain chic ✓</li>
+        <li><b>Schneiderberger wedding</b> · <b>date TBD — text it to me</b></li>
       </ul>
     </div>
     <div class="b c4 hov">
       <div class="title">👔 When you need a suit</div>
-      <div class="meta">Weddings &amp; black-tie → <span class="tip" data-tip="You order from Indochino (~3–4 wk lead). Give me dates + cities and I'll set the order deadline.">order from Indochino early</span>. Send me any wedding dates and I'll back-plan.</div>
+      <div class="meta"><b>Misciagna wedding · Oct 2–4 · Sundance UT</b> — "elevated mountain chic." Indochino needs 3–4 weeks → <b>order by Aug 28</b>. And text me the <b>Schneiderberger wedding</b> date so I can back-plan that one too.</div>
     </div>
     <div class="b c4 hov">
-      <div class="title">🎟️ Tickets</div>
-      <ul class="tl"><li><b>Have:</b> SummerSlam 2-day pass · Shane Gillis Jul 17</li><li><b>Watching:</b> Ben Folds · Jungle · dueling pianos · close-up magic · immersive theater</li></ul>
+      <div class="title">🎟️ Tickets — grab these now</div>
+      <ul class="tl">
+        <li><b>Jungle @ Barclays</b> · Sat Sep 19 · new album tour — will sell</li>
+        <li><b>Alonso's return, Citi Field</b> · Sep 14 · Bryant's bday — get 2</li>
+        <li><b>Jared Freid @ the Vogel</b> · Thu Jul 16 · Red Bank comedy, your vibe</li>
+        <li><b>Juston McKinney @ the Vogel</b> · Thu Aug 6 · chill comedy room</li>
+        <li><b>Have:</b> SummerSlam pass · Gillis Jul 17 ✓</li>
+        <li><b>Still hunting:</b> Ben Folds (NJ symphony dates just passed — watching for new ones) · dueling pianos · close-up magic · immersive theater</li>
+      </ul>
     </div>
   </div>
   </details>
 
   <!-- FUN / GIFTS / PETS -->
-  <details class="sec"><summary>Life, gifts &amp; the dogs <span class="cnt">tap to open</span></summary>
+  <details class="sec"><summary>🎁 Screens, gifts &amp; Archie <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c4 hov">
-      <div class="title">🎭 Fun radar — now watching</div>
-      <div class="meta"><b>Ben Folds</b> (NJ dates) · <b>Jungle</b> · <b>dueling pianos</b> (any NJ/NYC) · <b>close-up magic</b> · <b>Sleep No More-style immersive theater</b>. Checked on every refresh. Local favorites on file: Silverball arcade + chill comedy in Asbury, Red Bank nights, Life Time Red Bank.</div>
+      <div class="title">📺 Screens radar — dates locked</div>
+      <div class="meta"><b>Street Fighter</b> · Oct 16, theaters + IMAX · <b>Traitors: New Blood</b> · Sep 17, NBC (celebrity Traitors follows Jan '27 on Peacock) · <b>Only Murders S6</b> · ~Sep 30, London season · <b>Widow's Bay S2</b> · renewed Jun 11, date TBA — watching · <b>Your Friends &amp; Neighbors</b> · S2 wrapped Jun 5, watching for S3 news.</div>
     </div>
     <div class="b c4 hov">
       <div class="title">🎁 Birthdays &amp; gifts</div>
@@ -331,7 +358,7 @@
   </div>
   </details>
 
-  <div class="foot">Built from your inbox + what you told me · Updated Thu, Jul 2 · refreshes daily.<br>Tap any day for detail · check off to-dos as you go.</div>
+  <div class="foot">Life HQ — half get-on-your-shit machine, half fun tracker · Updated Thu, Jul 2 · refreshes daily.<br>Tap any day for detail · check off to-dos as you go · be bold.</div>
 </div>
 
 <script>
@@ -365,7 +392,10 @@ const TODOS=[
   ['lakeplacid','Accept the Lake Placid invite','Jul 22–25 · Interlaken Inn w/ Allie · conf 7C8Z7B76 — say yes on the calendar invite','Jul 22'],
   ['villanova','Villanova golf outing — register or decline','Jul 20 · Woodway CC, Darien CT · 2 days before Lake Placid','Jul 20'],
   ['risingbenefit','RSVP Rising Treetops Summer Benefit','7 PM gala · counts as your giving','Jul 18'],
-  ['hotel','Book Minneapolis hotel','SummerSlam','Jul 30'] ]],
+  ['hotel','Book Minneapolis hotel','SummerSlam','Jul 30'],
+  ['suit','Order Indochino — Misciagna wedding','"elevated mountain chic" · Sundance UT Oct 2–4 · 3–4 wk lead time','Aug 28'],
+  ['alonsotix','Get Mets–O&#39;s tickets for Bryant&#39;s bday','Sep 14, Citi Field · Alonso&#39;s first game back — perfect gift + night out','Sep 14'],
+  ['schneidwed','Text me the Schneiderberger wedding date','not on your calendar — send it and I&#39;ll add it + back-plan the suit',[]] ]],
  ['Watching',[
   ['watch1','Personal matters','tracked in the private copy',[]] ]],
 ];
@@ -402,6 +432,10 @@ let EV=[
  {s:'2026-08-01',e:'2026-08-02',title:'SummerSlam',type:'blue',note:'2-day pass — in hand'},
  {s:'2026-08-07',title:'Gordon Daniels',time:'5:00 PM',type:'pink',note:'@ MBBT · smart casual'},
  {s:'2026-09-06',title:'White Party',time:'5:30 PM',type:'pink',note:"Hendo's · wear white"},
+ {s:'2026-09-14',title:'Alonso back at Citi',time:'7:10 PM',type:'pink',note:'Mets vs Orioles · Pete&#39;s first game back in NY · Bryant&#39;s birthday — take him! Series runs Sep 14–16'},
+ {s:'2026-09-19',title:'Jungle @ Barclays',time:'8:00 PM',type:'pink',note:'Brooklyn · new album "Sunshine" tour · grab tickets'},
+ {s:'2026-10-02',e:'2026-10-04',title:'Misciagna wedding',type:'blue',note:'Rennie &amp; Mike · Sundance Mountain Resort, Utah · welcome BBQ Fri · "elevated mountain chic" · michaelandrennie.com (pw: outlaw) · book flights + Archie boarding'},
+ {s:'2026-10-16',title:'STREET FIGHTER 🥋',type:'pink',note:'In theaters + IMAX · you&#39;ve been waiting for this one'},
  {s:'2026-09-15',title:'Q3 taxes',type:'amber',note:'Federal + NJ estimate'},
  {s:'2026-10-15',title:'Extended return',type:'amber',note:'2025 return due if extended'},
  {s:'2026-07-03',e:'2026-07-05',title:'Mohonk',type:'blue',note:'Mohonk Mountain House · Fri–Sun getaway · Archie boarded at Purr&#39;n Pooch ✓ (drop 12–3 PM Jul 3)'},
@@ -444,21 +478,31 @@ document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-07-01T12:00'
 
 /* ---- tiles + clock ---- */
 const COUNTS=[
- ['🏔️ Mohonk getaway','2026-07-03'],
- ['🎤 Shane Gillis · Philly','2026-07-17'],
- ['🏞️ Lake Placid w/ Allie','2026-07-22'],
- ['✈️ Minneapolis · SummerSlam','2026-07-30'],
- ['🌴 Agora Bahamas','2026-11-12'],
- ['🎄 Agora Holiday Gala','2026-12-03'],
+ ['🏔️','Mohonk getaway','2026-07-03','unplug all weekend'],
+ ['🎤','Shane Gillis · the Linc','2026-07-17','Philly · w/ Allie'],
+ ['🏞️','Lake Placid w/ Allie','2026-07-22','Interlaken Inn'],
+ ['🍹','Chapel Beach Club','2026-07-26','Drew Tig · Sea Bright'],
+ ['✈️','Minneapolis · SummerSlam','2026-07-30','tickets in hand'],
+ ['🎧','Jungle — new album','2026-08-14','"Sunshine" drops'],
+ ['⚾','Alonso back at Citi','2026-09-14','Mets vs O&#39;s · Bryant&#39;s bday'],
+ ['🗡️','Traitors: New Blood','2026-09-17','NBC premiere'],
+ ['🕺','Jungle @ Barclays','2026-09-19','grab tix'],
+ ['🔪','Only Murders S6','2026-09-30','London season'],
+ ['🤵','Misciagna wedding','2026-10-02','Sundance, Utah · mountain chic'],
+ ['🥋','STREET FIGHTER','2026-10-16','in theaters + IMAX'],
+ ['🌴','Agora Bahamas','2026-11-12','Atlantis'],
+ ['🎄','Agora Holiday Gala','2026-12-03','26 West, Red Bank'],
+ ['🎅','Christmas','2026-12-25','the big one'],
 ];
 const dTo=d=>Math.max(0,Math.ceil((new Date(d+'T09:00:00-04:00')-TODAY)/864e5));
-const up=COUNTS.filter(c=>dTo(c[1])>=0);
-const nd=dTo(up[0][1]);
+const up=COUNTS.filter(c=>dTo(c[2])>=0);
+const nd=dTo(up[0][2]);
 document.getElementById('ringd').textContent=nd;
 document.getElementById('nextfun').textContent=nd===0?'Today!':nd===1?'Tomorrow!':nd+' days';
-document.getElementById('nextfunsub').textContent=up[0][0].replace(/^\S+\s/,'');
+document.getElementById('nextfunsub').textContent=up[0][1];
 document.getElementById('ring').style.setProperty('--p',Math.max(8,100-nd*1.3));
-document.getElementById('counts').innerHTML=up.slice(1).map(c=>{const n=dTo(c[1]);return '<li><b>'+c[0]+'</b> — '+(n===0?'today':n===1?'tomorrow':n+' days')+'</li>';}).join('');
+document.getElementById('counts').innerHTML=up.map((c,i)=>{const n=dTo(c[2]);
+ return '<div class="cd cd'+(i%4)+'"><div class="n">'+(n===0?'TODAY':n===1?'TOMORROW':n+'<small> DAYS</small>')+'</div><div class="lbl">'+c[0]+' '+c[1]+'</div><div class="s2">'+c[3]+'</div></div>';}).join('');
 function greet(){const h=new Date().getHours(),g=h<12?'Good morning':h<18?'Good afternoon':'Good evening';
  document.getElementById('hello').textContent=g+', Andrew';
  document.getElementById('today').textContent=TODAY.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
