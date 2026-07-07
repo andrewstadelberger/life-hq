@@ -147,6 +147,12 @@
   .blk.p{border-color:#ff9e5e}.blk.r{border-color:#f4739d}.blk.l{border-color:#a583ea}.blk.m{border-color:#2fbf94}
   .blk .h{display:block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
   .blk.p .h{color:#c05a17}.blk.r .h{color:#c23a67}.blk.l .h{color:#7350b5}.blk.m .h{color:#0d8a68}
+  /* song cards */
+  .songgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:9px;margin-top:10px}
+  .song{border-radius:12px;padding:10px 12px;background:#fdfcfa;border:1px solid var(--hair);transition:transform .15s}
+  .song:hover{transform:translateY(-2px)}
+  .song b{display:block;font-size:12.5px;line-height:1.3}
+  .song .s2{font-size:10.5px;color:var(--sub);margin:2px 0 7px}
   /* people map */
   .mapwrap{position:relative;height:220px;border-radius:16px;margin-top:12px;overflow:hidden;
     background:linear-gradient(135deg,#fff3e6,#ffe3ee 38%,#ecdffd 68%,#dcf5ec);
@@ -228,7 +234,7 @@
       <div class="blk r"><span class="h">The fix list</span>
         <b>Hip + groin — priority, they're wrecking you</b> · deep tissue shoulders &amp; neck · carpal tunnel (hand) · full assisted-stretch session. Next refresh I'll shortlist the best-reviewed local spots for each — hand specialist included.</div>
       <div class="blk p"><span class="h">One-tap booking</span>
-        <a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a> — or just text me <i>"book Kyle Tuesday afternoon"</i> or <i>"hip massage this week"</i> and I'll line it up in your browser and confirm with you before anything's locked.</div>
+        <a class="act" style="display:inline-block" href="https://www.zocdoc.com" target="_blank">Your doctor ↗</a> &nbsp;<a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a> — or just text me <i>"book Kyle Tuesday afternoon"</i> or <i>"hip massage this week"</i> and I'll line it up in your browser and confirm with you before anything's locked.</div>
     </div>
 
     <!-- CALENDAR -->
@@ -251,12 +257,12 @@
 
     <!-- WATCHING -->
     <div class="b c4 watch">
-      <div class="title"><span style="margin-right:5px">&#128276;</span>Personal matter</div>
-      <div class="meta" style="color:var(--mag-d)">Tracking a private personal/legal matter here — the specifics are kept off the public page.</div>
-      
+      <div class="title"><span style="margin-right:5px">&#128276;</span>Watching</div>
+      <div class="meta" style="color:var(--mag-d)">Keeping an eye on a few personal matters for you — details live in the private copy.</div>
     </div>
   </div>
 
+  <!-- FINANCES -->
 
   <!-- TRIPS & NYC -->
   <details class="sec" open><summary>✈️ Trips &amp; adventures</summary>
@@ -407,7 +413,23 @@
     <div class="b c12 hov">
       <div class="title">🎹 Music practice — you already own the tools</div>
       <div class="meta"><b>Your piano course — one click:</b> <a class="act mint" href="https://www.udemy.com/home/my-courses/" target="_blank" style="display:inline-block">Open your Udemy library ↗</a> — log in with your personal Gmail, your Jonny/piano course is in there (purchases never expire, even years later). Backup: <a class="act mint" href="https://www.pianowithjonny.com/my-account/" target="_blank" style="display:inline-block">Piano With Jonny login ↗</a> in case part of it lives there. Wall mounts are up, keyboard's ready — just press play on lesson one.<br>
-      <b>🎸 Songs to learn:</b> Slow Dancing in a Burning Room — John Mayer (guitar) · Dance With Me — Orleans (guitar) · plus your saved reels: <a href="https://www.instagram.com/reel/DaIsqoWMb-B/" target="_blank">1</a> · <a href="https://www.instagram.com/reel/DaN_Wb-sTxc/" target="_blank">2</a> · <a href="https://www.instagram.com/reel/DV0i_D5kknT/" target="_blank">3</a> · <a href="https://www.instagram.com/reel/DZqapOBBKZY/" target="_blank">4</a> · <a href="https://www.instagram.com/reel/DZzwEaHMI3Z/" target="_blank">5</a> · <a href="https://www.instagram.com/reel/DY764Q9stFy/" target="_blank">6</a> (one of these is your style reference — the color-theory guy — tell me which number and I'll move it to the style card). Keep sending songs — this list grows.</div>
+      <b>🎸 Songs to learn</b> — tap any card to open it. Keep sending songs; one of reels 1–6 is your color-theory style ref, tell me which and I'll move it to the style card.</div>
+      <div class="songgrid">
+        <div class="song"><b>Slow Dancing in a Burning Room</b><div class="s2">John Mayer · guitar</div><a class="act mint" href="https://www.youtube.com/results?search_query=slow+dancing+in+a+burning+room+guitar+lesson" target="_blank">Lesson ↗</a></div>
+        <div class="song"><b>Dance With Me</b><div class="s2">Orleans · guitar</div><a class="act mint" href="https://www.youtube.com/results?search_query=dance+with+me+orleans+guitar+lesson" target="_blank">Lesson ↗</a></div>
+        <div class="song"><b>Reel 1</b><div class="s2">Instagram · piano/guitar</div><a class="act" href="https://www.instagram.com/reel/DaIsqoWMb-B/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 2</b><div class="s2">Instagram · piano/guitar</div><a class="act" href="https://www.instagram.com/reel/DaN_Wb-sTxc/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 3</b><div class="s2">Instagram · piano/guitar</div><a class="act" href="https://www.instagram.com/reel/DV0i_D5kknT/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 4</b><div class="s2">Instagram · piano/guitar</div><a class="act" href="https://www.instagram.com/reel/DZqapOBBKZY/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 5</b><div class="s2">Instagram · piano/guitar</div><a class="act" href="https://www.instagram.com/reel/DZzwEaHMI3Z/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 6</b><div class="s2">Instagram · piano/guitar</div><a class="act" href="https://www.instagram.com/reel/DY764Q9stFy/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 7 <span style="color:var(--mag-d)">NEW</span></b><div class="s2">Instagram · added Jul 2</div><a class="act" href="https://www.instagram.com/reel/DZv3ntbp_RT/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 8 <span style="color:var(--mag-d)">NEW</span></b><div class="s2">Instagram · added Jul 2</div><a class="act" href="https://www.instagram.com/reel/DZgXOHVpZDi/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 9 <span style="color:var(--mag-d)">NEW</span></b><div class="s2">Instagram · added Jul 2</div><a class="act" href="https://www.instagram.com/reel/DY71kVCMNKn/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 10 <span style="color:var(--mag-d)">NEW</span></b><div class="s2">Instagram · added Jul 2</div><a class="act" href="https://www.instagram.com/reel/DZJoJG7RPRO/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>Reel 11 <span style="color:var(--mag-d)">NEW</span></b><div class="s2">Instagram · added Jul 2</div><a class="act" href="https://www.instagram.com/reel/DYt64PWRnZh/" target="_blank">Open ↗</a></div>
+        <div class="song"><b>YouTube pick <span style="color:var(--mag-d)">NEW</span></b><div class="s2">YouTube · added Jul 2</div><a class="act" href="https://youtu.be/QKoDUapOMUg" target="_blank">Open ↗</a></div>
+      </div>
     </div>
     <div class="b c6 hov">
       <div class="title">🐾 Archie &amp; the dogs</div>
@@ -484,22 +506,22 @@ const tkey='2026-07-07';
 /* ---- TO-DOS ---- */
 const TODOS=[
  ['Calls & bookings',[
-  ['physical','Book annual physical','with your primary doctor',[]],
-  ['dentist','Book dentist','call your dental office',[]],
+  ['physical','Book annual physical','get it on the books',[]],
+  ['dentist','Book dentist','routine cleaning · online booking',[]],
   ['car','Schedule car service','Middletown · Mon–Fri',[['Call','tel:+17327418408',1]]],
   ['hair','Book haircut','Kyle @ Prosecco · monthly',[['Book Kyle','https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287',1]]],
   ['archlp','Book Archie&#39;s boarding for Lake Placid','Jul 22–25 · Purr&#39;n Pooch — his Mohonk stay is done ✓, but no Lake Placid confirmation in your inbox yet',[['Purr&#39;n Pooch','https://www.purrnpooch.com',1]]],
-  ['audiservice','Check the Mercedes-Benz GLC service email','A dealer sent a &quot;Vehicle Care Report — Service Due&quot; for a Mercedes-Benz GLC on Jul 5 — you drive an Audi, so this is either a mix-up or a car you didn&#39;t mention. Worth a quick check.',[]],
+  ['audiservice','Check the Mercedes-Benz GLC service email','Audi Eatontown &amp; CA sent a &quot;Vehicle Care Report — Service Due&quot; for a Mercedes-Benz GLC on Jul 5 — you drive an Audi, so this is either a shared dealer mix-up or a car you didn&#39;t mention. Worth a quick check.',[]],
   ['audi','Get car title','Audi Financial',[['Call','tel:+18882372834',0],['myAudi','https://www.audiusa.com/en/myaudi/',0]]],
   ['ezpass','Fix E-ZPass — it&#39;s one 10-minute job','Don&#39;t panic: the root cause is your Amex on file started declining (Apr 26) so auto-replenish has failed ever since → statements piled up → Jun 27 revocation warning. Log in, update the card, replenish. All the scary emails stop.',[['Log in','https://www.ezpassnj.com',0]]] ]],
  ['Money',[
   ['soho','Cancel Soho House membership','stop the spend — still active',[]],
   ['subs','Kill the auto-renewals','1Password $36→$48 Jul 24 · LegalZoom renewing · Intego auto-renewed Jun 28 · GoDaddy domains expiring',[]],
-  ['fidelity403b','Roll over old CBS 403B','old employer retirement plan — roll to an IRA or leave it, just decide',[['Call your brokerage','tel:+18779020006',0]]],
+  ['retire403b','Sort the old retirement plan','decide: roll it over or leave it',[]],
   ['bofa','View Bank of America renewal notice','Online Banking → Statements & Documents',[]],
   ['audible','Audible membership started Jul 1','new auto-renewing sub + $20 credit — use it, or cancel before the first charge',[]],
-  ['bofacard','New Bank of America card shipped','Reason given: "expiring card" · shipped Jul 6, arrives in 7–10 business days — no action needed, just watch for it',[]],
-  ['amexcheck','Verify which card just paid your Amex AutoPay','A payment processed Jul 4 — if that&#39;s the same Amex that&#39;s been declining on E-ZPass, the card may be working again; worth a quick check before you spend time swapping it out',[]],
+  ['bofacard','New Bank of America card shipped','Reason given: "expiring card" · ending 2509 · shipped Jul 6, arrives in 7–10 business days — no action needed, just watch for it',[]],
+  ['amexcheck','Verify which card just paid your Amex AutoPay','$9,194.30 processed Jul 4 on the card ending 35006 — if that&#39;s the same Amex that&#39;s been declining on E-ZPass, the card may be working again; worth a quick check before you spend time swapping it out',[]],
   ['applecharges','Review your Apple charges','Receipts landing every 1–2 weeks (most recent Jul 4, &quot;Monthly Access&quot;) — AppleCare+ was also canceled May 12. Worth a quick look to make sure nothing&#39;s double-billing.',[]],
   ['registration','Text me your registration expiry month','on the card in the glovebox / windshield sticker — then it goes on the calendar with a renewal runway',[]],
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
@@ -518,7 +540,7 @@ const TODOS=[
   ['alonsotix','Get Mets–O&#39;s tickets for Bryant&#39;s bday','Sep 14, Citi Field · Alonso&#39;s first game back — perfect gift + night out','Sep 14'],
  ]],
  ['Watching',[
-  ['vsst','Track a personal matter','details kept private on the public page',[]] ]],
+  ['watch1','Personal matters','tracked in the private copy',[]] ]],
 ];
 let total=0,done=0;const tg=document.getElementById('todos');
 TODOS.forEach(grp=>{const h=document.createElement('div');h.className='gh';h.textContent=grp[0];tg.appendChild(h);
@@ -542,15 +564,15 @@ prog();
 /* ---- EVENTS ---- */
 let EV=[
  {s:'2026-07-09',title:'Kat Henderson — lunch/hang',time:'',type:'pink',note:'Kathryn Henderson (kathryn@vsnyc.tv) invited you — the calendar invite reads dinner/hang 7–9 PM, but you mentioned grabbing lunch. Confirm lunch vs. dinner + time, then accept.'},
- {s:'2026-07-20',e:'2026-07-21',title:'Personal matter (optional)',type:'amber',note:'A private personal/legal matter — details kept off the public page'},
+ {s:'2026-07-20',e:'2026-07-21',title:'DC trip (optional)',type:'amber',note:'Optional two-day event in Washington DC · details in the private copy · your call'},
  {s:'2026-07-17',title:'Shane Gillis',time:'7:00 PM',type:'pink',note:'CORRECTED: Fri Jul 17, Lincoln Financial Field, Philadelphia · w/ Allie (her Christmas gift) · on your calendar, both accepted ✓'},
  {s:'2026-07-22',e:'2026-07-25',title:'Lake Placid',type:'blue',note:'Interlaken Inn w/ Allie · The Carriage House · conf 7C8Z7B76 · (518) 241-8855 · NEW from your inbox — accept the invite + book Archie&#39;s boarding'},
  {s:'2026-07-20',title:'Villanova golf outing',time:'10:30 AM',type:'pink',note:'Invited, not registered · Villanova Basketball Golf Outing · Woodway CC, Darien CT · 10:30 AM–8 PM · register or decline'},
  {s:'2026-07-26',title:'Drew Tig · Chapel Beach Club',type:'pink',note:'Sea Bright · time TBD — check the invite · on your calendar ✓ · day after Lake Placid, easy'},
  {s:'2026-07-14',title:'Agora meetup',time:'5:30 PM',type:'teal',note:'Dorbrook Park'},
- {s:'2026-07-19',title:'BlueClaws World Cup Watch Party ⚽',time:'',type:'pink',note:'NEW · Jersey Shore BlueClaws + Ocean County Tourism · free World Cup Final watch party &amp; Youth Soccer Skills Day in ShoreTown — landed in your inbox Jul 6'},
+ {s:'2026-07-19',title:'WORLD CUP FINAL 🏆',type:'pink',note:'MetLife Stadium — 40 min from your door · QF Jul 9–11 · Semis Jul 14–15 · easiest plan: free BlueClaws watch party @ ShoreTown (invite in your inbox) — or be bold and hunt a ticket to the actual Final'},
  {s:'2026-07-18',title:'Rising Treetops Benefit',time:'7:00 PM',type:'pink',note:'Summer Benefit gala · "Growing Stronger Together" · Rumson, NJ · $56,360 raised so far · counts toward your giving — RSVP'},
- {s:'2026-07-25',title:'Rent due',time:'',type:'amber',note:'Rent · next cycle'},
+ {s:'2026-07-25',title:'Rent due',time:'',type:'amber',note:'Monthly rent — July handled ✓'},
  {s:'2026-07-30',e:'2026-08-04',title:'Minneapolis',type:'blue',note:'SummerSlam trip · Delta, conf H6WZVC'},
  {s:'2026-08-01',e:'2026-08-02',title:'SummerSlam',type:'blue',note:'2-day pass — in hand'},
  {s:'2026-08-07',title:'Gordon Daniels',time:'5:00 PM',type:'pink',note:'@ MBBT · smart casual'},
@@ -583,7 +605,7 @@ let EV=[
 [['2026-07-03','Independence Day'],['2026-09-07','Labor Day'],['2026-10-12','Columbus Day'],['2026-11-11','Veterans Day'],['2026-11-26','Thanksgiving'],['2026-12-25','Christmas']]
  .forEach(h=>EV.push({s:h[0],title:h[1],type:'gray',bank:1,note:'Bank holiday — banks & most people offline.'}));
 {let d=new Date('2026-07-02T07:00:00');for(let i=0;i<20;i++){const x=new Date(d.getTime()+i*7*864e5);EV.push({s:x.toISOString().slice(0,10),title:'Agora Zoom',time:'7:00 AM',type:'teal',note:'Sacred Time · ID 872 7821 7343'});}}
-['2026-08-25','2026-09-25','2026-10-25','2026-11-25','2026-12-25'].forEach(d=>EV.push({s:d,title:'Rent due',type:'amber',note:'Rent · monthly, 25th'}));
+['2026-08-25','2026-09-25','2026-10-25','2026-11-25','2026-12-25'].forEach(d=>EV.push({s:d,title:'Rent due',type:'amber',note:'Monthly rent · 25th'}));
 [['2026-09-08','JD',1],['2026-09-14','Bryant',0],['2026-10-28','Steve Silva',0],['2027-01-20','Randy Wilder',1],['2027-01-24','Ryan Driscoll',0],['2027-02-12','Dad',1],['2027-03-16','Kat Henderson',0],['2027-04-03','Paul Molzon',0],['2027-05-13','Tom D',1],['2027-05-16','Jeff Miscagne',1]].forEach(b=>EV.push({s:b[0],title:b[1]+' 🎂',type:'bday',note:b[2]?'Close friend — order a gift ~2 weeks ahead':'Birthday'}));
 const BY={};EV.forEach(ev=>{const s=new Date(ev.s+'T12:00'),e=ev.e?new Date(ev.e+'T12:00'):s;for(let d=new Date(s);d<=e;d.setDate(d.getDate()+1)){const k=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());(BY[k]=BY[k]||[]).push(ev);}});
 
@@ -608,7 +630,7 @@ document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-07-01T12:00'
 const COUNTS=[
  ['🥗','Lunch with Kat Henderson','2026-07-09','confirm the time'],
  ['🎉','Levy backyard bash','2026-07-10','Rumson · Pat Roddy Band · 6 PM'],
- ['⚽','BlueClaws World Cup Watch Party','2026-07-19','ShoreTown · free · Youth Soccer Skills Day too'],
+ ['🏆','WORLD CUP FINAL','2026-07-19','@ MetLife, 40 min away · BlueClaws watch party = easy plan'],
  ['🎤','Shane Gillis · the Linc','2026-07-17','Philly · w/ Allie'],
  ['🏞️','Lake Placid w/ Allie','2026-07-22','Interlaken Inn'],
  ['🍹','Chapel Beach Club','2026-07-26','Drew Tig · Sea Bright'],
@@ -629,8 +651,9 @@ const COUNTS=[
  ['🎄','Agora Holiday Gala','2026-12-03','26 West, Red Bank'],
  ['🎅','Christmas + Schneiderbergers','2026-12-25','the annual tradition · same day every year'],
 ];
-const dTo=d=>Math.max(0,Math.ceil((new Date(d+'T09:00:00-04:00')-TODAY)/864e5));
-const up=COUNTS.filter(c=>dTo(c[2])>=0);
+const dToRaw=d=>Math.ceil((new Date(d+'T09:00:00-04:00')-TODAY)/864e5);
+const dTo=d=>Math.max(0,dToRaw(d));
+const up=COUNTS.filter(c=>dToRaw(c[2])>=0);
 const nd=dTo(up[0][2]);
 document.getElementById('ringd').textContent=nd;
 document.getElementById('nextfun').textContent=nd===0?'Today!':nd===1?'Tomorrow!':nd+' days';
