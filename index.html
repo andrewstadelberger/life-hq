@@ -106,8 +106,9 @@
   .off{background:#ece9f3;color:#6a5f7a}
   .agorap{background:#eef7f3;color:#2f8f6e;border:1px dashed #8fd6bf}
   .bday{background:#fdeef4;color:#b03a67}
-  .draft{border-top:1px solid var(--hair);padding:11px 0}
-  .draft:first-child{border-top:none;padding-top:2px}
+  #bdrafts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  @media(max-width:520px){#bdrafts{grid-template-columns:1fr}}
+  .draft{background:#fdfcfa;border:1px solid var(--hair);border-radius:12px;padding:12px 13px}
   .dhead{font-size:13.5px;display:flex;align-items:center;gap:8px}
   .dhead .cpy{margin-left:auto;font-size:11.5px;font-weight:600;border:none;background:var(--mag-s);color:var(--mag-d);padding:5px 12px;border-radius:8px;cursor:pointer}
   .dhead .cpy:hover{background:var(--mag-l)}
@@ -185,14 +186,18 @@
   .cd1{background:linear-gradient(135deg,#ffdfe8,#ffd2df);color:#a83a5c}
   .cd2{background:linear-gradient(135deg,#ece2ff,#e0d2fb);color:#6d4fa8}
   .cd3{background:linear-gradient(135deg,#dcf5ea,#cbf0df);color:#0d7a5c}
+  .cdopen{background:#eef7f3;border:1.5px dashed #8fd6bf;color:#0d7a5c}
+  .cdopen .n{color:#2f8f6e}
   details.sec{margin-top:16px}
-  details.sec summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--sub);text-transform:uppercase;padding:12px 16px;background:var(--card);border-radius:14px;box-shadow:var(--sh);user-select:none;transition:.15s}
-  details.sec summary:hover{color:var(--mag-d)}
+  details.sec summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:11px;font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--ink);text-transform:uppercase;padding:14px 18px;background:var(--card);border-radius:14px;box-shadow:var(--sh);user-select:none;transition:.15s;border:1px solid var(--hair)}
+  details.sec summary:hover{color:var(--mag-d);border-color:var(--mag-l);box-shadow:var(--sh-h)}
   details.sec summary::-webkit-details-marker{display:none}
-  details.sec summary::before{content:"\25B8";color:var(--mag);transition:transform .15s}
-  details.sec[open] summary::before{transform:rotate(90deg)}
+  details.sec summary::before{content:"\25B8";display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:8px;flex:none;background:var(--mint-s);color:var(--mint-d);font-size:13px;transition:transform .18s,background .18s,color .18s}
+  details.sec[open] summary::before{transform:rotate(90deg);background:var(--mag-s);color:var(--mag-d)}
+  details.sec[open]>summary{background:linear-gradient(90deg,var(--mint-s) 0%,var(--card) 55%);border-color:var(--mint-l)}
   details.sec>.bento{margin-top:12px}
-  details.sec summary .cnt{margin-left:auto;font-size:11px;font-weight:600;color:var(--faint);text-transform:none;letter-spacing:0}
+  details.sec summary .cnt{margin-left:auto;font-size:11px;font-weight:700;color:var(--mint-d);text-transform:none;letter-spacing:0;background:var(--mint-s);padding:4px 10px;border-radius:999px}
+  details.sec[open] summary .cnt{color:var(--mag-d);background:var(--mag-s)}
   /* gate */
   #gate{position:fixed;inset:0;z-index:999;background:linear-gradient(160deg,#0f3d31,#16302a 55%,#3a1326);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:#fff}
   #gate .glab{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7fd8c4;font-weight:700}
@@ -378,24 +383,24 @@
   </div>
   </details>
 
-  <!-- PARTIES / ATTIRE / TICKETS -->
-  <details class="sec" open><summary>🥂 Parties · fits · tickets</summary>
+  <!-- PARTIES / ATTIRE -->
+  <details class="sec" open><summary>🥂 Parties · fits</summary>
   <div class="bento">
-    <div class="b c4 hov">
+    <div class="b c6 hov">
       <div class="title">🥂 Parties</div>
-      <ul class="tl">
-        <li><b>Jimmy &amp; Ash's Backyard Bash</b> · Fri Jul 10, 6 PM · 164 Bingham Ave, Rumson · Pat Roddy Band · on your calendar ✓</li>
-        <li><b>Shane Gillis</b> · Fri Jul 17, 7 PM · Linc, Philly · w/ Allie ✓</li>
-        <li><b>Parker's pool party</b> · Jul 25 · skipping — Allie's out &amp; you're at Lake Placid · send regrets</li>
-        <li><b>Drew Tig @ Chapel Beach Club</b> · Sun Jul 26 · Sea Bright · time TBD · on your calendar ✓</li>
-        <li><b>Gordon Daniels @ MBBT</b> · Fri Aug 7, 5 PM · Monmouth Beach ✓</li>
-        <li><b>Hendo's White Party</b> · Sun Sep 6, 5:30 PM · w/ Gordon Daniels · wear white ✓</li>
-        <li><b>Misciagna wedding</b> · Oct 2–4 · Sundance, Utah · mountain chic ✓</li>
-        <li><b>The Schneiderbergers</b> · Dec 25 · Christmas Day tradition, every year ✓</li>
-        <li><b>Hendersons' laser party?</b> · you mentioned it — no invite in your email · text me the date</li>
-      </ul>
+      <div class="cdgrid">
+        <div class="cd cd0"><div class="n">JUL 10</div><div class="lbl">🎉 Jimmy &amp; Ash's Bash</div><div class="s2">Rumson · Pat Roddy Band · 6 PM ✓</div></div>
+        <div class="cd cd1"><div class="n">JUL 17</div><div class="lbl">🎤 Shane Gillis</div><div class="s2">the Linc, Philly · w/ Allie ✓</div></div>
+        <div class="cd cd2"><div class="n">JUL 25</div><div class="lbl">🏊 Parker's pool party</div><div class="s2">Skipping — at Lake Placid · send regrets</div></div>
+        <div class="cd cd3"><div class="n">JUL 26</div><div class="lbl">🍹 Chapel Beach Club</div><div class="s2">Drew Tig · Sea Bright · time TBD</div></div>
+        <div class="cd cd0"><div class="n">AUG 7</div><div class="lbl">🥂 Gordon Daniels</div><div class="s2">MBBT · Monmouth Beach · 5 PM ✓</div></div>
+        <div class="cd cd1"><div class="n">SEP 6</div><div class="lbl">🤍 Hendo's White Party</div><div class="s2">w/ Gordon Daniels · wear white ✓</div></div>
+        <div class="cd cd2"><div class="n">OCT 2</div><div class="lbl">🤵 Misciagna Wedding</div><div class="s2">Sundance, Utah · mountain chic ✓</div></div>
+        <div class="cd cd3"><div class="n">DEC 25</div><div class="lbl">🎄 The Schneiderbergers</div><div class="s2">Christmas tradition, every year ✓</div></div>
+        <div class="cd cd0"><div class="n">TBD</div><div class="lbl">✨ Hendersons' laser party?</div><div class="s2">No invite yet — text me the date</div></div>
+      </div>
     </div>
-    <div class="b c8 hov">
+    <div class="b c6 hov">
       <div class="title">👔 Dress like the man</div>
       <div class="cdgrid">
         <div class="cd cd1"><div class="lbl">🎯 The vibe</div><div class="s2"><b>Jon Hamm in F&amp;N</b> · 50s/60s clean</div><a class="act" style="display:inline-block;margin-top:6px" href="https://www.instagram.com/reel/DV0i_D5kknT/" target="_blank">LSN ref ↗</a></div>
@@ -406,19 +411,31 @@
         <div class="cd cd1"><div class="lbl">📏 L · 40R · 12</div><div class="s2">sizes on file</div><button class="ask" data-q="Go: build my 10-piece fall kit — exact pieces, sizes, and links">build my fall kit →</button></div>
       </div>
     </div>
-    <div class="b c4 hov">
-      <div class="title">🎟️ Tickets — grab these now</div>
+  </div>
+  </details>
+
+  <!-- TICKETS & EXPERIENCES -->
+  <details class="sec" open><summary>🎟️ Tickets &amp; experiences — grab these now</summary>
+  <div class="bento">
+    <div class="b c12 hov">
+      <div class="title">🎟️ On sale — don't sleep</div>
       <div class="cdgrid">
         <div class="cd cd1"><div class="n">SEP 19</div><div class="lbl">🕺 Jungle @ Barclays</div><div class="s2">album tour — will sell out</div><a class="act" style="display:inline-block;margin-top:6px" href="https://www.ticketmaster.com/jungle-tickets/artist/1947184" target="_blank">Tickets ↗</a></div>
         <div class="cd cd0"><div class="n">SEP 14</div><div class="lbl">⚾ Alonso's return @ Citi</div><div class="s2">Bryant's bday — get 2</div><a class="act" style="display:inline-block;margin-top:6px" href="https://www.mlb.com/mets/tickets" target="_blank">Tickets ↗</a></div>
         <div class="cd cd2"><div class="n">NOV 22</div><div class="lbl">🎤 Maria Bamford</div><div class="s2">the Basie · 7:30 PM</div><a class="act" style="display:inline-block;margin-top:6px" href="https://thebasie.org/events/maria-bamford/" target="_blank">Tickets ↗</a></div>
-        <div class="cd cd0"><div class="n">~DEC</div><div class="lbl">🏀 Nova @ Xfinity Arena</div><div class="s2">Wisconsin + Big 5 · dates drop late summer</div><a class="act" style="display:inline-block;margin-top:6px" href="https://villanova.evenue.net/events/MBB" target="_blank">Nova tix ↗</a></div>
-        <div class="cd cd3"><div class="n">→SEP 13</div><div class="lbl">🎭 MASQUERADE</div><div class="s2">immersive Phantom · book it, you're hyped</div><a class="act" style="display:inline-block;margin-top:6px" href="https://masqueradenyc.com" target="_blank">Tickets ↗</a></div>
+        <div class="cd cd3"><div class="n">~DEC</div><div class="lbl">🏀 Nova @ Xfinity Arena</div><div class="s2">Wisconsin + Big 5 · dates drop late summer</div><a class="act" style="display:inline-block;margin-top:6px" href="https://villanova.evenue.net/events/MBB" target="_blank">Nova tix ↗</a></div>
+        <div class="cd cd0"><div class="n">✓ HAVE</div><div class="lbl">🤼 SummerSlam</div><div class="s2">2-day pass — in hand</div></div>
+        <div class="cd cd2"><div class="n">✓ HAVE</div><div class="lbl">🎤 Shane Gillis</div><div class="s2">Jul 17 — in hand</div></div>
       </div>
-      <div class="blk m"><span class="h">✓ In hand</span>SummerSlam 2-day pass · Shane Gillis Jul 17</div>
-      <div class="blk l"><span class="h">👀 Hunting</span>Ben Folds · Vulfpeck · Chicago (band) · Maher &amp; Stewart · roast tapings · dueling pianos · <b>Broadway:</b> <a href="https://www.broadway.com/shows/schmigadoon/" target="_blank">Schmigadoon! ↗</a> + Play That Goes Wrong · <a href="https://www.thesphere.com/shows" target="_blank"><b>Sphere Vegas ↗</b></a> Metallica fall '26 🤘 + Eagles Sep/Nov · <a href="https://www.redrocksonline.com/events/" target="_blank">Red Rocks ↗</a> light watch · <button class="ask" data-q="Check my ticket watchlist for new dates and grab-worthy shows">ask me to sweep the watchlist →</button></div>
-      <div class="blk r"><span class="h">🎭 MASQUERADE — you're doing this</span><b>Immersive Phantom · 218 W 57th · booking NOW through Sep 13</b> · nightly except Mondays · 60 guests, masked, 2h10 on your feet · from $208 · dress code black/white/silver formal (your new wardrobe has a mission) · <a class="act" style="display:inline-block" href="https://masqueradenyc.com" target="_blank">Get tickets ↗</a> <button class="ask" data-q="Find me the best available Masquerade NYC date and price for 2, ideally a Friday or Saturday">find my date →</button><br><b>Also:</b> Punchdrunk's <a href="https://www.theshed.org/program/444-violas-room" target="_blank">Viola's Room @ The Shed ↗</a> (their actual NYC show) · Arcane is Shanghai-only for now — watching for a Western transfer · Accomplice NYC walking mystery</div>
-      <div class="blk p" style="border:none;background:none;padding:10px 0 0"><span class="h">🎮 Go-do machines — verified &amp; open now</span></div>
+    </div>
+    <div class="b c8 hov">
+      <div class="blk r" style="margin-top:0"><span class="h">🎭 MASQUERADE — you're doing this</span><b>Immersive Phantom · 218 W 57th · booking NOW through Sep 13</b> · nightly except Mondays · 60 guests, masked, 2h10 on your feet · from $208 · dress code black/white/silver formal (your new wardrobe has a mission) · <a class="act" style="display:inline-block" href="https://masqueradenyc.com" target="_blank">Get tickets ↗</a> <button class="ask" data-q="Find me the best available Masquerade NYC date and price for 2, ideally a Friday or Saturday">find my date →</button><br><b>Also:</b> Punchdrunk's <a href="https://www.theshed.org/program/444-violas-room" target="_blank">Viola's Room @ The Shed ↗</a> (their actual NYC show) · Arcane is Shanghai-only for now — watching for a Western transfer · Accomplice NYC walking mystery</div>
+    </div>
+    <div class="b c4 hov">
+      <div class="blk l" style="margin-top:0"><span class="h">👀 Hunting</span>Ben Folds · Vulfpeck · Chicago (band) · Maher &amp; Stewart · roast tapings · dueling pianos · <b>Broadway:</b> <a href="https://www.broadway.com/shows/schmigadoon/" target="_blank">Schmigadoon! ↗</a> + Play That Goes Wrong · <a href="https://www.thesphere.com/shows" target="_blank"><b>Sphere Vegas ↗</b></a> Metallica fall '26 🤘 + Eagles Sep/Nov · <a href="https://www.redrocksonline.com/events/" target="_blank">Red Rocks ↗</a> light watch · <button class="ask" data-q="Check my ticket watchlist for new dates and grab-worthy shows">ask me to sweep the watchlist →</button></div>
+    </div>
+    <div class="b c12 hov">
+      <div class="title">🎮 Go-do machines — verified &amp; open now</div>
       <div class="cdgrid">
         <div class="cd cd3"><div class="lbl">🪄 Chamber Magic · NYC</div><div class="s2">Steve Cohen @ the Lotte Palace · Fri/Sat 9:30 · THE close-up show — this is your magic itch, scratched</div><a class="act" style="display:inline-block;margin-top:6px" href="https://chambermagic.com" target="_blank">Book ↗</a></div>
         <div class="cd cd0"><div class="lbl">🏎️ iPlay America · Freehold</div><div class="s2">indoor go-karts + laser tag + boardwalk · 15 min away</div><a class="act" style="display:inline-block;margin-top:6px" href="https://www.iplayamerica.com" target="_blank">Go ↗</a></div>
@@ -484,15 +501,16 @@
   <details class="sec"><summary>Agora — open invites · RSVP to grab them <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c12 care">
-      <ul class="tl">
-        <li><b>AG Morning Brew</b> — Mon Aug 3, 8 AM · Molly Pitcher Inn, Red Bank</li>
-        <li><b>AG Volunteer · Rising Treetops</b> — Sat Sep 12, 9 AM · doubles as your committee work</li>
-        <li><b>Playground meetups</b> — every other Tue 5:30 PM · Jul 14, Jul 28, Aug 11, Aug 25, Sep 8 · Dorbrook Park</li>
-        <li><b>AG Alphafit Workout</b> — Thu Oct 1, 7 PM · Alpha Fit Club, Englishtown <span class="pill nyc">NEW</span></li>
-        <li><b>AG Bahamas Trip</b> — Nov 12 on the calendar · Atlantis · ask Hendo for the real dates <span class="pill nyc">NEW</span></li>
-        <li><b>Agora Holiday Gala</b> — Thu Dec 3, 6 PM · 26 West On The Navesink, Red Bank <span class="pill nyc">NEW</span></li>
-      </ul>
-      <div class="meta">You haven't signed up for any of these — they're on the calendar in dashed green so you can grab the ones you want. Say which and I'll RSVP for you.</div>
+      <div class="title" style="margin-bottom:2px">🟢 Open — you haven't signed up yet</div>
+      <div class="cdgrid">
+        <div class="cd cdopen"><div class="n">AUG 3</div><div class="lbl">☕ AG Morning Brew</div><div class="s2">Molly Pitcher Inn, Red Bank · 8 AM</div></div>
+        <div class="cd cdopen"><div class="n">SEP 12</div><div class="lbl">🌳 Rising Treetops Volunteer</div><div class="s2">doubles as your committee work · 9 AM</div></div>
+        <div class="cd cdopen"><div class="n">BIWEEKLY</div><div class="lbl">🛝 Playground Meetups</div><div class="s2">Dorbrook Park · Tue 5:30 PM · Jul 14, 28, Aug 11, 25, Sep 8</div></div>
+        <div class="cd cdopen"><div class="n">OCT 1</div><div class="lbl">💪 AG Alphafit Workout</div><div class="s2">Alpha Fit Club, Englishtown · 7 PM <span class="pill nyc">NEW</span></div></div>
+        <div class="cd cdopen"><div class="n">NOV 12</div><div class="lbl">🌴 AG Bahamas Trip</div><div class="s2">Atlantis · ask Hendo for real dates <span class="pill nyc">NEW</span></div></div>
+        <div class="cd cdopen"><div class="n">DEC 3</div><div class="lbl">🎄 Agora Holiday Gala</div><div class="s2">26 West, Red Bank · 6 PM <span class="pill nyc">NEW</span></div></div>
+      </div>
+      <div class="meta" style="margin-top:12px">They're on the calendar in dashed green so you can spot them at a glance. Say which and I'll RSVP for you. <button class="ask" data-q="RSVP me to these Agora events: ">say which →</button></div>
     </div>
   </div>
   </details>
@@ -741,6 +759,16 @@ function greet(){const h=new Date().getHours(),g=h<12?'Good morning':h<18?'Good 
  document.getElementById('today').textContent=TODAY.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
 function clk(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
 greet();clk();setInterval(clk,20000);render();showDay(tkey);
+
+/* ---- clearer dropdowns: consistent open/closed hint on every section ---- */
+document.querySelectorAll('details.sec').forEach(d=>{
+ const s=d.querySelector('summary');if(!s)return;
+ let cnt=s.querySelector('.cnt');
+ if(!cnt){cnt=document.createElement('span');cnt.className='cnt';s.appendChild(cnt);}
+ const setHint=()=>{cnt.textContent=d.open?'tap to collapse':'tap to open';};
+ setHint();
+ d.addEventListener('toggle',setHint);
+});
 
 /* ---- tap-to-show tooltips (iPad/touch has no hover) ---- */
 document.querySelectorAll('.tip').forEach(el=>{
