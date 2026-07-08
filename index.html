@@ -147,6 +147,15 @@
   .blk.p{border-color:#ff9e5e}.blk.r{border-color:#f4739d}.blk.l{border-color:#a583ea}.blk.m{border-color:#2fbf94}
   .blk .h{display:block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
   .blk.p .h{color:#c05a17}.blk.r .h{color:#c23a67}.blk.l .h{color:#7350b5}.blk.m .h{color:#0d8a68}
+  /* ask-me buttons + flight cards */
+  .ask{border:none;cursor:pointer;font-size:11.5px;font-weight:700;color:#fff;
+    background:linear-gradient(90deg,#f4739d,#a583ea);padding:6px 13px;border-radius:999px;margin-top:7px;transition:.15s}
+  .ask:hover{filter:brightness(1.07)}
+  .fly{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:9px;margin-top:12px}
+  .fly a{display:block;text-decoration:none;border-radius:12px;padding:11px 13px;background:#fdfcfa;border:1px solid var(--hair);color:var(--ink);transition:transform .15s}
+  .fly a:hover{transform:translateY(-2px)}
+  .fly b{display:block;font-size:13px}
+  .fly span{font-size:10.5px;color:var(--sub)}
   /* song cards */
   .songgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:9px;margin-top:10px}
   .song{border-radius:12px;padding:10px 12px;background:#fdfcfa;border:1px solid var(--hair);transition:transform .15s}
@@ -234,7 +243,9 @@
       <div class="blk r"><span class="h">The fix list</span>
         <b>Hip + groin — priority, they're wrecking you</b> · deep tissue shoulders &amp; neck · carpal tunnel (hand) · full assisted-stretch session. Next refresh I'll shortlist the best-reviewed local spots for each — hand specialist included.</div>
       <div class="blk p"><span class="h">One-tap booking</span>
-        <a class="act" style="display:inline-block" href="https://www.zocdoc.com" target="_blank">Your doctor ↗</a> &nbsp;<a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a> — or just text me <i>"book Kyle Tuesday afternoon"</i> or <i>"hip massage this week"</i> and I'll line it up in your browser and confirm with you before anything's locked.</div>
+        <a class="act" style="display:inline-block" href="https://www.zocdoc.com" target="_blank">Your doctor ↗</a> &nbsp;<a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a>
+        <br><button class="ask" data-q="Book Kyle at Prosecco for a haircut this week — find a slot and line it up">book Kyle →</button> <button class="ask" data-q="Set up a hip + groin deep tissue massage for me this week, local">fix my hip →</button> <button class="ask" data-q="Book me a full assisted stretch session near Middletown">book a stretch →</button> <button class="ask" data-q="Book my annual physical">book physical →</button>
+        <div class="s2" style="font-size:11px;color:var(--sub);margin-top:6px">Tap a button → it copies the request → paste it to me in Claude → I line it up in your browser and you approve the final tap.</div></div>
     </div>
 
     <!-- CALENDAR -->
@@ -377,24 +388,24 @@
       <div class="title">👔 Dress like the man</div>
       <div class="cdgrid">
         <div class="cd cd1"><div class="lbl">🎯 The vibe</div><div class="s2"><b>Jon Hamm in F&amp;N</b> · 50s/60s clean</div><a class="act" style="display:inline-block;margin-top:6px" href="https://www.instagram.com/reel/DV0i_D5kknT/" target="_blank">LSN ref ↗</a></div>
-        <div class="cd cd0"><div class="lbl">🧵 Tailoring &amp; shirts</div><div class="s2">Suitsupply · Proper Cloth · Spier &amp; Mackay</div></div>
-        <div class="cd cd2"><div class="lbl">👕 The Carmy tee</div><div class="s2">Whitesville / Merz b. Schwanen · budget: Uniqlo U</div></div>
-        <div class="cd cd3"><div class="lbl">👞 Shoes</div><div class="s2">Thursday ✓ · Morjas loafers · Koio sneaker</div></div>
-        <div class="cd cd0"><div class="n">AUG 28</div><div class="lbl">⏰ Wedding suit deadline</div><div class="s2">Indochino · "mountain chic"</div></div>
-        <div class="cd cd1"><div class="lbl">📏 L · 40R · 12</div><div class="s2">say <b>"go"</b> → 10-piece fall kit</div></div>
+        <div class="cd cd0"><div class="lbl">🧵 Tailoring &amp; shirts</div><div class="s2"><a href="https://suitsupply.com" target="_blank">Suitsupply ↗</a> · <a href="https://propercloth.com" target="_blank">Proper Cloth ↗</a> · <a href="https://spierandmackay.com" target="_blank">Spier &amp; Mackay ↗</a></div></div>
+        <div class="cd cd2"><div class="lbl">👕 The Carmy tee</div><div class="s2"><a href="https://www.merz-schwanen.com" target="_blank">Merz b. Schwanen ↗</a> · budget: <a href="https://www.uniqlo.com/us/en/special-feature/uniqlo-u" target="_blank">Uniqlo U ↗</a></div></div>
+        <div class="cd cd3"><div class="lbl">👞 Shoes</div><div class="s2"><a href="https://thursdayboots.com" target="_blank">Thursday ✓↗</a> · <a href="https://www.morjas.com" target="_blank">Morjas ↗</a> · <a href="https://www.koio.co" target="_blank">Koio ↗</a></div></div>
+        <div class="cd cd0"><div class="n">AUG 28</div><div class="lbl">⏰ Wedding suit deadline</div><div class="s2"><a href="https://www.indochino.com" target="_blank">Indochino ↗</a> · "mountain chic"</div></div>
+        <div class="cd cd1"><div class="lbl">📏 L · 40R · 12</div><div class="s2">sizes on file</div><button class="ask" data-q="Go: build my 10-piece fall kit — exact pieces, sizes, and links">build my fall kit →</button></div>
       </div>
     </div>
     <div class="b c4 hov">
       <div class="title">🎟️ Tickets — grab these now</div>
       <div class="cdgrid">
-        <div class="cd cd1"><div class="n">SEP 19</div><div class="lbl">🕺 Jungle @ Barclays</div><div class="s2">album tour — will sell out</div></div>
-        <div class="cd cd0"><div class="n">SEP 14</div><div class="lbl">⚾ Alonso's return @ Citi</div><div class="s2">Bryant's bday — get 2</div></div>
-        <div class="cd cd2"><div class="n">NOV 22</div><div class="lbl">🎤 Maria Bamford</div><div class="s2">the Basie · 7:30 PM</div></div>
-        <div class="cd cd0"><div class="n">~DEC</div><div class="lbl">🏀 Nova @ Xfinity Arena</div><div class="s2">Wisconsin + Big 5 · schedule drops late summer</div></div>
+        <div class="cd cd1"><div class="n">SEP 19</div><div class="lbl">🕺 Jungle @ Barclays</div><div class="s2">album tour — will sell out</div><a class="act" style="display:inline-block;margin-top:6px" href="https://www.ticketmaster.com/jungle-tickets/artist/1947184" target="_blank">Tickets ↗</a></div>
+        <div class="cd cd0"><div class="n">SEP 14</div><div class="lbl">⚾ Alonso's return @ Citi</div><div class="s2">Bryant's bday — get 2</div><a class="act" style="display:inline-block;margin-top:6px" href="https://www.mlb.com/mets/tickets" target="_blank">Tickets ↗</a></div>
+        <div class="cd cd2"><div class="n">NOV 22</div><div class="lbl">🎤 Maria Bamford</div><div class="s2">the Basie · 7:30 PM</div><a class="act" style="display:inline-block;margin-top:6px" href="https://thebasie.org/events/maria-bamford/" target="_blank">Tickets ↗</a></div>
+        <div class="cd cd0"><div class="n">~DEC</div><div class="lbl">🏀 Nova @ Xfinity Arena</div><div class="s2">Wisconsin + Big 5 · dates drop late summer</div><a class="act" style="display:inline-block;margin-top:6px" href="https://villanova.evenue.net/events/MBB" target="_blank">Nova tix ↗</a></div>
       </div>
       <div class="blk m"><span class="h">✓ In hand</span>SummerSlam 2-day pass · Shane Gillis Jul 17</div>
-      <div class="blk l"><span class="h">👀 Hunting</span>Ben Folds · Vulfpeck · Chicago (band) · Maher &amp; Stewart (no NJ/NYC dates yet) · roast tapings · dueling pianos · close-up magic · vetted immersive theater · <b>Broadway:</b> Schmigadoon! + Play That Goes Wrong · <b>Sphere Vegas:</b> Metallica fall '26 🤘 + Eagles Sep/Nov · <b>Red Rocks:</b> light watch</div>
-      <div class="blk p"><span class="h">🎮 Always-on radar</span>Activate @ American Dream · go-karts · VR · murder-mystery · magic · paintball · carnivals &amp; fairs · Monmouth lounge top-5 in the works · <b>anytime:</b> Yestercades + Silverball · <b>sports TV:</b> golf majors + election nights, on the board every season ✓</div>
+      <div class="blk l"><span class="h">👀 Hunting</span>Ben Folds · Vulfpeck · Chicago (band) · Maher &amp; Stewart · roast tapings · dueling pianos · close-up magic · vetted immersive theater · <b>Broadway:</b> <a href="https://www.broadway.com/shows/schmigadoon/" target="_blank">Schmigadoon! ↗</a> + Play That Goes Wrong · <a href="https://www.thesphere.com/shows" target="_blank"><b>Sphere Vegas ↗</b></a> Metallica fall '26 🤘 + Eagles Sep/Nov · <a href="https://www.redrocksonline.com/events/" target="_blank">Red Rocks ↗</a> light watch · <button class="ask" data-q="Check my ticket watchlist for new dates and grab-worthy shows">ask me to sweep the watchlist →</button></div>
+      <div class="blk p"><span class="h">🎮 Always-on radar</span><a href="https://playactivate.com" target="_blank">Activate ↗</a> @ American Dream · go-karts · VR · murder-mystery · magic · paintball · carnivals &amp; fairs · Monmouth lounge top-5 in the works · <b>anytime:</b> <a href="https://www.yestercades.com/redbank" target="_blank">Yestercades ↗</a> + <a href="https://silverballmuseum.com" target="_blank">Silverball ↗</a> · <b>sports TV:</b> golf majors + election nights ✓</div>
     </div>
   </div>
   </details>
@@ -491,7 +502,13 @@
         <div class="pin" style="left:74%;top:72%">Florida<i style="background:#2fbf94"></i></div>
         <div class="pin" style="left:78%;top:88%">Miami<i style="background:#ffb264"></i></div>
       </div>
-      <div class="meta" style="margin-top:10px">Friends dotted across the map — every pin is a trip that plans itself. Got a free weekend? Pick a dot, I'll handle flights and the rest.</div>
+      <div class="fly">
+        <a href="https://www.google.com/travel/flights?q=Flights+from+EWR+to+SFO" target="_blank"><b>✈️ EWR → San Francisco</b><span>tap for live fares · Google Flights opens on the cheapest dates</span></a>
+        <a href="https://www.google.com/travel/flights?q=Flights+from+EWR+to+ORD" target="_blank"><b>✈️ EWR → Chicago</b><span>tap for live fares · usually the cheapest of the bunch</span></a>
+        <a href="https://www.google.com/travel/flights?q=Flights+from+EWR+to+MIA" target="_blank"><b>✈️ EWR → Miami</b><span>tap for live fares · winter-you will thank you</span></a>
+        <a href="https://www.google.com/travel/flights?q=Flights+from+EWR+to+MCO" target="_blank"><b>✈️ EWR → Florida</b><span>tap for live fares · tell me which airport your guy's near</span></a>
+      </div>
+      <div class="meta" style="margin-top:10px">Every pin is a trip that plans itself — the flight buttons open Google Flights with the lowest-fare dates highlighted. Or skip the tabs entirely: <button class="ask" data-q="Find me the cheapest weekend to visit one of my people in the next 3 months and plan the trip">ask me to find your cheapest weekend →</button></div>
     </div>
   </div>
 
@@ -696,6 +713,13 @@ const BDRAFTS=[
  bd.addEventListener('click',e=>{if(e.target.classList.contains('cpy')){const i=e.target.dataset.i;
   navigator.clipboard&&navigator.clipboard.writeText(BDRAFTS[i][2]);e.target.textContent='Copied ✓';setTimeout(()=>e.target.textContent='Copy',1500);}});
 })();
+
+/* ---- ask-me buttons: copy request to clipboard ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('.ask');if(!b)return;
+ const q=b.dataset.q||b.textContent;
+ if(navigator.clipboard)navigator.clipboard.writeText(q);
+ const t=b.textContent;b.textContent='Copied ✓ paste it to me';b.disabled=true;
+ setTimeout(()=>{b.textContent=t;b.disabled=false;},2200);});
 
 /* ---- password gate (light client-side lock; change PASSWORD) ---- */
 const PASSWORD='lifehq';
