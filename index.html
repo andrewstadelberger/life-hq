@@ -609,7 +609,7 @@ const TODOS=[
   ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
   ['reschedule','Sort out &amp; reschedule your meetings','you flagged a pile of meetings to move — send me the list (who + rough timing) and I&#39;ll draft the reschedule notes and line up new slots for your OK',[]],
   ['tigparty','Confirm Chapel Beach Club start time','Drew Tig · Sun Jul 26, Sea Bright — on your calendar, just need the hour','Jul 26'],
-  ['villanova','Villanova golf outing — register or decline','Jul 20 · Woodway CC, Darien CT · now conflict-free if you want a golf day','Jul 20'],
+  ['villanova','Pay Pat Dooley&#39;s Venmo — Villanova golf','you&#39;re on Pat&#39;s team tomorrow (Jul 20, Woodway CC) · his Venmo request is incoming — pay it when it lands so it&#39;s off your plate','Jul 20'],
   ['reset','Reset trip — Jul 22–25 just opened up','the Lake Placid dates came off the calendar, so Wed–Sat is free: Mohonk or your Condado spot, solo, phone mostly off. I&#39;ll handle every detail — just say go',[]],
   ['hotel','Book Minneapolis hotel','SummerSlam','Jul 30'],
   ['weddingrsvp','RSVP Misciagna wedding + grab a Sundance room','NEW: Mike emailed everyone Jul 10 — non-responders asked to RSVP ASAP (michaelandrennie.com/rsvp-1, pw outlaw) · room block is limited, book via the travel tab before it sells out (backup: Provo, 15–20 min)','ASAP'],
@@ -645,7 +645,7 @@ let EV=[
  {s:'2026-09-13',title:'A Mourning Walk',time:'6:45 AM',type:'teal',note:'Stephy&#39;s Place walk · Seven Presidents Park, Long Branch · registered ✓ paid ✓ · shirt (L) at check-in'},
  {s:'2026-07-27',title:'HeartStrong Golf Outing',time:'',type:'pink',note:'Wayne, NJ · Dan (Schoen Cap) asked if you can play — he&#39;s building a foursome and registration is tight. Your reply draft is sitting UNSENT in Gmail — send him a yes or no today.'},
  {s:'2026-07-20',e:'2026-07-21',title:'Personal — DC (optional)',type:'amber',note:'Details in the private copy.'},
- {s:'2026-07-20',title:'Villanova golf outing',time:'10:30 AM',type:'pink',note:'Invited, not registered · Villanova Basketball Golf Outing · Woodway CC, Darien CT · 10:30 AM–8 PM · register or decline'},
+ {s:'2026-07-20',title:'Villanova golf — Pat&#39;s team ⛳',time:'10:30 AM',type:'pink',note:'YOU&#39;RE IN — on Pat Dooley&#39;s team · Villanova Basketball Golf Outing · Woodway CC, Darien CT · 10:30 AM–8 PM · Pat&#39;s sending a Venmo request for your spot — pay it when it lands · Darien is ~1h45 from Middletown, leave by 8:30'},
  {s:'2026-07-26',title:'Drew Tig · Chapel Beach Club',type:'pink',note:'Sea Bright · time TBD — check the invite · on your calendar ✓'},
  {s:'2026-07-19',title:'WORLD CUP FINAL 🏆',type:'pink',note:'TODAY · MetLife Stadium — 40 min from your door · easiest plan: free BlueClaws watch party @ ShoreTown — or a couch, sunshine, and the best game of the year'},
  {s:'2026-07-25',title:'Rent due',time:'',type:'amber',note:'monthly — handled'},
@@ -701,6 +701,7 @@ document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-07-19T12:00'
 /* ---- tiles + clock ---- */
 const COUNTS=[
  ['🏆','WORLD CUP FINAL','2026-07-19','@ MetLife, 40 min away · BlueClaws watch party = easy plan'],
+ ['⛳','Villanova golf — Pat\'s team','2026-07-20','Woodway CC, Darien CT · 10:30 AM · leave by 8:30'],
  ['🌅','Open week — yours to claim','2026-07-22','Jul 22–25 freed up · Mohonk? Condado? say go'],
  ['🍹','Chapel Beach Club','2026-07-26','Drew Tig · Sea Bright'],
  ['✈️','Minneapolis · SummerSlam','2026-07-30','tickets in hand'],
