@@ -260,7 +260,7 @@
       <div class="blk r"><span class="h">The fix list</span>
         <b>Hip + groin — priority, they're wrecking you</b> · deep tissue shoulders &amp; neck · carpal tunnel (hand) · full assisted-stretch session. Next refresh I'll shortlist the best-reviewed local spots for each — hand specialist included.</div>
       <div class="blk p"><span class="h">One-tap booking</span>
-        <a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a>
+        <a class="act" style="display:inline-block" href="https://www.zocdoc.com" target="_blank">Your doctor ↗</a> &nbsp;<a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a>
         <br><button class="ask" data-q="Book Kyle at Prosecco for a haircut this week — find a slot and line it up">book Kyle →</button> <button class="ask" data-q="Set up a hip + groin deep tissue massage for me this week, local">fix my hip →</button> <button class="ask" data-q="Book me a full assisted stretch session near Middletown">book a stretch →</button> <button class="ask" data-q="Book my annual physical">book physical →</button>
         <div class="s2" style="font-size:11px;color:var(--sub);margin-top:6px">Tap a button → it copies the request → paste it to me in Claude → I line it up in your browser and you approve the final tap.</div></div>
     </div>
@@ -292,14 +292,6 @@
   </div>
 
   <!-- FINANCES -->
-  <details class="sec"><summary>Finances <span class="cnt">tap to open</span></summary>
-  <div class="bento">
-    <div class="b c12 hov">
-      <div class="title">💼 Personal finances</div>
-      <div class="meta">Personal matters — account balances and investment details are kept private in the full version.</div>
-    </div>
-  </div>
-  </details>
 
   <!-- TRIPS & NYC -->
   <details class="sec" open><summary>📺 Screens &amp; music</summary>
@@ -309,7 +301,7 @@
       <div class="blk p"><span class="h">▶ Watch tonight — zero waiting</span>
         Hotel-room night in Minneapolis: <b>Project Hail Mary</b> (on Prime, Clariss's pick) · Paradise · finish Hacks · Knives Out: Wake Up Dead Man (Netflix) · Obsession (digital)</div>
       <div class="blk r"><span class="h">📅 Dates locked</span>
-        Traitors: New Blood <b>Sep 17</b> · Only Murders S6 <b>~Sep 30</b> · Social Reckoning <b>Oct 9</b> · Street Fighter <b>Oct 16</b> · Celebrity Traitors <b>Jan '27</b></div>
+        Traitors: New Blood <b>Sep 17</b> · Primetime <b>Sep 25</b> (theaters) · Only Murders S6 <b>~Sep 30</b> · Social Reckoning <b>Oct 9</b> · Street Fighter <b>Oct 16</b> · Madden on Prime <b>Nov 18</b> · Celebrity Traitors <b>Jan '27</b></div>
       <div class="blk l"><span class="h">👀 Watching for dates</span>
         Widow's Bay S2 · Friends &amp; Neighbors S3 · The Studio · The Diplomat · Landman · Love Island · Too Hot to Handle · Perfect Match · Million Dollar Secret · The Trust · next Knives Out</div>
       <div class="blk m"><span class="h">🛋️ The backlog — bored? pull anything</span>
@@ -385,8 +377,9 @@
       <div class="meta">Want a reminder a week before each, nudging your accountant?</div>
     </div>
     <div class="b c12 hov">
-      <div class="title">🔔 Watching · personal matters</div>
-      <div class="meta">A private legal/financial matter Andrew is following. Details are kept private in the full version.</div>
+      <div class="title">🔔 Watching</div>
+      <div class="blk r"><span class="h">Personal matters</span>Tracked in the private copy — nothing needs you right now.</div>
+      <div class="btns" style="margin-bottom:14px"><a class="act" href="https://www.the fund.com/Home/Payments" target="_blank">Payments ↗</a></div>
       <div class="title" style="margin-top:6px">🔁 Renewals &amp; red tape — so nothing sneaks up</div>
       <ul class="tl">
         <li><b>Car insurance (Progressive)</b> · renewed ~June, 6-month term → <b>next renewal ~Dec 1</b>. The renewal email lands in November — I'll catch it and post the exact date + price so you can shop it if it jumps.</li>
@@ -594,20 +587,29 @@ const TODOS=[
   ['checkin','Check in + set the alarm','If 7:10 AM holds: boarding closes 6:55 AM, so be at MSP by ~5:10 AM. Pack tonight, car to the airport booked before you sleep.','TONIGHT'],
   ['smackdown','Accept your SmackDown tickets in Ticketmaster','You bought 2 tickets on StubHub (order 649101262, $185.06) for WWE Friday Night SmackDown — Fri Aug 7, 7:30 PM, Xfinity Mobile Arena (old Wells Fargo Center), Philly · Sec 210A, Row 7, Seats 9–10. They transfer through Ticketmaster and you have to ACCEPT them or they don&#39;t exist on game night. Alexandria also sent a calendar invite. Do it now, not Friday afternoon.','Aug 7'] ]],
  ['Calls & bookings',[
-  ['physical','Book annual physical','with your primary care doctor',[]],
-  ['dentist','Book dentist','online',[]],
-  ['car','Schedule car service','Middletown · Mon–Fri',[['Call','tel:+17327418408',1]]],
+  ['cpap','Call back the CPAP place in Asbury','they called you — sleep is the foundation of everything else right now, close the loop',[]],
+  ['reuter','"Reuter" — remind me what this is','it&#39;s on your list; doctor? PT? tell me and I&#39;ll file it properly and book it',[]],
+  ['amerihealth','Healthcare check-in','confirm your AmeriHealth plan/card is current · I&#39;ll prep your options when open enrollment hits Nov 1',[]],
+  ['physical','Book annual physical','get it on the books',[]],
+  ['dentist','Book dentist','routine cleaning · online booking',[]],
   ['hair','Book haircut','Kyle @ Prosecco · monthly',[['Book Kyle','https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287',1]]],
   ['audiservice','Check the Mercedes-Benz GLC service email','Audi Eatontown &amp; CA sent a &quot;Vehicle Care Report — Service Due&quot; for a Mercedes-Benz GLC on Jul 5 — you drive an Audi, so this is either a shared dealer mix-up or a car you didn&#39;t mention. Worth a quick check.',[]],
   ['audi','Get car title','Audi Financial',[['Call','tel:+18882372834',0],['myAudi','https://www.audiusa.com/en/myaudi/',0]]],
   ['ezpass','Fix E-ZPass — it&#39;s one 10-minute job','Don&#39;t panic: the root cause is your Amex on file started declining (Apr 26) so auto-replenish has failed ever since → statements piled up → Jun 27 revocation warning. Log in, update the card, replenish. All the scary emails stop.',[['Log in','https://www.ezpassnj.com',0]]] ]],
+ ['Car',[
+  ['tire','Tire — fix or replace','bundle it with the service visit, one trip',[['Middletown Service','tel:+17327418408',1]]],
+  ['carkey','Replacement key','Audi — dealer or Audi Financial can point you',[['Call Audi','tel:+18882372834',0]]],
+  ['detail','Detailing','The Detail Doctor (they email you — you&#39;re a known customer)',[]],
+  ['service','Book Middletown Service Center','service + tire together · Mon–Fri',[['Call','tel:+17327418408',1]]] ]],
  ['Money',[
+  ['deficit','Build the real money picture — family&#39;s in your corner','step 1: one Amex login or forward me a statement → I map every recurring charge, the true deficit number, and the kill list. Fog is the enemy, not the number.',[]],
+  ['bartinvest','ShoreHaven chat: the Bart investment','get it scheduled — and bring the deficit picture first, so the decision comes from facts',[]],
   ['payarchie2','Pay Purr&#39;n Pooch — two invoices, $469.15 total','$367.86 landed this morning (Aug 3 — the Minneapolis boarding) plus the older $101.29 from Jul 18 that&#39;s still sitting there. Pay both in one go and Archie&#39;s ledger is clean.','this week'],
-  ['payvenmo2','Venmo: Shayenne has TWO requests — $150 + $100','$150 from Jul 17 and a new $100 from Aug 1. Either approve both ($250) or ask her what they&#39;re for — but don&#39;t let a third one stack up.','this week'],
+  ['payvenmo2','Venmo: a friend has TWO requests — $150 + $100','$150 from Jul 17 and a new $100 from Aug 1. Either approve both ($250) or ask her what they&#39;re for — but don&#39;t let a third one stack up.','this week'],
   ['sohonext','Soho House charged $1,250 — put the NEXT decision on the calendar','It processed Jul 31 and Soho House says it can&#39;t be reversed, so this quarter is spent. The real move: the next auto-debit is ~Nov 1, and cancelling needs an email to membership@sohohouse.com at least 3 days ahead. Decide by <b>Oct 25</b> — I&#39;ll put it on the calendar. Between now and then, actually use it (Miami, NYC, Chicago) so the answer writes itself.','Oct 25'],
   ['mintmobile','Mint Mobile charged $129.63 via PayPal','Hit Aug 3. If that&#39;s your annual/multi-month plan renewing, fine — just confirm it&#39;s the rate you expected and not a step-up from a promo price.',[]],
   ['subs','Kill the auto-renewals','monday.com Pro auto-renewed Jul 26 · 1Password $36→$48 · GoDaddy sent a &quot;Protected Registration saved your domain&quot; notice Jul 25 (check if it auto-charged) · LegalZoom + Intego renewing — renew the keepers, let the rest lapse',[]],
-  ['oldretirement','Roll over your old employer 403(b)','roll it to an IRA or leave it — just decide',[]],
+  ['retire403b','Sort the old retirement plan','decide: roll it over or leave it',[]],
   ['bofa','View Bank of America renewal notice','Online Banking → Statements & Documents',[]],
   ['audible','Audible membership started Jul 1','new auto-renewing sub + $20 credit — use it, or cancel before the first charge',[]],
   ['bofacard','BofA card is live in Apple Pay','The replacement arrived and BofA confirmed Aug 1 that the debit card ending 7748 is ready in Apple Pay. Good candidate to become the new E-ZPass card on file.',[]],
@@ -616,6 +618,8 @@ const TODOS=[
   ['registration','Text me your registration expiry month','on the card in the glovebox / windshield sticker — then it goes on the calendar with a renewal runway',[]],
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
  ['NYC & social',[
+  ['chitrip','Plan Chicago','your guy&#39;s there, you love the city, EWR flights run cheap — say when and it&#39;s planned',[]],
+  ['tri','Pick your triathlon','Steelman (Aug 2) clashes with SummerSlam — I&#39;ll scout a Sept/Oct race worth training toward',[]],
   ['nyc','Get your NYC meetings going','line up + send invites: JD, Carson, others',[]],
   ['reschedule','Sort out &amp; reschedule your meetings','you flagged a pile of meetings to move — send me the list (who + rough timing) and I&#39;ll draft the reschedule notes and line up new slots for your OK',[]],
   ['weddingrsvp','RSVP Misciagna wedding + grab a Sundance room','Mike emailed everyone Jul 10 — non-responders asked to RSVP ASAP (michaelandrennie.com/rsvp-1, pw outlaw) · room block is limited, book via the travel tab before it sells out (backup: Provo, 15–20 min)','ASAP'],
@@ -623,8 +627,8 @@ const TODOS=[
   ['alonsotix','Get Mets–O&#39;s tickets for Bryant&#39;s bday','Sep 14, Citi Field · Alonso&#39;s first game back — perfect gift + night out','Sep 14'],
   ['actri','Atlantic City Triathlon — price goes up','They emailed Jul 31 that registration pricing is about to jump. Only worth a look if you actually want the training block; if not, delete it and don&#39;t think about it again.',[]],
  ]],
-  ['Watching',[
-  ['personal','A personal matter you are tracking','Kept private in the full version — no action needed here.',[]] ]],
+ ['Watching',[
+  ['watch1','Personal matters','tracked in the private copy',[]] ]],
 ];
 let total=0,done=0;const tg=document.getElementById('todos');
 TODOS.forEach(grp=>{const h=document.createElement('div');h.className='gh';h.textContent=grp[0];tg.appendChild(h);
@@ -708,6 +712,7 @@ const COUNTS=[
  ['🚶','A Mourning Walk','2026-09-13','registered ✓ · Seven Presidents Park, 6:45 AM'],
  ['🗡️','Traitors: New Blood','2026-09-17','NBC premiere'],
  ['🕺','Jungle @ Barclays','2026-09-19','grab tix'],
+ ['📺','PRIMETIME','2026-09-25','Pattinson as Chris Hansen · A24 · theaters'],
  ['🔪','Only Murders S6','2026-09-30','London season'],
  ['🤵','Misciagna wedding','2026-10-02','Sundance, Utah · mountain chic'],
  ['💻','The Social Reckoning','2026-10-09','Sorkin&#39;s Social Network sequel · Jeremy Strong'],
@@ -715,6 +720,7 @@ const COUNTS=[
  ['🎃','Halloween','2026-10-31','Saturday night · costume: Ricky "Wild Thing" Vaughn'],
  ['🗳️','Election Day — midterms','2026-11-03','coverage night · order in, settle in'],
  ['🌴','Agora Bahamas','2026-11-12','Atlantis'],
+ ['🏈','MADDEN','2026-11-18','Nic Cage as Madden · straight to Prime — couch night'],
  ['🦃','Thanksgiving','2026-11-26','food coma incoming'],
  ['🎄','Agora Holiday Gala','2026-12-03','26 West, Red Bank'],
  ['🎅','Christmas + Schneiderbergers','2026-12-25','the annual tradition · same day every year'],
