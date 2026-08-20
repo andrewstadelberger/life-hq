@@ -258,7 +258,7 @@
         <b>Muscle Memory Mechanic</b> — you've got sessions banked · sign in with your Gmail <a class="act mint" style="display:inline-block" href="https://www.google.com/search?q=muscle+memory+mechanic+nj+book+appointment" target="_blank">Book ↗</a> &nbsp;·&nbsp; <b>Recover · Ocean County</b> — your chiro <a class="act mint" style="display:inline-block" href="https://www.google.com/search?q=recover+chiropractic+ocean+county+nj+book" target="_blank">Book ↗</a> &nbsp;·&nbsp; <b>Bodywork · Middletown</b> — Rt 35 across from Whole Foods (yeah, the spot's a little grim — I'll scout upgrades)</div>
       <div class="blk l"><span class="h">🏆 Best-in-area — researched Jul 8</span><b>Your insurance:</b> AmeriHealth NJ (from your member emails — confirm the plan card) · <b>Top doctor on Zocdoc:</b> Dr. Apurva Mallampati — 5.0★ (41 reviews), Patient Choice, Marlboro Medical Group, Englishtown · slots open next week <a class="act" style="display:inline-block" href="https://www.zocdoc.com/search?address=Middletown%2C%20NJ&specialty=153" target="_blank">Book ↗</a> · <b>Top dentists:</b> Navesink Dental Care (Red Bank/Middletown, 30+ yrs) <a class="act" style="display:inline-block" href="https://www.navesinkdentalcare.com" target="_blank">↗</a> + Dr. Richard Elsinger (Middletown, patients stay 30 years) · filter AmeriHealth on Zocdoc before booking</div>
       <div class="blk r"><span class="h">The fix list</span>
-        <b>Hip + groin — priority, they're wrecking you</b> · deep tissue shoulders &amp; neck · carpal tunnel (hand) · full assisted-stretch session. Next refresh I'll shortlist the best-reviewed local spots for each — hand specialist included.</div>
+        <b>Hip → Optimum Chiro, Manasquan (the viral one) — appointment locked 💪 text me date/time to calendar it</b> · deep tissue shoulders &amp; neck · carpal tunnel (hand) · full assisted-stretch session. Next refresh I'll shortlist the best-reviewed local spots for each — hand specialist included.</div>
       <div class="blk p"><span class="h">One-tap booking</span>
         <a class="act" style="display:inline-block" href="https://www.zocdoc.com" target="_blank">Your doctor ↗</a> &nbsp;<a class="act" style="display:inline-block" href="https://booksy.com/en-us/1067832_processo-barber-co_barber-shop_28678_morganville/staffer/1017287" target="_blank">Kyle @ Prosecco ↗</a>
         <br><button class="ask" data-q="Book Kyle at Prosecco for a haircut this week — find a slot and line it up">book Kyle →</button> <button class="ask" data-q="Set up a hip + groin deep tissue massage for me this week, local">fix my hip →</button> <button class="ask" data-q="Book me a full assisted stretch session near Middletown">book a stretch →</button> <button class="ask" data-q="Book my annual physical">book physical →</button>
@@ -588,7 +588,7 @@ const TODOS=[
   ['smackdown','Accept your SmackDown tickets in Ticketmaster','You bought 2 tickets on StubHub (order 649101262, $185.06) for WWE Friday Night SmackDown — Fri Aug 7, 7:30 PM, Xfinity Mobile Arena (old Wells Fargo Center), Philly · Sec 210A, Row 7, Seats 9–10. They transfer through Ticketmaster and you have to ACCEPT them or they don&#39;t exist on game night. Alexandria also sent a calendar invite. Do it now, not Friday afternoon.','Aug 7'] ]],
  ['Calls & bookings',[
   ['cpap','Call back the CPAP place in Asbury','they called you — sleep is the foundation of everything else right now, close the loop',[]],
-  ['reuter','"Reuter" — remind me what this is','it&#39;s on your list; doctor? PT? tell me and I&#39;ll file it properly and book it',[]],
+  ['standing1','Book the standing appointment','protect it — especially right now',[]],
   ['amerihealth','Healthcare check-in','confirm your AmeriHealth plan/card is current · I&#39;ll prep your options when open enrollment hits Nov 1',[]],
   ['physical','Book annual physical','get it on the books',[]],
   ['dentist','Book dentist','routine cleaning · online booking',[]],
@@ -601,8 +601,12 @@ const TODOS=[
   ['carkey','Replacement key','Audi — dealer or Audi Financial can point you',[['Call Audi','tel:+18882372834',0]]],
   ['detail','Detailing','The Detail Doctor (they email you — you&#39;re a known customer)',[]],
   ['service','Book Middletown Service Center','service + tire together · Mon–Fri',[['Call','tel:+17327418408',1]]] ]],
+ ['The move',[
+  ['uhaul','Book the U-Haul','pick your date — reserve online in 5 min, weekday rentals run cheaper than weekends',[['U-Haul','https://www.uhaul.com/Truck-Rentals/',1]]],
+  ['storage','Lock a storage unit','compare Middletown/Red Bank units on price — first-month-free deals are standard, don&#39;t pay full',[['Compare units','https://www.sparefoot.com/self-storage/new-jersey/middletown/',1]]],
+  ['movedate','Tell me the move date','and I&#39;ll build the whole runway: truck, unit, boxes, help, Archie logistics',[]] ]],
  ['Money',[
-  ['deficit','Build the real money picture — family&#39;s in your corner','step 1: one Amex login or forward me a statement → I map every recurring charge, the true deficit number, and the kill list. Fog is the enemy, not the number.',[]],
+  ['deficit','Build the money picture — priority one','map the recurring charges, set the plan, work it monthly',[]],
   ['bartinvest','ShoreHaven chat: the Bart investment','get it scheduled — and bring the deficit picture first, so the decision comes from facts',[]],
   ['payarchie2','Pay Purr&#39;n Pooch — two invoices, $469.15 total','$367.86 landed this morning (Aug 3 — the Minneapolis boarding) plus the older $101.29 from Jul 18 that&#39;s still sitting there. Pay both in one go and Archie&#39;s ledger is clean.','this week'],
   ['payvenmo2','Venmo: a friend has TWO requests — $150 + $100','$150 from Jul 17 and a new $100 from Aug 1. Either approve both ($250) or ask her what they&#39;re for — but don&#39;t let a third one stack up.','this week'],
@@ -651,6 +655,7 @@ prog();
 
 /* ---- EVENTS ---- */
 let EV=[
+ {s:'2026-08-21',title:'Doctor appt 🩺',type:'teal',note:'Friday · time TBD — text me the time · bring hip history + med list, mention CPAP follow-up. (Re-connect your personal Google calendar in Claude and I&#39;ll pin it there too.)'},
  {s:'2026-07-31',title:'Soho House charged — $1,250',type:'amber',note:'Processed Jul 31, non-reversible per their email. Next quarterly debit ~Nov 1 — decide by Oct 25 if you want out.'},
  {s:'2026-10-25',title:'Soho House — decide by today',type:'amber',note:'Last clean day to email membership@sohohouse.com if you want to stop the ~Nov 1 quarterly debit ($1,250). Between now and then: actually use the houses.'},
  {s:'2026-09-13',title:'A Mourning Walk',time:'6:45 AM',type:'teal',note:'Stephy&#39;s Place walk · Seven Presidents Park, Long Branch · registered ✓ paid ✓ · shirt (L) at check-in'},
