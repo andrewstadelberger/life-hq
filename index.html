@@ -10,7 +10,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Life HQ">
-<meta name="theme-color" content="#f4fbf8">
+<meta name="theme-color" content="#1c222b">
 <style>
   :root{
     color-scheme:light;
@@ -253,6 +253,72 @@
   #gate button{background:var(--mag);border:none;color:#fff;border-radius:13px;padding:13px 28px;font-size:15px;font-weight:600;cursor:pointer}
   #gate button:hover{background:var(--mag-d)}
   #gate .err{color:#ffb0c0;font-size:13px;height:16px}
+
+  /* ===== LIFT — lighter surfaces, higher contrast, bigger small type ===== */
+  :root{
+    --bg1:#1c222b;--bg2:#20272f;--ink:#f7fafc;--sub:#c2ccd6;--faint:#96a2ad;--hair:#39434f;
+    --card:#262e38;--mint:#3fe3aa;--mint-d:#9df6d8;--mint-s:#1c3a32;--mint-l:#2b5548;
+    --mag:#ff617f;--mag-d:#ff9db0;--mag-s:#3a222a;--mag-l:#52303a;
+    --blue:#6fb8ff;--blue-s:#1e2e40;--blue-d:#a6d5ff;
+    --amber:#ffc25c;--amber-s:#3a2f1c;--amber-d:#ffdda1;
+    --gray:#98a3ad;--gray-s:#2d353f;
+    --sh:0 1px 2px rgba(0,0,0,.35),0 18px 40px -24px rgba(0,0,0,.7);
+    --sh-h:0 2px 8px rgba(0,0,0,.4),0 26px 50px -26px rgba(0,0,0,.85);
+  }
+  body{background:radial-gradient(1200px 600px at 20% -10%,#2b3a56 0%,transparent 62%),linear-gradient(180deg,#1c222b,#20272f)}
+  .b{border:1px solid var(--hair);background:var(--card)}
+  .hero{background:linear-gradient(120deg,#2b343f,#242b34 60%);border:1px solid #414c59}
+  .blk{background:#1e252e}
+  .cd,.song,.fly a{background:#1e252e !important;border:1px solid var(--hair)}
+  table.cal td{background:#222a33}table.cal td:hover{background:#2c3846}
+  td.today{background:#3a222a;outline-color:var(--mag)}
+  .daycard,.dev,.dtext{background:#222a33 !important;border-color:var(--hair)}
+  details.sec summary{background:var(--card);border:1px solid var(--hair)}
+  .scorewrap{background:linear-gradient(120deg,#242c36,#2c222a);border:1px solid #46515f}
+  .sc{background:#1e252e;border:1px solid var(--hair)}
+  .sc:hover{border-color:#5b6878}
+  .sc .barx{background:#333d49}
+  .cb{border-color:#5b6878}
+  .mapwrap{background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(135deg,#232f3c,#262130 60%,#1f2f2b)}
+  /* readability: small text was too small and too dim */
+  .tiny{font-size:12.5px;color:var(--sub)}
+  .sub,.meta,.note{color:var(--sub)}
+  .blk{font-size:13.5px;line-height:1.6;color:var(--ink)}
+  .creed{color:var(--sub);font-size:14px}
+  .k{color:var(--sub)}
+  .cd .s2,.cd .n{color:var(--ink)}
+
+  /* ===== scoreboard: minus buttons, log, reset ===== */
+  .sc{padding-top:13px}
+  .sc .minus{position:absolute;top:7px;right:7px;width:26px;height:26px;border-radius:9px;border:1px solid var(--hair);
+    background:#2b333d;color:var(--sub);font-size:15px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center;padding:0}
+  .sc:hover .minus,.sc.hasval .minus{display:flex}
+  .sc .minus:hover{background:var(--mag-s);color:var(--mag-d);border-color:var(--mag)}
+  .logbar{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .logbar select,.logbar input{background:#1e252e;border:1px solid var(--hair);color:var(--ink);border-radius:11px;
+    padding:11px 12px;font-size:14px;font-family:inherit;outline:none}
+  .logbar select{flex:0 0 auto;max-width:170px}
+  .logbar input{flex:1 1 220px;min-width:0}
+  .logbar select:focus,.logbar input:focus{border-color:var(--mint);box-shadow:0 0 0 3px rgba(63,227,170,.18)}
+  .logbar button{background:var(--mint);border:none;color:#0e1a16;border-radius:11px;padding:11px 18px;
+    font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;flex:0 0 auto}
+  .logbar button:hover{background:var(--mint-d)}
+  .loglist{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+  .logitem{display:flex;align-items:flex-start;gap:10px;background:#1e252e;border:1px solid var(--hair);
+    border-radius:11px;padding:9px 12px;font-size:13.5px;line-height:1.5}
+  .logitem .lday{flex:0 0 auto;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--faint);min-width:34px;padding-top:2px}
+  .logitem .ltxt{flex:1 1 auto;color:var(--ink)}
+  .logitem .ltxt em{font-style:normal;color:var(--mint-d);font-weight:700}
+  .logitem .lx{flex:0 0 auto;background:none;border:none;color:var(--faint);cursor:pointer;font-size:15px;line-height:1;padding:2px 4px}
+  .logitem .lx:hover{color:var(--mag-d)}
+  .logempty{font-size:13px;color:var(--faint);padding:4px 2px}
+  .scfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    margin-top:14px;border-top:1px solid var(--hair);padding-top:12px}
+  .scfoot .creed{margin:0;border:none;padding:0;flex:1 1 320px}
+  .reset{background:#2b333d;border:1px solid var(--hair);color:var(--sub);font-size:12px;font-weight:600;
+    border-radius:10px;padding:8px 13px;cursor:pointer;text-decoration:none;margin:0;flex:0 0 auto;font-family:inherit}
+  .reset:hover{background:var(--mag-s);color:var(--mag-d);border-color:var(--mag)}
 </style>
 </head>
 <body>
@@ -279,7 +345,16 @@
     <div class="b c12 scorewrap">
       <div class="todohead"><div class="mid">⚡ THE SCOREBOARD</div><div class="k" id="wklabel">this week</div></div>
       <div class="scoregrid" id="score"></div>
-      <div class="creed"><b>Tap a tile every time you do the thing.</b> These five are the only things that compound — followers, money, and the rest are what they turn into. Miss a day, tap it tomorrow. Resets every Monday.</div>
+      <div class="logbar">
+        <select id="logcat"></select>
+        <input id="logtxt" placeholder="What did you do? e.g. Shred w/ Jessica T — legs, 45 min">
+        <button id="logadd">Log it</button>
+      </div>
+      <div class="loglist" id="loglist"></div>
+      <div class="scfoot">
+        <div class="creed"><b>Tap a tile to count it, or log it below with detail.</b> Logging bumps the counter too. Hit &minus; to undo. These five are the only things that compound. Resets every Monday — last week is kept.</div>
+        <button class="reset" id="wkreset">Reset this week</button>
+      </div>
     </div>
 
     <!-- business section withheld from the public build -->
@@ -944,16 +1019,57 @@ const BDRAFTS=[
 })();
 
 /* ---- SCOREBOARD ---- */
-const SC=[['train','🏋️ Train',5,'#ff4d6d'],['ship','📣 Post / ship',5,'#ffb43d'],['ask','📞 Asks made',10,'#4da6ff'],['money','💵 Money moves',3,'#2fd39a'],['reps','🎹 Piano reps',4,'#b388ff']];
+const SC=[['train','🏋️ Train',5,'#ff617f'],['ship','📣 Post / ship',5,'#ffc25c'],['ask','📞 Asks made',10,'#6fb8ff'],['money','💵 Money moves',3,'#3fe3aa'],['reps','🎹 Piano reps',4,'#c4a1ff']];
+const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 function wkKey(){const d=new Date();const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return d.toISOString().slice(0,10);}
-function scLoad(){let raw=localStorage.getItem('hq_score');let o=raw?JSON.parse(raw):{};if(o.wk!==wkKey())o={wk:wkKey()};return o;}
-function scSave(o){localStorage.setItem('hq_score',JSON.stringify(o));}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function scLoad(){let o={};try{o=JSON.parse(localStorage.getItem('hq_score'))||{};}catch(e){o={};}
+ if(o.wk!==wkKey()){
+  if(o.wk){try{const h=JSON.parse(localStorage.getItem('hq_score_hist'))||[];h.unshift(o);localStorage.setItem('hq_score_hist',JSON.stringify(h.slice(0,8)));}catch(e){}}
+  o={wk:wkKey(),log:[]};
+ }
+ if(!Array.isArray(o.log))o.log=[];
+ return o;}
+function scSave(o){try{localStorage.setItem('hq_score',JSON.stringify(o));}catch(e){}}
 function scRender(){const o=scLoad();const el=document.getElementById('score');if(!el)return;
- el.innerHTML=SC.map(([k,lab,tgt,col])=>{const n=o[k]||0;const pct=Math.min(100,Math.round(n/tgt*100));
-  return '<div class="sc'+(n>=tgt?' hit':'')+'" data-k="'+k+'"><div class="lab">'+lab+'</div><div class="num">'+n+'<span style="font-size:14px;color:var(--faint);font-weight:600"> / '+tgt+'</span></div><div class="tgt">'+(n>=tgt?'target hit ✓':(tgt-n)+' to go this week')+'</div><div class="barx"><i style="width:'+pct+'%;background:'+col+'"></i></div></div>';}).join('');
- const lbl=document.getElementById('wklabel');if(lbl){const done=SC.filter(([k,,t])=>(o[k]||0)>=t).length;lbl.textContent=done+' of 5 targets hit';}}
-document.addEventListener('click',e=>{const t=e.target.closest('.sc');if(!t)return;const o=scLoad();const k=t.dataset.k;o[k]=(o[k]||0)+1;scSave(o);scRender();});
-document.addEventListener('contextmenu',e=>{const t=e.target.closest('.sc');if(!t)return;e.preventDefault();const o=scLoad();const k=t.dataset.k;o[k]=Math.max(0,(o[k]||0)-1);scSave(o);scRender();});
+ el.innerHTML=SC.map(function(r){const k=r[0],lab=r[1],tgt=r[2],col=r[3];const n=o[k]||0;const pct=Math.min(100,Math.round(n/tgt*100));
+  return '<div class="sc'+(n>=tgt?' hit':'')+(n>0?' hasval':'')+'" data-k="'+k+'">'+
+   '<button class="minus" data-m="'+k+'" title="undo one">&minus;</button>'+
+   '<div class="lab">'+lab+'</div>'+
+   '<div class="num">'+n+'<span style="font-size:14px;color:var(--faint);font-weight:600"> / '+tgt+'</span></div>'+
+   '<div class="tgt">'+(n>=tgt?'target hit &#10003;':(tgt-n)+' to go this week')+'</div>'+
+   '<div class="barx"><i style="width:'+pct+'%;background:'+col+'"></i></div></div>';}).join('');
+ const lbl=document.getElementById('wklabel');
+ if(lbl){const done=SC.filter(function(r){return (o[r[0]]||0)>=r[2];}).length;lbl.textContent=done+' of 5 targets hit';}
+ const sel=document.getElementById('logcat');
+ if(sel&&!sel.options.length){SC.forEach(function(r){const op=document.createElement('option');op.value=r[0];op.textContent=r[1];sel.appendChild(op);});}
+ const list=document.getElementById('loglist');
+ if(list){
+  if(!o.log.length){list.innerHTML='<div class="logempty">Nothing logged this week yet — log your first one above.</div>';}
+  else{list.innerHTML=o.log.map(function(en,i){
+   const hit=SC.filter(function(r){return r[0]===en.k;})[0];
+   const lab=hit?hit[1]:'&mdash;';
+   return '<div class="logitem"><span class="lday">'+DAYS[new Date(en.d).getDay()]+'</span>'+
+    '<span class="ltxt"><em>'+lab+'</em> &middot; '+esc(en.t)+'</span>'+
+    '<button class="lx" data-i="'+i+'" title="remove">&times;</button></div>';}).join('');}
+ }}
+document.addEventListener('click',function(e){
+ const m=e.target.closest('.minus');
+ if(m){const o=scLoad();const k=m.dataset.m;o[k]=Math.max(0,(o[k]||0)-1);scSave(o);scRender();return;}
+ const x=e.target.closest('.lx');
+ if(x){const o=scLoad();const i=+x.dataset.i;const en=o.log[i];
+  if(en){o[en.k]=Math.max(0,(o[en.k]||0)-1);o.log.splice(i,1);scSave(o);scRender();}return;}
+ const t=e.target.closest('.sc');
+ if(t){const o=scLoad();const k=t.dataset.k;o[k]=(o[k]||0)+1;scSave(o);scRender();}});
+function logAdd(){const sel=document.getElementById('logcat'),inp=document.getElementById('logtxt');
+ if(!sel||!inp)return;const txt=(inp.value||'').trim();if(!txt)return;
+ const o=scLoad();const k=sel.value||'train';
+ o.log.unshift({k:k,t:txt,d:Date.now()});o[k]=(o[k]||0)+1;
+ scSave(o);inp.value='';scRender();}
+const _la=document.getElementById('logadd');if(_la)_la.onclick=logAdd;
+const _lt=document.getElementById('logtxt');if(_lt)_lt.addEventListener('keydown',function(e){if(e.key==='Enter')logAdd();});
+const _wr=document.getElementById('wkreset');
+if(_wr)_wr.onclick=function(){if(!confirm('Reset this week? Counters and the log go back to zero.'))return;scSave({wk:wkKey(),log:[]});scRender();};
 scRender();
 
 /* ---- ask-me buttons: copy request to clipboard ---- */
