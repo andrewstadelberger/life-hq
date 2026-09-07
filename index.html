@@ -198,6 +198,52 @@
   details.sec>.bento{margin-top:12px}
   details.sec summary .cnt{margin-left:auto;font-size:11px;font-weight:700;color:var(--mint-d);text-transform:none;letter-spacing:0;background:var(--mint-s);padding:4px 10px;border-radius:999px}
   details.sec[open] summary .cnt{color:var(--mag-d);background:var(--mag-s)}
+
+  /* ===== UNDENIABLE MODE — dark rebuild ===== */
+  :root{
+    --bg1:#0b0d0f;--bg2:#0e1114;--ink:#f2f4f5;--sub:#98a1a8;--faint:#6b757c;--hair:#1e242a;
+    --card:#14181c;--mint:#2fd39a;--mint-d:#7ff0c8;--mint-s:#12241f;--mint-l:#1c3a31;
+    --mag:#ff4d6d;--mag-d:#ff8098;--mag-s:#26141a;--mag-l:#3a1d25;
+    --blue:#4da6ff;--blue-s:#101d2b;--blue-d:#8ccaff;
+    --amber:#ffb43d;--amber-s:#2a2013;--amber-d:#ffd489;
+    --gray:#7b858c;--gray-s:#1a1f24;
+    --sh:0 1px 2px rgba(0,0,0,.5),0 18px 40px -22px rgba(0,0,0,.9);
+    --sh-h:0 2px 8px rgba(0,0,0,.6),0 26px 50px -24px rgba(0,0,0,1);
+  }
+  body{background:radial-gradient(1200px 600px at 20% -10%,#16203a 0%,transparent 60%),linear-gradient(180deg,#0b0d0f,#0e1114)}
+  .b{border:1px solid var(--hair)}
+  .hero{background:linear-gradient(120deg,#171d24,#12161a 60%);border:1px solid #262f38}
+  .hero::after{background:radial-gradient(circle at 35% 35%,rgba(255,77,109,.18),transparent 70%)}
+  .hero::before{background:radial-gradient(circle at 60% 40%,rgba(47,211,154,.10),transparent 70%)}
+  .hello{background:linear-gradient(90deg,#fff,#ff8098 60%,#ffb43d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .next::before{background:linear-gradient(180deg,rgba(10,12,14,.82),rgba(10,12,14,.55) 55%,rgba(10,12,14,.85))}
+  .blk{background:#0f1317;border-left-width:3px}
+  .cd,.song,.fly a{background:#0f1317 !important;border:1px solid var(--hair);color:var(--ink) !important}
+  .cd .n{color:#fff}
+  .cd0{box-shadow:inset 3px 0 0 #ffb43d}.cd1{box-shadow:inset 3px 0 0 #ff4d6d}
+  .cd2{box-shadow:inset 3px 0 0 #4da6ff}.cd3{box-shadow:inset 3px 0 0 #2fd39a}
+  table.cal td{background:#101418}table.cal td:hover{background:#16202a}
+  td.today{background:#26141a;outline-color:var(--mag)}
+  .daycard,.dev,.dtext{background:#101418 !important;border-color:var(--hair)}
+  .mapwrap{background:linear-gradient(135deg,#101820,#141018 60%,#0f1a17);background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(135deg,#101820,#141018 60%,#0f1a17)}
+  .pin{color:#e9edf0}
+  details.sec summary{background:var(--card);border:1px solid var(--hair)}
+  .b>.title::before{background:linear-gradient(180deg,#ff4d6d,#ffb43d)}
+  .cb{border-color:#39424a}
+  /* scoreboard */
+  .scorewrap{background:linear-gradient(120deg,#12171c,#171015);border:1px solid #2a333c}
+  .scoregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+  .sc{background:#0e1216;border:1px solid var(--hair);border-radius:14px;padding:13px;cursor:pointer;transition:.15s;user-select:none;position:relative;overflow:hidden}
+  .sc:hover{border-color:#3a4650;transform:translateY(-2px)}
+  .sc .lab{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--sub)}
+  .sc .num{font-size:30px;font-weight:800;letter-spacing:-.03em;margin-top:6px;line-height:1}
+  .sc .tgt{font-size:11px;color:var(--faint);margin-top:3px}
+  .sc .barx{height:5px;border-radius:99px;background:#1c2228;margin-top:9px;overflow:hidden}
+  .sc .barx i{display:block;height:100%;width:0;transition:width .25s}
+  .sc.hit{border-color:#2fd39a}
+  .sc.hit .num{color:#2fd39a}
+  .reset{background:none;border:none;color:var(--faint);font-size:11px;cursor:pointer;text-decoration:underline;margin-top:10px}
+  .creed{font-size:13.5px;color:var(--sub);line-height:1.6;margin-top:14px;border-top:1px solid var(--hair);padding-top:12px}
   /* gate */
   #gate{position:fixed;inset:0;z-index:999;background:linear-gradient(160deg,#0f3d31,#16302a 55%,#3a1326);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:#fff}
   #gate .glab{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7fd8c4;font-weight:700}
@@ -225,10 +271,34 @@
       <span class="clock" id="clock"></span>
       <div class="hello" id="hello">Good evening, Andrew</div>
       <div class="tiny" id="today" style="margin-top:4px"></div>
-      <div class="spark">One call today — AmeriHealth — and the rest of the week gets easy. Therapy consult tomorrow at 3:45, Agora meetup tonight if you want people. 🌿</div>
+      <div class="spark">Undeniable isn't a feeling. It's the reps below, 12 months deep. 🔥</div>
       <div class="wx"><span style="font-size:18px">&#9928;</span>81° and humid, 65° tonight · shower this morning, thunderstorm this afternoon <span class="tiny" style="color:var(--mint-d)">· Labor Day — an indoor kind of Monday · Middletown, NJ</span></div>
       <div class="countpill" id="countpill">— open</div>
     </div>
+    <!-- SCOREBOARD -->
+    <div class="b c12 scorewrap">
+      <div class="todohead"><div class="mid">⚡ THE SCOREBOARD</div><div class="k" id="wklabel">this week</div></div>
+      <div class="scoregrid" id="score"></div>
+      <div class="creed"><b>Tap a tile every time you do the thing.</b> These five are the only things that compound — followers, money, and the rest are what they turn into. Miss a day, tap it tomorrow. Resets every Monday.</div>
+    </div>
+
+    <!-- PIANO PROJECT -->
+    <div class="b c12">
+      <div class="title">🎹 COCKTAIL PIANO — gorgeous by Dec 1</div>
+      <div class="blk l"><span class="h">The test you're training for</span>Sit down cold at a party and play <b>45 minutes of continuous, effortless background music</b> without sheet music or stopping. That's the whole bar. Not virtuosity — <i>unbotherable</i>.</div>
+      <div class="cdgrid">
+        <div class="cd cd1"><div class="n">WK 1–4</div><div class="lbl">Foundation</div><div class="s2">Rootless left-hand voicings (A + B position) · ii–V–I through all 12 keys · <b>2 tunes memorized cold</b></div></div>
+        <div class="cd cd0"><div class="n">WK 5–8</div><div class="lbl">Feel + polish</div><div class="s2">Bossa &amp; ballad grooves · intros, turnarounds, endings · fills between phrases · <b>2 more tunes</b></div></div>
+        <div class="cd cd2"><div class="n">WK 9–12</div><div class="lbl">Perform</div><div class="s2">Segues between tunes · playing under conversation (dynamics!) · <b>2 more</b> = 6-tune set · play for actual humans</div></div>
+        <div class="cd cd3"><div class="n">DEC 1</div><div class="lbl">Curtain</div><div class="s2">6 tunes, 45 min, no charts. Christmas party season = live testing ground.</div></div>
+      </div>
+      <div class="blk m"><span class="h">The set list — half of it is already on your song board</span>
+        1. <b>How Deep Is Your Love</b> (yours) · 2. <b>Laughter in the Rain</b> (yours) · 3. <b>Fly Me to the Moon</b> — the single most useful cocktail tune alive · 4. <b>Autumn Leaves</b> — your ii–V–I workshop in tune form · 5. <b>Misty</b> or <b>Georgia On My Mind</b> — the one that makes a room go quiet · 6. <b>Corcovado</b> or <b>Girl from Ipanema</b> — you already saved bossa progressions</div>
+      <div class="blk p"><span class="h">Daily rep = 25 minutes, 4x/week (that's the scoreboard tile)</span>
+        5 min voicings in 2 keys → 10 min on the current tune → 10 min just <i>playing</i> loosely over changes, no goal. The last 10 is what makes it sound gorgeous instead of correct.
+        <br><b>Your teacher is already paid for:</b> Piano With Jonny on Udemy — he literally teaches this style. <a class="act mint" style="display:inline-block;margin-top:6px" href="https://www.udemy.com/home/my-courses/" target="_blank">Open your course ↗</a></div>
+    </div>
+
     <!-- NEXT UP -->
     <div class="b c4 hov next" id="nextcard">
       <div class="k">Next up</div>
@@ -242,12 +312,12 @@
       <div class="todohead"><div class="mid">🗂️ September, made legible</div><div class="k">dates aren't emergencies · one thing at a time</div></div>
       <div class="blk m"><span class="h">This week — only 2 things need prep</span>
         <b>Thu 10:</b> Aunt Millie + Clariss (Trinidad) land → <i>need: arrival times, one dinner plan, studio logistics</i><br>
-        <b>Fri 11:</b> a heavy anniversary → <i>need: decide in advance where you'll be, how much family, and what time you're done</i><br>
+        <b>Fri 11:</b> an anniversary → <i>need: decide in advance where you'll be, how much family, and what time you're done</i><br>
         <b>Everything else this week has no prep. It's just a date.</b></div>
       <div class="blk p"><span class="h">Rest of the month — already handled</span>
         Mon 14 Bryant's bday (+ Alonso @ Citi) · Fri 18 SACRO for Sydney · Sat 19 Jungle @ Barclays · <b>Thu 24 Masquerade ✓ booked</b> · Sep 25–27 LBI · Clariss here all month</div>
       <div class="blk l"><span class="h">☎️ Admin — needs business hours (not today, Labor Day)</span>
-        1. Bank credit limit &nbsp;2. Card &nbsp;3. E-ZPass reactivation &nbsp;4. Utah flight + hotel &nbsp;5. Car title &nbsp;6. Dentist &nbsp;7. Confirm derm<br>
+        1. the bank credit limit &nbsp;2. the card &nbsp;3. E-ZPass reactivation &nbsp;4. Utah flight + hotel &nbsp;5. Car title &nbsp;6. Dentist &nbsp;7. Confirm derm<br>
         <i>Tomorrow morning, in that order. One sitting. Money stuff first — it's the only category quietly costing you.</i></div>
       <div class="blk r"><span class="h">🛋️ Can do anytime, no phone calls</span>
         Cancel Le Alfré · returns · haircut · Utah outfit · book Miami · rare-earth diligence for ShoreHaven</div>
@@ -310,7 +380,7 @@
   <!-- FINANCES -->
 
   <!-- TRIPS & NYC -->
-  <details class="sec" open><summary>📺 Screens &amp; music</summary>
+  <details class="sec"><summary>📺 Screens &amp; music</summary>
   <div class="bento">
     <div class="b c12 hov">
       <div class="title">📺 Screens radar</div>
@@ -467,7 +537,7 @@
   </details>
 
   <!-- FUN / GIFTS / PETS -->
-  <details class="sec" open><summary>🗓️ The year ahead — proof there's good stuff coming</summary>
+  <details class="sec"><summary>🗓️ The year ahead — proof there's good stuff coming</summary>
   <div class="bento">
     <div class="b c3 hov"><div class="k">Now → Sep · filling in</div><ul class="tl">
       <li>Therapy consult Aug 26 — the good one</li>
@@ -492,7 +562,7 @@
       <li>Summer tours announce — Ben Folds, Jungle, Vulfpeck, roasts</li></ul></div>
   </div>
   </details>
-  <details class="sec" open><summary>🎁 Gifts, giving &amp; Archie <span class="cnt">tap to open</span></summary>
+  <details class="sec"><summary>🎁 Gifts, giving &amp; Archie <span class="cnt">tap to open</span></summary>
   <div class="bento">
     <div class="b c6 hov">
       <div class="title">🎁 Birthdays — all in one place</div>
@@ -600,11 +670,11 @@ const tkey='2026-09-07';
 const TODOS=[
  ['🔴 Do these first — everything else can wait',[
   ['amerihealth2','CALL AMERIHEALTH — <b>$2,558.10</b>, and it&#39;s now been open 4 weeks','Unchanged since Aug 25, which is the problem. Aug 13: &quot;We tried to process your AmeriHealth premium payment on <b>August 10, 2026 for $2,558.10</b>... <b>Your bank account number and/or routing number are invalid.</b>&quot; Aug 19: &quot;your payment is overdue and your coverage may be terminated.&quot; The failed debit was Aug 10 — you are roughly <b>28 days into a 90-day grace period</b>, so the real cliff is early November, but every week you wait is a week of claims that could bounce. This is not a money problem, it&#39;s a wrong-digits problem. Call <b>1-800-313-9168</b>, pay the past-due in full, re-enter the bank details on the phone, then have them read the account and routing back to you. Nothing else on this page costs more if it lapses.','TODAY'],
-  ['bankroot','The real story: one bad bank account is breaking payments everywhere','Look at these together and the pattern is obvious. <b>AmeriHealth</b> — debit failed Aug 10, &quot;account number and/or routing number are invalid.&quot; <b>Card</b> — payment returned Aug 6, again Aug 8, again Aug 12; card suspended in Apple Pay Aug 16; only cleared Aug 17. <b>E-ZPass</b> — the same card-on-file story earlier this summer. Three different creditors, same few weeks, same failure mode. That is one closed or mistyped funding account, not three separate flukes. Pull up the actual account + routing numbers once, verify them against a real BofA statement, then fix them everywhere in one sitting: AmeriHealth, Card autopay, E-ZPass. Do this before Sep 14, when the next Card payment is due.','THIS WEEK'],
+  ['bankroot','The real story: one bad bank account is breaking payments everywhere','Look at these together and the pattern is obvious. <b>AmeriHealth</b> — debit failed Aug 10, &quot;account number and/or routing number are invalid.&quot; <b>the card</b> — payment returned Aug 6, again Aug 8, again Aug 12; card suspended in Apple Pay Aug 16; only cleared Aug 17. <b>E-ZPass</b> — the same card-on-file story earlier this summer. Three different creditors, same few weeks, same failure mode. That is one closed or mistyped funding account, not three separate flukes. Pull up the actual account + routing numbers once, verify them against a real BofA statement, then fix them everywhere in one sitting: AmeriHealth, the card autopay, E-ZPass. Do this before Sep 14, when the next the card payment is due.','THIS WEEK'],
   ['the fund2','Send the the fund letter to Congress — 3 minutes, actually matters','your counsel (John Eubanks) emailed you twice on Aug 18: the standalone bill is now real — <b>H.R. 9795</b>, introduced Jul 21 and sitting in House Judiciary with 6 cosponsors. They&#39;re asking every claimant to send a pre-written letter to their Rep + Senators through a one-click form (Wilkes sent a corrected link in the second email — use that one). After the skinny 7th distribution, cosponsor count is the whole ballgame. This is the rare ask where you personally moving the needle is plausible.','this week'],
-  ['utahnow','🚨 UTAH IS IN 25 DAYS AND NOTHING IS BOOKED','This was &quot;ASAP&quot; on Aug 25 and it is still untouched. Saturday mountain wedding, Oct 2–4, limited room block, and there is <b>no flight, no room, and no RSVP in your name</b>. Three moves, one sitting, 20 minutes: (1) <b>Text Mike</b> — the guest list needs a quick fix so you can RSVP solo at michaelandrennie.com/rsvp-1. (2) Book the room off the wedding site travel tab; if Sundance is gone, Provo is 15–20 min. (3) Book EWR→SLC landing <b>Fri Oct 2</b> early afternoon — the welcome party is 7 PM. Every day you wait, this gets more expensive and the room block gets thinner. Do it today.','TODAY'] ]],
+  ['utahnow','🚨 UTAH IS IN 25 DAYS AND NOTHING IS BOOKED','This was &quot;ASAP&quot; on Aug 25 and it is still untouched. Saturday mountain wedding, Oct 2–4, limited room block, and there is <b>no flight, no room, and no RSVP in your name</b>. Three moves, one sitting, 20 minutes: (1) <b>Text Mike</b> — you&#39;re bundled under her&#39;s guest-list entry, he fixes it, then you RSVP solo at michaelandrennie.com/rsvp-1. (2) Book the room off the wedding site travel tab; if Sundance is gone, Provo is 15–20 min. (3) Book EWR→SLC landing <b>Fri Oct 2</b> early afternoon — the welcome party is 7 PM. Every day you wait, this gets more expensive and the room block gets thinner. Do it today.','TODAY'] ]],
  ['Calls & bookings',[
-  ['derm','Confirm the appointment','one call, closes a loop',[]],
+  ['derm','Confirm the appointment','one call',[]],
   ['cpap','Call back the CPAP place in Asbury','they called you — sleep is the foundation of everything else right now, close the loop',[]],
   ['standing1','Book the standing appointment','protect it',[]],
   ['physical','Book annual physical','Your doctor ',[['Zocdoc','https://www.zocdoc.com/search?q=%20',1],['Call','tel:',0]]],
@@ -625,7 +695,7 @@ const TODOS=[
   ['movedate','Move status — you&#39;re IN 🎉','USPS forwarding ✓ (welcome kit Aug 21) · furniture + sheets arriving · returns blitz in motion (money coming BACK) · tell me what the new place still needs',[]] ]],
  ['Money',[
   ['usbank','Bank call — credit limit','first of the phone sequence',[]],
-  ['the cardfix','Card issue — resolve','statement in inbox',[]],
+  ['cardfix','Card issue — resolve','statement in inbox',[]],
   ['venmojohn','Clear the open Venmo request','don&#39;t let it age',[]],
   ['deficit','Money picture — statement in hand','forward it, full map same-day','NOW'],
   ['bartinvest','ShoreHaven chat: the Bart investment','get it scheduled — and bring the deficit picture first, so the decision comes from facts',[]],
@@ -633,7 +703,7 @@ const TODOS=[
   ['payvenmo2','Venmo: a friend has TWO requests — $150 + $100','$150 from Jul 17 and a new $100 from Aug 1. Either approve both ($250) or ask her what they&#39;re for — but don&#39;t let a third one stack up.','this week'],
   ['sohonext','Soho House charged $1,250 — put the NEXT decision on the calendar','It processed Jul 31 and Soho House says it can&#39;t be reversed, so this quarter is spent. The real move: the next auto-debit is ~Nov 1, and cancelling needs an email to membership@sohohouse.com at least 3 days ahead. Decide by <b>Oct 25</b> — I&#39;ll put it on the calendar. Between now and then, actually use it (Miami, NYC, Chicago) so the answer writes itself.','Oct 25'],
   ['norton','⏰ Norton 360 renews $119.99 in 10 days — kill it by Sep 16','<b>Norton 360 Deluxe, 1 year, $119.99</b>, renewing <b>Sep 17</b>. Apple&#39;s rule: cancel at least a day before, so <b>Sep 16 is the last clean day</b>. If you&#39;re not actively using Norton — and almost nobody on a Mac is — this is $120 back for two minutes. Settings → your name → Subscriptions. Note this lands while you&#39;re in your Sep 10–15 off block, so do it now rather than remembering on the 16th.','Sep 16'],
-  ['the carddue','Card August statement — due Mon Sep 14','Account ending 35006, statement landed Aug 21. Given three returned payments this month, confirm the funding account is fixed well before this date rather than finding out on the 15th.','Sep 14'],
+  ['the carddue','the card August statement — due Mon Sep 14','Account ending 35006, statement landed Aug 21. Given three returned payments this month, confirm the funding account is fixed well before this date rather than finding out on the 15th.','Sep 14'],
   ['dropbox2','Dropbox took $198 via PayPal on Aug 22','Annual plan renewing. Fine if you use it — you do, the studio runs on it — but it belongs on the recurring list so it stops being a surprise. Worth one look at whether you&#39;re on the right tier.',[]],
   ['mintmobile','Mint Mobile charged $129.63 via PayPal','Hit Aug 3. If that&#39;s your annual/multi-month plan renewing, fine — just confirm it&#39;s the rate you expected and not a step-up from a promo price.',[]],
   ['openai','OpenAI is billing you every day or two — check what&#39;s running','Three API invoices in four days (Aug 17, 18, 19). That&#39;s usage-based billing on an API key, not a flat ChatGPT sub. Either something you built is running on a loop, or a key is out in the wild. Open the usage dashboard and look — this is the classic quiet money leak.',[['OpenAI billing','https://platform.openai.com/usage',1]]],
@@ -643,12 +713,12 @@ const TODOS=[
   ['bofa','View Bank of America renewal notice','Online Banking → Statements & Documents',[]],
   ['audible','Audible membership started Jul 1','new auto-renewing sub + $20 credit — use it, or cancel before the first charge',[]],
   ['bofacard','BofA card is live in Apple Pay','The replacement arrived and BofA confirmed Aug 1 that the debit card ending 7748 is ready in Apple Pay. Good candidate to become the new E-ZPass card on file.',[]],
-  ['the cardcheck','Verify which card just paid your Card AutoPay','$9,194.30 processed Jul 4 on the card ending 35006 — if that&#39;s the same Card that&#39;s been declining on E-ZPass, the card may be working again; worth a quick check before you spend time swapping it out',[]],
+  ['the cardcheck','Verify which card just paid your the card AutoPay','$9,194.30 processed Jul 4 on the card ending 35006 — if that&#39;s the same the card that&#39;s been declining on E-ZPass, the card may be working again; worth a quick check before you spend time swapping it out',[]],
   ['applecharges','Review your Apple charges','Receipts landing every 1–2 weeks (most recent Jul 4, &quot;Monthly Access&quot;) — AppleCare+ was also canceled May 12. Worth a quick look to make sure nothing&#39;s double-billing.',[]],
   ['registration','Text me your registration expiry month','on the card in the glovebox / windshield sticker — then it goes on the calendar with a renewal runway',[]],
   ['q3','Q3 estimated taxes','fed + NJ','Sep 15'] ]],
  ['NYC & social',[
-  ['ninesep','Friday — decide your day in advance','where, how long, what time you&#39;re done','Sep 11'],
+  ['ninesep','Friday — decide your day in advance','where, how long, when you&#39;re done','Sep 11'],
   ['guests','Thu: arrival times + one dinner plan','that&#39;s the whole prep','Sep 10'],
   ['chitrip','Plan Chicago','your guy&#39;s there, you love the city, EWR flights run cheap — say when and it&#39;s planned',[]],
   ['tri','Pick a 2027 race or drop it — the half-wanting-it is what costs you','Steelman came and went Aug 23 without a decision, which is the pattern worth naming. <b>IRONMAN Canada–Ottawa registration is open</b> if you want a real 2027 goal to train toward. Either put money down on something and let it structure your winter, or take this line off the page. Both are fine. Carrying it unresolved for another three months is not.',[]],
@@ -689,8 +759,9 @@ prog();
 
 /* ---- EVENTS ---- */
 let EV=[
+ {s:'2026-12-01',title:'🎹 PIANO DEADLINE',type:'pink',note:'Gorgeous by Dec 1: 6 tunes, 45 minutes, no sheet music. Christmas party season is the proving ground.'},
  {s:'2026-09-10',title:'Aunt Millie + Clariss arrive',type:'teal',note:'Aunt Millie in town · Clariss flying in from Trinidad, here all month after today. Need before: arrival times, one dinner plan, studio logistics. That&#39;s it.'},
- {s:'2026-09-11',title:'Anniversary',type:'gray',note:'Decide YOUR day in advance: where you&#39;ll be, how much family involvement, and what time you&#39;re done. Deciding beforehand is how you stay in control of it.'},
+ {s:'2026-09-11',title:'an anniversary',type:'gray',note:'Decide YOUR day in advance: where you&#39;ll be, how much family involvement, and what time you&#39;re done. Deciding beforehand is how you stay in control of it.'},
  {s:'2026-09-25',e:'2026-09-27',title:'LBI weekend 🌊',type:'blue',note:'Family house · the weekend after Masquerade · nothing to prep, just go'},
  {s:'2026-09-11',e:'2026-09-30',title:'Clariss in town 💼',type:'teal',note:'Your teammate is local all September after the 10th — rare face-to-face window: studio days, client push, real work sessions. Plan the good stuff early in the stretch.'},
  {s:'2026-09-18',title:'SACRO · Sydney&#39;s bday 🎂🔥',time:'8 PM–2 AM',type:'pink',note:'Mestiza&#39;s flamenco-house experience, first time in NY · Under the K Bridge Park, Greenpoint · Sydney&#39;s birthday thing — she wants you there · grab tickets on Shotgun · Jungle @ Barclays the NEXT night = back-to-back Brooklyn, stay in the city and make one trip of it'},
@@ -718,7 +789,7 @@ let EV=[
  {s:'2026-12-03',title:'Agora Holiday Gala',time:'6:00 PM',type:'agorap',note:'26 West On The Navesink · 6–9 PM · open, not signed up'},
  {s:'2026-10-07',title:'CBA Business Networking Night',type:'pink',note:'NEW (Aug 24 email) · Christian Brothers alumni business directory night, Wed Oct 7 · you&#39;re already in the directory and you gave in June — this is the low-effort version of that relationship. Free-ish, local, and it&#39;s your people.'},
  {s:'2026-09-16',title:'Cancel Norton by today',type:'amber',note:'Norton 360 Deluxe auto-renews <b>$119.99/yr on Sep 17</b> via Apple. Apple&#39;s rule: cancel at least one day before. If you don&#39;t use it, this is a free $120.'},
- {s:'2026-09-14',title:'Card payment due',type:'amber',note:'August statement, account ending 35006 · due Mon Sep 14. Three payments were returned this month — confirm the funding account is good BEFORE this one.'},
+ {s:'2026-09-14',title:'the card payment due',type:'amber',note:'August statement, account ending 35006 · due Mon Sep 14. Three payments were returned this month — confirm the funding account is good BEFORE this one.'},
  {s:'2026-09-15',title:'Miami — book by today',type:'amber',note:'MIA fares step up hard inside 30 days and Oct 15 is 30 days out. Flight + hotel booked by today or the trip gets more expensive for no reason.'},
 ];
 [['2026-07-03','Independence Day'],['2026-09-07','Labor Day'],['2026-10-12','Columbus Day'],['2026-11-11','Veterans Day'],['2026-11-26','Thanksgiving'],['2026-12-25','Christmas']]
@@ -747,7 +818,8 @@ document.getElementById('todayBtn').onclick=()=>{cur=new Date('2026-09-07T12:00'
 
 /* ---- tiles + clock ---- */
 const COUNTS=[
- ['🕯️','Anniversary','2026-09-11','decide your day in advance'],
+ ['🎹','Cocktail piano — showtime','2026-12-01','6 tunes, 45 min, no charts'],
+ ['🕯️','an anniversary','2026-09-11','decide your day in advance'],
  ['👋','Aunt Millie + Clariss','2026-09-10','arrival times + one dinner plan'],
  ['🛝','Agora meetup — the LAST one','2026-09-08','Dorbrook, 5:30 PM · no RSVP, just show up'],
  ['🌳','Rising Treetops volunteer','2026-09-12','9 AM–12 PM · Oakhurst · falls in your off week'],
@@ -835,6 +907,19 @@ const BDRAFTS=[
  bd.addEventListener('click',e=>{if(e.target.classList.contains('cpy')){const i=e.target.dataset.i;
   navigator.clipboard&&navigator.clipboard.writeText(BDRAFTS[i][2]);e.target.textContent='Copied ✓';setTimeout(()=>e.target.textContent='Copy',1500);}});
 })();
+
+/* ---- SCOREBOARD ---- */
+const SC=[['train','🏋️ Train',5,'#ff4d6d'],['ship','📣 Post / ship',5,'#ffb43d'],['ask','📞 Asks made',10,'#4da6ff'],['money','💵 Money moves',3,'#2fd39a'],['reps','🎹 Piano reps',4,'#b388ff']];
+function wkKey(){const d=new Date();const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return d.toISOString().slice(0,10);}
+function scLoad(){let raw=localStorage.getItem('hq_score');let o=raw?JSON.parse(raw):{};if(o.wk!==wkKey())o={wk:wkKey()};return o;}
+function scSave(o){localStorage.setItem('hq_score',JSON.stringify(o));}
+function scRender(){const o=scLoad();const el=document.getElementById('score');if(!el)return;
+ el.innerHTML=SC.map(([k,lab,tgt,col])=>{const n=o[k]||0;const pct=Math.min(100,Math.round(n/tgt*100));
+  return '<div class="sc'+(n>=tgt?' hit':'')+'" data-k="'+k+'"><div class="lab">'+lab+'</div><div class="num">'+n+'<span style="font-size:14px;color:var(--faint);font-weight:600"> / '+tgt+'</span></div><div class="tgt">'+(n>=tgt?'target hit ✓':(tgt-n)+' to go this week')+'</div><div class="barx"><i style="width:'+pct+'%;background:'+col+'"></i></div></div>';}).join('');
+ const lbl=document.getElementById('wklabel');if(lbl){const done=SC.filter(([k,,t])=>(o[k]||0)>=t).length;lbl.textContent=done+' of 5 targets hit';}}
+document.addEventListener('click',e=>{const t=e.target.closest('.sc');if(!t)return;const o=scLoad();const k=t.dataset.k;o[k]=(o[k]||0)+1;scSave(o);scRender();});
+document.addEventListener('contextmenu',e=>{const t=e.target.closest('.sc');if(!t)return;e.preventDefault();const o=scLoad();const k=t.dataset.k;o[k]=Math.max(0,(o[k]||0)-1);scSave(o);scRender();});
+scRender();
 
 /* ---- ask-me buttons: copy request to clipboard ---- */
 document.addEventListener('click',e=>{const b=e.target.closest('.ask');if(!b)return;
