@@ -343,17 +343,15 @@
   .sc.hit .num{color:var(--mint-d)}
   .sc .minus{background:#eef2f6;border:1px solid var(--hair);color:var(--sub)}
   .sc .minus:hover{background:var(--mag-s);color:var(--mag-d);border-color:var(--mag)}
-  .logbar select,.logbar input{background:#fff;border:1px solid var(--hair);color:var(--ink);font-size:14.5px}
-  .logbar select:focus,.logbar input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,95,158,.16)}
-  .logbar input::placeholder{color:var(--faint)}
-  .logbar button{background:#1f5f9e;color:#fff;font-size:14.5px}
-  .logbar button:hover{background:#164871}
-  .logitem{background:#fff;border:1px solid var(--hair);font-size:14.5px}
-  .logitem .ltxt{color:var(--ink)}
-  .logitem .ltxt em{color:var(--blue-d)}
-  .logitem .lday{color:var(--faint)}
-  .logempty{color:var(--faint);font-size:14px}
-  .reset{background:#eef2f6;border:1px solid var(--hair);color:var(--sub);font-size:12.5px}
+  .sc{position:relative}
+  .sc .minus{position:absolute;top:7px;right:7px;width:26px;height:26px;border-radius:9px;padding:0;
+    font-size:15px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center}
+  .sc:hover .minus,.sc.hasval .minus{display:flex}
+  .scfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    margin-top:14px;border-top:1px solid var(--hair);padding-top:12px}
+  .scfoot .creed{margin:0;border:none;padding:0;flex:1 1 320px}
+  .reset{background:#eef2f6;border:1px solid var(--hair);color:var(--sub);font-size:12.5px;
+    border-radius:10px;padding:8px 13px;margin:0;flex:0 0 auto;font-family:inherit;font-weight:600;text-decoration:none;cursor:pointer}
   .reset:hover{background:var(--mag-s);color:var(--mag-d);border-color:var(--mag)}
 
   .ask{background:linear-gradient(90deg,#1f5f9e,#41538a);font-size:12px}
@@ -386,14 +384,8 @@
     <div class="b c12 scorewrap">
       <div class="todohead"><div class="mid">⚡ THE SCOREBOARD</div><div class="k" id="wklabel">this week</div></div>
       <div class="scoregrid" id="score"></div>
-      <div class="logbar">
-        <select id="logcat"></select>
-        <input id="logtxt" placeholder="What did you do? e.g. Shred w/ Jessica T — legs, 45 min">
-        <button id="logadd">Log it</button>
-      </div>
-      <div class="loglist" id="loglist"></div>
       <div class="scfoot">
-        <div class="creed"><b>Tap a tile to count it, or log it below with detail.</b> Logging bumps the counter too. Hit &minus; to undo. These five are the only things that compound. Resets every Monday — last week is kept.</div>
+        <div class="creed"><b>Tap a tile every time you do the thing.</b> Hit &minus; to undo. These five are the only things that compound. Resets every Monday — last week is kept.</div>
         <button class="reset" id="wkreset">Reset this week</button>
       </div>
     </div>
@@ -1064,15 +1056,12 @@ const BDRAFTS=[
 
 /* ---- SCOREBOARD ---- */
 const SC=[['train','🏋️ Train',5,'#b3341f'],['ship','📣 Post / ship',5,'#a86a06'],['ask','📞 Asks made',10,'#1f5f9e'],['money','💵 Money moves',3,'#12805f'],['reps','🎹 Piano reps',4,'#41538a']];
-const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 function wkKey(){const d=new Date();const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return d.toISOString().slice(0,10);}
-function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 function scLoad(){let o={};try{o=JSON.parse(localStorage.getItem('hq_score'))||{};}catch(e){o={};}
  if(o.wk!==wkKey()){
   if(o.wk){try{const h=JSON.parse(localStorage.getItem('hq_score_hist'))||[];h.unshift(o);localStorage.setItem('hq_score_hist',JSON.stringify(h.slice(0,8)));}catch(e){}}
-  o={wk:wkKey(),log:[]};
+  o={wk:wkKey()};
  }
- if(!Array.isArray(o.log))o.log=[];
  return o;}
 function scSave(o){try{localStorage.setItem('hq_score',JSON.stringify(o));}catch(e){}}
 function scRender(){const o=scLoad();const el=document.getElementById('score');if(!el)return;
@@ -1085,35 +1074,14 @@ function scRender(){const o=scLoad();const el=document.getElementById('score');i
    '<div class="barx"><i style="width:'+pct+'%;background:'+col+'"></i></div></div>';}).join('');
  const lbl=document.getElementById('wklabel');
  if(lbl){const done=SC.filter(function(r){return (o[r[0]]||0)>=r[2];}).length;lbl.textContent=done+' of 5 targets hit';}
- const sel=document.getElementById('logcat');
- if(sel&&!sel.options.length){SC.forEach(function(r){const op=document.createElement('option');op.value=r[0];op.textContent=r[1];sel.appendChild(op);});}
- const list=document.getElementById('loglist');
- if(list){
-  if(!o.log.length){list.innerHTML='<div class="logempty">Nothing logged this week yet — log your first one above.</div>';}
-  else{list.innerHTML=o.log.map(function(en,i){
-   const hit=SC.filter(function(r){return r[0]===en.k;})[0];
-   const lab=hit?hit[1]:'&mdash;';
-   return '<div class="logitem"><span class="lday">'+DAYS[new Date(en.d).getDay()]+'</span>'+
-    '<span class="ltxt"><em>'+lab+'</em> &middot; '+esc(en.t)+'</span>'+
-    '<button class="lx" data-i="'+i+'" title="remove">&times;</button></div>';}).join('');}
- }}
+ }
 document.addEventListener('click',function(e){
  const m=e.target.closest('.minus');
  if(m){const o=scLoad();const k=m.dataset.m;o[k]=Math.max(0,(o[k]||0)-1);scSave(o);scRender();return;}
- const x=e.target.closest('.lx');
- if(x){const o=scLoad();const i=+x.dataset.i;const en=o.log[i];
-  if(en){o[en.k]=Math.max(0,(o[en.k]||0)-1);o.log.splice(i,1);scSave(o);scRender();}return;}
  const t=e.target.closest('.sc');
  if(t){const o=scLoad();const k=t.dataset.k;o[k]=(o[k]||0)+1;scSave(o);scRender();}});
-function logAdd(){const sel=document.getElementById('logcat'),inp=document.getElementById('logtxt');
- if(!sel||!inp)return;const txt=(inp.value||'').trim();if(!txt)return;
- const o=scLoad();const k=sel.value||'train';
- o.log.unshift({k:k,t:txt,d:Date.now()});o[k]=(o[k]||0)+1;
- scSave(o);inp.value='';scRender();}
-const _la=document.getElementById('logadd');if(_la)_la.onclick=logAdd;
-const _lt=document.getElementById('logtxt');if(_lt)_lt.addEventListener('keydown',function(e){if(e.key==='Enter')logAdd();});
 const _wr=document.getElementById('wkreset');
-if(_wr)_wr.onclick=function(){if(!confirm('Reset this week? Counters and the log go back to zero.'))return;scSave({wk:wkKey(),log:[]});scRender();};
+if(_wr)_wr.onclick=function(){if(!confirm('Reset this week? Counters and the log go back to zero.'))return;scSave({wk:wkKey()});scRender();};
 scRender();
 
 /* ---- ask-me buttons: copy request to clipboard ---- */
