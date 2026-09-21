@@ -358,6 +358,20 @@
   .ask:hover{filter:brightness(1.12)}
   #gate{background:linear-gradient(160deg,#1b2a3a,#16202b 55%,#241a1c)}
   #gate .glab{color:#8fb4d9}
+  /* piano phases */
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:10px;margin-top:10px}
+  .ph{background:#fafbfc;border:1px solid var(--hair);border-left:4px solid var(--blue);border-radius:12px;padding:12px 14px}
+  .ph.now{border-left-color:var(--mag);background:#fff8f6;box-shadow:0 0 0 2px rgba(179,52,31,.10)}
+  .ph.last{border-left-color:var(--mint)}
+  .phd{font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
+  .ph.now .phd{color:var(--mag-d)}
+  .pht{font-size:15.5px;font-weight:700;margin-top:3px;color:var(--ink);letter-spacing:-.01em}
+  .phw{font-size:13.5px;color:var(--sub);line-height:1.55;margin:6px 0 10px}
+  .phb{font-size:12px;color:var(--faint);margin-top:8px;line-height:1.5}
+  .phb a{font-weight:600}
+  .ptonight{background:linear-gradient(120deg,#fff3ef,#fff);border:1px solid #f0cfc6;border-left:4px solid var(--mag);
+    border-radius:12px;padding:13px 15px;margin-top:10px}
+  .ptonight .h{display:block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--mag-d);margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -977,7 +991,6 @@ const COUNTS=[
  ['⚾','Villanova Night @ Yankee Stadium','2026-09-25','Nova hats + Josh Hart bobbleheads'],
  ['📺','PRIMETIME','2026-09-25','Pattinson as Chris Hansen · A24 · theaters'],
  ['🔪','Only Murders S6','2026-09-30','London season'],
- ['📄','Client renewal — notice window shuts','2026-10-01','reprice now or it locks at the old rate through April'],
  ['🤵','a friend&#39;s wedding — NOTHING BOOKED','2026-10-02','the resort UT · call the resort · western chic is OPTIONAL'],
  ['💻','The Social Reckoning','2026-10-09','Sorkin&#39;s Social Network sequel · Jeremy Strong'],
  ['🌴','Miami w/ your business partner','2026-10-15','Oct 15–20 · flight ✓ · South Beach ✓'],
